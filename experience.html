@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience & Leadership</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        /* Theme variables to match index.html */
+        :root {
+            --primary-color: #4f46e5;
+            --secondary-color: #06b6d4;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-card: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        [data-theme="dark"] {
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --bg-primary: #111827;
+            --bg-secondary: #1f2937;
+            --bg-card: #374151;
+            --border-color: #4b5563;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        body { font-family: 'Roboto', sans-serif; line-height: 1.7; color: var(--text-primary); background: var(--bg-primary); }
+        .page { max-width: 1100px; margin: 0 auto; padding: 2rem 1.25rem; }
+        .title { font-family: 'Poppins', sans-serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; margin-bottom: 1.5rem; text-align: center; }
+        /* Two-column layout */
+        .layout { display: grid; grid-template-columns: 320px 1fr; gap: 2rem; align-items: start; }
+        .photo {
+            width: 100%; max-width: 320px; height: auto; border-radius: 16px; object-fit: cover;
+            background: var(--bg-card); border: 3px solid var(--border-color); box-shadow: var(--shadow);
+        }
+        .content { color: var(--text-primary); }
+        .role { font-family: 'Poppins', sans-serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.4rem; }
+        .org { color: var(--text-secondary); margin-bottom: 1rem; }
+        .desc { color: var(--text-secondary); }
+        .back { display: inline-block; margin-top: 1.25rem; text-decoration: none; font-weight: 600; color: var(--primary-color); border: 2px solid var(--primary-color); padding: 0.5rem 1rem; border-radius: 999px; transition: all .2s ease; }
+        .back:hover { background: var(--primary-color); color: #ffffff; transform: translateY(-1px); }
+        @media (max-width: 900px) { .layout { grid-template-columns: 260px 1fr; } }
+        @media (max-width: 680px) { .layout { grid-template-columns: 1fr; } .photo { max-width: 100%; } }
+    </style>
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <main class="page">
+        <h1 class="title">Experience & Leadership</h1>
+        <section class="layout">
+            <img class="photo" src="web dev co lead.jpg" alt="Web Dev Co-Lead">
+            <div class="content">
+                <h2 class="role">Web Development Co-Lead – Google Developer Groups on Campus (GDGoC) TCOER 2025</h2>
+                <p class="org">Leadership • Community • Web Development</p>
+                <p class="desc">As the Web Development Co-Lead of GDGoC TCOER 2025, I collaborate with a talented team of developers to design, build, and maintain impactful web solutions. My role involves leading technical initiatives, mentoring peers, and contributing to community-driven projects that enhance student engagement and learning. I actively work on organizing workshops, guiding juniors in modern web technologies, and driving innovative projects that align with the GDGoC mission of fostering a strong developer ecosystem on campus.</p>
+                <a class="back" href="index.html#experience">← Back to Portfolio</a>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Apply saved theme from localStorage to keep in sync with index.html
+        (function syncTheme() {
+            try {
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    document.body.setAttribute('data-theme', 'dark');
+                } else if (savedTheme === 'light') {
+                    document.body.setAttribute('data-theme', 'light');
+                }
+            } catch (e) {
+                // ignore
+            }
+        })();
+    </script>
+    
+</body>
+</html>
+

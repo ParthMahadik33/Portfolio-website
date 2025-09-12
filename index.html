@@ -202,6 +202,37 @@
             z-index: 1;
         }
         
+        .hero-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--border-color);
+            box-shadow: var(--shadow);
+            display: block;
+            margin: 0 auto 1.5rem;
+            background: var(--bg-card);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            will-change: transform;
+        }
+        
+        .hero-avatar:hover {
+            transform: scale(1.08);
+            /* Outer ambient glow + crisp colored ring that respects theme */
+            box-shadow:
+                0 10px 25px -5px rgba(0, 0, 0, 0.25),
+                0 0 0 3px var(--bg-primary),
+                0 0 0 6px var(--primary-color),
+                0 0 25px 6px rgba(79, 70, 229, 0.35);
+        }
+        
+        @media (max-width: 480px) {
+            .hero-avatar {
+                width: 140px;
+                height: 140px;
+            }
+        }
+        
         .hero h1 {
             font-family: 'Poppins', sans-serif;
             font-size: clamp(2.5rem, 5vw, 4rem);
@@ -498,6 +529,57 @@
             color: white;
         }
         
+        /* ===== EXPERIENCE SECTION ===== */
+        .experience-intro {
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            text-align: center;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .experience-actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .experience-pair {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .experience-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            box-shadow: var(--shadow);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .experience-item:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
+        
+        .experience-item p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 0.9rem;
+        }
+        
+        .experience-item .btn { 
+            margin-top: auto; 
+            align-self: flex-start;
+        }
+
         /* ===== CONTACT SECTION ===== */
         .contact-content {
             display: grid;
@@ -686,6 +768,7 @@
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -704,6 +787,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
+            <img src="hero%20section%20Photo.jpg" alt="Parth Mahadik" class="hero-avatar" loading="eager">
             <h1>Hi, I'm Parth Mahadik</h1>
             <p>Aspiring AI & Backend Developer | Exploring Data Science & DevOps</p>
             <div class="hero-buttons">
@@ -714,6 +798,38 @@
                 <a href="resume.pdf" class="btn btn-secondary" target="_blank">
                     <i class="fas fa-download"></i>
                     Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Leadership Section -->
+    <section id="experience" class="section">
+        <h2 class="section-title fade-in">Experience & Leadership</h2>
+        <p class="experience-intro fade-in">
+            Explore my journey through hands-on roles, leadership positions, and verified certifications.
+        </p>
+        <div class="experience-pair">
+            <div class="experience-item fade-in">
+                <h3 class="experience-title">Experience & Leadership</h3>
+                <p>
+                    Roles, projects, and responsibilities I’ve taken on — including leadership positions like
+                    GDG Web Dev Co-Lead — focusing on building, mentoring, and community-led initiatives.
+                </p>
+                <a class="btn btn-primary" href="experience.html">
+                    <i class="fas fa-briefcase"></i>
+                    View Experience
+                </a>
+            </div>
+            <div class="experience-item fade-in">
+                <h3 class="experience-title">Certificates</h3>
+                <p>
+                    Curated certifications and achievements that validate my skills and continuous learning
+                    across development, data and AI tools.
+                </p>
+                <a class="btn btn-secondary" href="certificates.html">
+                    <i class="fas fa-certificate"></i>
+                    View Certificates
                 </a>
             </div>
         </div>
