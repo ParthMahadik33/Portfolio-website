@@ -326,23 +326,31 @@
   color: var(--color-vermilion);
 }
 
-/* Vintage Tractor & Rolling Hills Engraving anchored beneath left links */
+/* Central Vintage Farm Tractor Engraving bridging text & collage */
 .tractorEngravingWrap {
-  position: relative;
-  width: clamp(280px, 34vw, 420px);
+  position: absolute;
+  bottom: -20px;
+  left: 26%;
+  width: clamp(330px, 37vw, 530px);
   height: auto;
-  margin-top: 1.75rem;
-  margin-left: -12px;
-  margin-bottom: -15px;
   pointer-events: none;
-  z-index: 2;
-  opacity: 0.88;
+  z-index: 12;
+  opacity: 0.92;
   mix-blend-mode: multiply;
 
-  @media (max-width: 960px) {
-    width: 260px;
-    margin-top: 1rem;
-    margin-left: 0;
+  @media (max-width: 1360px) {
+    left: 22%;
+    width: clamp(290px, 35vw, 460px);
+  }
+
+  @media (max-width: 1080px) {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    width: clamp(270px, 68vw, 400px);
+    margin: 0.75rem auto 0;
+    display: block;
+    order: 3;
   }
 }
 

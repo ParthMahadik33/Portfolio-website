@@ -95,18 +95,18 @@ export const AgroRentProject: React.FC = () => {
             <span className={styles.linkArrow} aria-hidden="true">→</span>
           </a>
         </div>
+      </div>
 
-        {/* Vintage Tractor & Rolling Hills Engraving beneath links */}
-        <div className={styles.tractorEngravingWrap} aria-hidden="true">
-          <Image
-            src="/assets/projects/tractor-engraving.jpg"
-            alt=""
-            width={1200}
-            height={675}
-            className={styles.tractorEngravingImg}
-            priority={false}
-          />
-        </div>
+      {/* Central Vintage Farm Tractor Engraving bridging text & collage */}
+      <div className={styles.tractorEngravingWrap} aria-hidden="true">
+        <Image
+          src="/assets/projects/tractor-farm-landscape.jpg"
+          alt=""
+          width={1376}
+          height={768}
+          className={styles.tractorEngravingImg}
+          priority={false}
+        />
       </div>
 
       {/* Right Column: Flagship Editorial Collage */}
