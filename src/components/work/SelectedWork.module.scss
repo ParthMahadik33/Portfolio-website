@@ -7,13 +7,14 @@
   width: 100%;
   background-color: var(--color-bg);
   color: var(--color-text);
-  overflow: hidden;
-  padding: 4.5rem 3.5rem 5.5rem;
+  overflow-x: clip;
+  overflow-y: visible;
+  padding: 4.5rem clamp(1.25rem, 3.5vw, 3.5rem) 5.5rem;
   box-sizing: border-box;
   scroll-margin-top: 1.5rem;
 
   @media (max-width: 1200px) {
-    padding: 3.8rem 2.25rem 4.5rem;
+    padding: 3.8rem clamp(1.25rem, 3vw, 2.25rem) 4.5rem;
   }
 
   @media (max-width: 960px) {
@@ -155,19 +156,14 @@
   position: relative;
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(540px, 1.85fr);
-  gap: clamp(2.5rem, 4.5vw, 5rem);
+  grid-template-columns: minmax(0, 1fr) minmax(440px, 1.45fr);
+  gap: clamp(1.75rem, 3.5vw, 4rem);
   align-items: flex-start;
   padding: 1rem 0 2rem;
 
-  @media (max-width: 1150px) {
-    grid-template-columns: 1fr 1.4fr;
-    gap: 2rem;
-  }
-
-  @media (max-width: 960px) {
+  @media (max-width: 1080px) {
     grid-template-columns: 1fr;
-    gap: 3.5rem;
+    gap: 3rem;
     padding: 0.5rem 0 1.5rem;
   }
 }
@@ -363,7 +359,8 @@
 .agrorentCollageContainer {
   position: relative;
   width: 100%;
-  min-height: 520px;
+  max-width: 680px;
+  min-height: 480px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -371,6 +368,8 @@
   user-select: none;
   cursor: pointer;
   overflow: visible;
+  padding: 2.5rem 1.25rem 1rem;
+  box-sizing: border-box;
 
   &:focus-visible {
     outline: 2px dashed var(--color-vermilion);
@@ -378,13 +377,15 @@
     border-radius: 4px;
   }
 
-  @media (max-width: 960px) {
-    min-height: 480px;
-    margin-top: 1.5rem;
+  @media (max-width: 1080px) {
+    margin: 0 auto;
+    max-width: 620px;
+    min-height: 440px;
   }
 
   @media (max-width: 600px) {
-    min-height: 420px;
+    min-height: 380px;
+    padding: 2rem 0.5rem 1rem;
   }
 }
 
@@ -392,13 +393,13 @@
 .archivalTornPaperBacking {
   position: absolute;
   top: 10px;
-  right: -15px;
+  left: 3%;
   width: 94%;
   height: 96%;
   background-color: #EFE6D7;
   border: 1px solid rgba(215, 202, 182, 0.65);
   box-shadow: 0 12px 28px rgba(23, 21, 18, 0.08);
-  transform: rotate(1.2deg);
+  transform: rotate(1deg);
   pointer-events: none;
   z-index: 2;
   clip-path: polygon(
@@ -412,30 +413,29 @@
 /* Botanical Sprigs */
 .botanicalSprigTopRight {
   position: absolute;
-  top: -45px;
-  right: -30px;
-  width: 240px;
-  height: 240px;
+  top: -35px;
+  right: 0;
+  width: 190px;
+  height: 190px;
   pointer-events: none;
   z-index: 3;
   opacity: 0.65;
   mix-blend-mode: multiply;
-  transform: rotate(25deg);
+  transform: rotate(20deg);
 
   @media (max-width: 768px) {
-    width: 180px;
-    top: -30px;
-    right: -15px;
+    width: 140px;
+    top: -20px;
     opacity: 0.45;
   }
 }
 
 .botanicalSprigBottomRight {
   position: absolute;
-  bottom: -45px;
-  right: -25px;
-  width: 220px;
-  height: 220px;
+  bottom: -35px;
+  right: 0;
+  width: 180px;
+  height: 180px;
   pointer-events: none;
   z-index: 3;
   opacity: 0.55;
@@ -456,28 +456,21 @@
 /* LEFT ARTIFACT: AI Condition Analysis Card (z-index 15 in front of main screen) */
 .aiConditionCard {
   position: absolute;
-  left: -50px;
+  left: 0;
   top: 35px;
   z-index: 15;
-  width: clamp(195px, 22vw, 240px);
+  width: clamp(170px, 20vw, 215px);
   transform-origin: center center;
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
 
-  @media (max-width: 1150px) {
-    left: -30px;
-    width: 200px;
-  }
-
-  @media (max-width: 960px) {
-    left: 10px;
-    top: 25px;
+  @media (max-width: 1080px) {
     width: 185px;
+    left: 0;
   }
 
   @media (max-width: 600px) {
-    left: -8px;
-    top: 15px;
-    width: 155px;
+    width: 140px;
+    top: 20px;
   }
 }
 
@@ -603,16 +596,16 @@
 /* Handwritten Annotation (Condition Card) */
 .annotationCondition {
   position: absolute;
-  top: -65px;
-  left: -20px;
+  top: -55px;
+  left: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   pointer-events: none;
   z-index: 20;
-  transform: rotate(-4deg);
+  transform: rotate(-3deg);
 
-  @media (max-width: 960px) {
+  @media (max-width: 768px) {
     display: none;
   }
 }
@@ -631,33 +624,30 @@
   width: 44px;
   height: 32px;
   margin-top: 2px;
-  margin-right: 12px;
+  margin-left: 12px;
 }
 
 /* CENTER ARTIFACT: Main AgroRent Desktop Window */
 .mainDesktopWindow {
   position: relative;
   z-index: 10;
-  width: clamp(340px, 44vw, 580px);
+  width: clamp(290px, 36vw, 470px);
+  margin: 0 auto;
   transform-origin: center center;
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
 
-  @media (max-width: 1150px) {
-    width: 440px;
-  }
-
-  @media (max-width: 960px) {
-    width: 380px;
+  @media (max-width: 1080px) {
+    width: 390px;
   }
 
   @media (max-width: 600px) {
-    width: 300px;
+    width: 260px;
   }
 }
 
 .desktopBezel {
   background-color: #1A1714;
-  padding: 7px;
+  padding: 6px;
   border-radius: 4px;
   box-shadow: 0 16px 36px rgba(23, 21, 18, 0.16), 0 3px 10px rgba(23, 21, 18, 0.08);
   overflow: hidden;
@@ -680,28 +670,22 @@
 /* RIGHT ARTIFACT: WhatsApp Smartphone Workflow (z-index 15 in front of main screen) */
 .whatsappPhoneCard {
   position: absolute;
-  right: -40px;
+  right: 0;
   top: 15px;
   z-index: 15;
-  width: clamp(175px, 19vw, 215px);
+  width: clamp(150px, 17vw, 190px);
   transform-origin: center center;
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
 
-  @media (max-width: 1150px) {
-    right: -25px;
-    width: 185px;
-  }
-
-  @media (max-width: 960px) {
-    right: 10px;
-    top: 30px;
-    width: 170px;
+  @media (max-width: 1080px) {
+    width: 165px;
+    right: 0;
+    top: 25px;
   }
 
   @media (max-width: 600px) {
-    right: -10px;
-    top: 30px;
-    width: 140px;
+    width: 130px;
+    top: 20px;
   }
 }
 
@@ -860,16 +844,16 @@
 /* Handwritten Annotation (WhatsApp) */
 .annotationWhatsapp {
   position: absolute;
-  top: -65px;
-  right: -10px;
+  top: -55px;
+  right: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   pointer-events: none;
   z-index: 20;
-  transform: rotate(4deg);
+  transform: rotate(3deg);
 
-  @media (max-width: 960px) {
+  @media (max-width: 768px) {
     display: none;
   }
 }
@@ -878,21 +862,21 @@
   width: 44px;
   height: 32px;
   margin-top: 2px;
-  margin-left: 12px;
+  margin-right: 14px;
 }
 
 /* Fanned-out Stack Spread on Hover or Tap (.isSpread) */
 .agrorentCollageContainer:hover,
 .agrorentCollageContainer.isSpread {
   .aiConditionCard {
-    transform: translate3d(-28px, -10px, 0) rotate(-7.5deg) !important;
+    transform: translate3d(-14px, -6px, 0) rotate(-7deg) !important;
     .conditionCardInner {
       box-shadow: 0 18px 36px rgba(23, 21, 18, 0.18);
     }
   }
 
   .whatsappPhoneCard {
-    transform: translate3d(26px, -8px, 0) rotate(9.5deg) !important;
+    transform: translate3d(14px, -5px, 0) rotate(9.5deg) !important;
     .smartphoneChassis {
       box-shadow: 0 18px 38px rgba(0, 0, 0, 0.25);
     }
@@ -931,7 +915,7 @@
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   width: 100%;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1080px) {
     grid-template-columns: 1fr;
     gap: 3.5rem;
   }
@@ -941,7 +925,7 @@
   padding-right: clamp(1.25rem, 2.2vw, 2.5rem);
   border-right: 1px solid rgba(181, 40, 45, 0.32);
 
-  @media (max-width: 900px) {
+  @media (max-width: 1080px) {
     padding-right: 0;
     border-right: none;
     border-bottom: 1px solid rgba(181, 40, 45, 0.32);
@@ -952,7 +936,7 @@
 .secondaryProjectColRight {
   padding-left: clamp(1.25rem, 2.2vw, 2.5rem);
 
-  @media (max-width: 900px) {
+  @media (max-width: 1080px) {
     padding-left: 0;
   }
 }
