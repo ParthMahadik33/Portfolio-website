@@ -100,10 +100,10 @@ export const AgroRentProject: React.FC = () => {
       {/* Central Vintage Farm Tractor Engraving bridging text & collage */}
       <div className={styles.tractorEngravingWrap} aria-hidden="true">
         <Image
-          src="/assets/projects/tractor-farm-landscape.jpg"
+          src="/assets/projects/tractor-isolated.png"
           alt=""
-          width={1376}
-          height={768}
+          width={1325}
+          height={710}
           className={styles.tractorEngravingImg}
           priority={false}
         />
