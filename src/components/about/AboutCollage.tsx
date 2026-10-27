@@ -15,21 +15,37 @@ export const AboutCollage: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
   const easeCurve: [number, number, number, number] = [0.25, 1, 0.5, 1];
 
-  // Active polaroid on interaction
-  const [activePolaroid, setActivePolaroid] = useState<number | null>(null);
+  // Toggle state for touchscreens & keyboard accessibility
+  const [isSpread, setIsSpread] = useState(false);
+
+  const toggleSpread = () => {
+    setIsSpread((prev) => !prev);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleSpread();
+    }
+  };
 
   return (
-    <div className={styles.collageContainer}>
-      {/* 1. Small Organic Vermilion Paper Scrap peeking out at top-left */}
+    <div
+      className={`${styles.collageContainer} ${isSpread ? styles.isSpread : ""}`}
+      onClick={toggleSpread}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
+      role="region"
+      aria-label="Interactive photo collage. Tap or hover to fan out polaroids."
+    >
+      {/* 1. Believable Torn Paper Scraps tucked behind foreground photo */}
       <VermilionTornScrap className={styles.vermilionScrapPos} />
-
-      {/* 2. Narrow Kraft Torn Paper Strip along left of photo */}
       <KraftTornStrip className={styles.kraftScrapPos} />
 
-      {/* 3. Small Casual Handwritten Note & Curved Arrow */}
+      {/* 2. Small Casual Handwritten Note & Curved Arrow */}
       <AboutHandwriting className={styles.handwritingPos} />
 
-      {/* 4. Upper Right Guiding Pillars */}
+      {/* 3. Upper Right Guiding Pillars */}
       <motion.div
         className={styles.pillarsPos}
         initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: 12 }}
@@ -40,7 +56,7 @@ export const AboutCollage: React.FC = () => {
         <AboutPillars />
       </motion.div>
 
-      {/* 5. Natural Hand-Drawn Botanical SVG Artwork */}
+      {/* 4. Natural Hand-Drawn Botanical Ink SVG Artwork */}
       <motion.div
         className={styles.botanicalsPos}
         initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.96 }}
@@ -51,13 +67,13 @@ export const AboutCollage: React.FC = () => {
         <AboutBotanicals />
       </motion.div>
 
-      {/* 6. Main Focal Point: Authentic Color Speaking Photo */}
+      {/* 5. Main Focal Point: Foreground Color Speaking Photo (z-index: 10) */}
       <motion.div
         className={styles.mainPhotoWrapper}
         initial={
           shouldReduceMotion
             ? { opacity: 1, y: 0, rotate: -2 }
-            : { opacity: 0, y: 24, rotate: -3.5 }
+            : { opacity: 0, y: 22, rotate: -3.5 }
         }
         whileInView={{ opacity: 1, y: 0, rotate: -2 }}
         viewport={{ once: true, amount: 0.3 }}
@@ -80,113 +96,75 @@ export const AboutCollage: React.FC = () => {
         <AboutTape
           className={styles.mainPhotoTapeTopRight}
           rotation={22}
-          width={65}
-          height={20}
+          width={62}
+          height={19}
         />
       </motion.div>
 
-      {/* 7. Deliberate Layered Composition of Three Black & White Polaroids */}
-      <div className={styles.polaroidsStack}>
-        {/* Polaroid 3 (Layered naturally between/behind): Parth with Bicycle */}
-        <motion.div
-          className={`${styles.polaroidItem} ${styles.polaroidBack} ${
-            activePolaroid === 3 ? styles.polaroidActive : ""
-          }`}
-          onMouseEnter={() => setActivePolaroid(3)}
-          onMouseLeave={() => setActivePolaroid(null)}
-          onClick={() => setActivePolaroid(activePolaroid === 3 ? null : 3)}
-          initial={
-            shouldReduceMotion
-              ? { opacity: 1, y: 0, rotate: -5 }
-              : { opacity: 0, y: 20, rotate: -7 }
-          }
-          whileInView={{ opacity: 1, y: 0, rotate: -5 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: shouldReduceMotion ? 0 : 0.75, delay: 0.3, ease: easeCurve }}
-        >
-          <div className={styles.polaroidCard}>
-            <Image
-              src="/assets/polaroid-05-cycling.png"
-              alt="Parth Mahadik exploring trails with bicycle"
-              width={220}
-              height={259}
-              className={styles.polaroidImg}
-            />
-          </div>
-        </motion.div>
-
-        {/* Polaroid 1 (Top right): Parth at Fort Watchtower */}
-        <motion.div
-          className={`${styles.polaroidItem} ${styles.polaroidTop} ${
-            activePolaroid === 1 ? styles.polaroidActive : ""
-          }`}
-          onMouseEnter={() => setActivePolaroid(1)}
-          onMouseLeave={() => setActivePolaroid(null)}
-          onClick={() => setActivePolaroid(activePolaroid === 1 ? null : 1)}
-          initial={
-            shouldReduceMotion
-              ? { opacity: 1, y: 0, rotate: 4.5 }
-              : { opacity: 0, y: 22, rotate: 2 }
-          }
-          whileInView={{ opacity: 1, y: 0, rotate: 4.5 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: shouldReduceMotion ? 0 : 0.8, delay: 0.4, ease: easeCurve }}
-        >
+      {/* 6. Three Black & White Polaroids Tucked Behind Main Photo */}
+      <div className={styles.tuckedPolaroidsStack}>
+        {/* Polaroid 1 (Tucked behind Upper-Right edge): Parth at Fort Bastion */}
+        <div className={`${styles.tuckedPolaroid} ${styles.polaroidFort}`}>
           <div className={styles.polaroidCard}>
             <Image
               src="/assets/polaroid-04-fort-portrait.png"
               alt="Parth Mahadik at heritage fort bastion"
-              width={235}
-              height={275}
+              width={225}
+              height={263}
               className={styles.polaroidImg}
             />
           </div>
-          {/* Small tape piece on fort polaroid corner */}
+          {/* Small piece of tape on polaroid corner */}
           <AboutTape
             className={styles.polaroidTape1}
-            rotation={-14}
-            width={52}
-            height={17}
+            rotation={-12}
+            width={48}
+            height={16}
           />
-        </motion.div>
+        </div>
 
-        {/* Polaroid 2 (Bottom right): Parth on Stone Stairs */}
-        <motion.div
-          className={`${styles.polaroidItem} ${styles.polaroidBottom} ${
-            activePolaroid === 2 ? styles.polaroidActive : ""
-          }`}
-          onMouseEnter={() => setActivePolaroid(2)}
-          onMouseLeave={() => setActivePolaroid(null)}
-          onClick={() => setActivePolaroid(activePolaroid === 2 ? null : 2)}
-          initial={
-            shouldReduceMotion
-              ? { opacity: 1, y: 0, rotate: -2.5 }
-              : { opacity: 0, y: 22, rotate: -5 }
-          }
-          whileInView={{ opacity: 1, y: 0, rotate: -2.5 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: shouldReduceMotion ? 0 : 0.8, delay: 0.55, ease: easeCurve }}
-        >
+        {/* Polaroid 2 (Tucked behind Lower-Right edge): Parth on Stone Stairs */}
+        <div className={`${styles.tuckedPolaroid} ${styles.polaroidStairs}`}>
           <div className={styles.polaroidCard}>
             <Image
               src="/assets/polaroid-01-stairs.png"
               alt="Parth Mahadik on heritage stone stairs"
-              width={235}
-              height={275}
+              width={225}
+              height={263}
               className={styles.polaroidImg}
             />
           </div>
-          {/* Small tape piece on stairs polaroid */}
+          {/* Small piece of tape on polaroid corner */}
           <AboutTape
             className={styles.polaroidTape2}
-            rotation={15}
-            width={50}
+            rotation={14}
+            width={48}
             height={16}
           />
-        </motion.div>
+        </div>
+
+        {/* Polaroid 3 (Tucked behind Lower edge): Parth with Bicycle in nature */}
+        <div className={`${styles.tuckedPolaroid} ${styles.polaroidCycling}`}>
+          <div className={styles.polaroidCard}>
+            <Image
+              src="/assets/polaroid-05-cycling.png"
+              alt="Parth Mahadik exploring trails with bicycle"
+              width={210}
+              height={247}
+              className={styles.polaroidImg}
+            />
+          </div>
+          {/* Small piece of tape on polaroid corner */}
+          <AboutTape
+            className={styles.polaroidTape3}
+            rotation={-8}
+            width={44}
+            height={15}
+          />
+        </div>
       </div>
 
-      {/* 8. Circular Printed Seal Stamp: STILL LEARNING / STILL BUILDING */}
+      {/* 7. Circular Printed Seal Stamp: STILL LEARNING / STILL BUILDING */}
       <motion.div
         className={styles.stampPos}
         initial={
@@ -198,7 +176,7 @@ export const AboutCollage: React.FC = () => {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: shouldReduceMotion ? 0 : 0.75, delay: 0.65, ease: easeCurve }}
       >
-        <AboutStamp size={112} rotation={-5} />
+        <AboutStamp size={110} rotation={-5} />
       </motion.div>
     </div>
   );
