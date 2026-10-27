@@ -1,0 +1,952 @@
+.workSection {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow: hidden;
+  padding: 4.5rem 3.5rem 5.5rem;
+  box-sizing: border-box;
+  scroll-margin-top: 1.5rem;
+
+  @media (max-width: 1200px) {
+    padding: 3.8rem 2.25rem 4.5rem;
+  }
+
+  @media (max-width: 960px) {
+    padding: 3.2rem 1.5rem 4rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 2.75rem 1.15rem 3.5rem;
+  }
+}
+
+.workBgPaper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseWork'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseWork)'/%3E%3C/svg%3E");
+}
+
+.workContainer {
+  position: relative;
+  z-index: 5;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+
+  @media (max-width: 960px) {
+    gap: 3.5rem;
+  }
+}
+
+/* =========================================================================
+   1. SECTION HEADER
+   ========================================================================= */
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sectionHeaderRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+
+.sectionTag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-family: var(--font-condensed);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+}
+
+.tagNum {
+  color: var(--color-vermilion);
+}
+
+.tagSep {
+  color: var(--color-muted-grey);
+}
+
+.tagText {
+  color: var(--color-text);
+}
+
+.headerRule {
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-vermilion);
+  opacity: 0.36;
+  transform-origin: left center;
+}
+
+.editorialHeadline {
+  position: relative;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-style: normal;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 96, "wght" 800;
+  font-size: clamp(3.1rem, 4.8vw, 5rem);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  width: 100%;
+
+  @media (max-width: 1200px) {
+    font-size: clamp(2.6rem, 4.4vw, 4rem);
+    line-height: 0.98;
+  }
+
+  @media (max-width: 768px) {
+    font-size: clamp(2.2rem, 7.5vw, 3.1rem);
+    line-height: 1.02;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.headlineCharcoal {
+  color: var(--color-text);
+}
+
+.headlineVermilion {
+  color: var(--color-vermilion);
+}
+
+.supportingCopy {
+  font-family: var(--font-sans);
+  font-size: clamp(1.08rem, 1.22vw, 1.2rem);
+  color: #24201C;
+  max-width: 620px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* =========================================================================
+   2. FLAGSHIP PROJECT: AGRORENT (STACK SPREAD)
+   ========================================================================= */
+
+.flagshipContainer {
+  width: 100%;
+}
+
+.flagshipArticle {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(460px, 1.65fr);
+  gap: clamp(2.5rem, 4.2vw, 5rem);
+  align-items: center;
+  padding: 1.5rem 0 2rem;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr 1.35fr;
+    gap: 2.5rem;
+  }
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    padding: 1rem 0;
+  }
+}
+
+.tractorEngravingWrap {
+  position: absolute;
+  bottom: -40px;
+  left: 18%;
+  width: clamp(380px, 44vw, 640px);
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
+
+  @media (max-width: 960px) {
+    left: 5%;
+    width: 320px;
+    bottom: -20px;
+    opacity: 0.14;
+  }
+}
+
+.tractorEngravingImg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Project Info Column */
+.projectInfoColumn {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.projectMetaHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.projectNumber {
+  font-family: var(--font-condensed);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-vermilion);
+  letter-spacing: 0.08em;
+  display: inline-block;
+}
+
+.titleBadgeRow {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.projectTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 3.8vw, 3.6rem);
+  font-weight: 800;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 96, "wght" 800;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.liveBadge {
+  font-family: var(--font-condensed);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--color-vermilion);
+  border: 1px solid var(--color-vermilion);
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  background-color: rgba(181, 40, 45, 0.04);
+  line-height: 1;
+}
+
+.projectRule {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-vermilion);
+  opacity: 0.35;
+  margin-top: 0.45rem;
+}
+
+.projectDescription {
+  font-family: var(--font-sans);
+  font-size: clamp(1.02rem, 1.16vw, 1.14rem);
+  line-height: 1.65;
+  color: #2E2822;
+  margin: 0;
+}
+
+.techTagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin-top: 0.25rem;
+}
+
+.techTagItem {
+  font-family: var(--font-condensed);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+  background-color: #FAF6EF;
+  border: 1px solid rgba(23, 21, 18, 0.18);
+  padding: 0.26rem 0.75rem;
+  border-radius: 14px;
+}
+
+.projectActionLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.85rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.editorialActionLink {
+  font-family: var(--font-condensed);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.2s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: var(--color-vermilion);
+    transform: scaleX(0.4);
+    transform-origin: left center;
+    transition: transform 0.25s ease, background-color 0.2s ease;
+  }
+
+  &:hover {
+    color: var(--color-vermilion);
+
+    &::after {
+      transform: scaleX(1);
+    }
+
+    .linkArrow {
+      transform: translateX(3px);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px dashed var(--color-vermilion);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+}
+
+.linkArrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  color: var(--color-vermilion);
+}
+
+/* =========================================================================
+   TACTILE STACK SPREAD COLLAGE (AGRORENT)
+   ========================================================================= */
+
+.stackSpreadContainer {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 6;
+  user-select: none;
+  cursor: pointer;
+  overflow: visible;
+
+  &:focus-visible {
+    outline: 2px dashed var(--color-vermilion);
+    outline-offset: 8px;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 960px) {
+    justify-content: center;
+    min-height: 440px;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    min-height: 380px;
+  }
+}
+
+/* Supplemental Paper Sheet (Layer 3) */
+.supplementalPaperSheet {
+  position: absolute;
+  top: 15px;
+  right: -15px;
+  width: 130px;
+  height: 180px;
+  background-color: #FAF5EA;
+  border: 1px solid rgba(215, 202, 182, 0.6);
+  transform: rotate(7deg);
+  z-index: 4;
+  box-shadow: 0 8px 18px rgba(23, 21, 18, 0.08);
+  pointer-events: none;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.paperTape {
+  position: absolute !important;
+  top: -6px !important;
+  right: 15px !important;
+}
+
+/* Rear Listings Card (Layer 2) - ~40% visible in resting state, spreads out on scroll/hover */
+.rearListingsCard {
+  position: absolute;
+  top: 35px;
+  left: -20px;
+  z-index: 6;
+  width: clamp(260px, 32vw, 440px);
+  transform-origin: center center;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
+
+  @media (max-width: 1100px) {
+    left: -10px;
+    width: 320px;
+  }
+
+  @media (max-width: 960px) {
+    left: 10px;
+    top: 25px;
+    width: 280px;
+  }
+
+  @media (max-width: 600px) {
+    left: 0;
+    top: 20px;
+    width: 230px;
+  }
+}
+
+.listingsTapeTop {
+  position: absolute !important;
+  top: -6px !important;
+  left: 20px !important;
+  z-index: 20 !important;
+}
+
+/* Foreground Focal Landing Card (Layer 1) */
+.focalLandingCard {
+  position: relative;
+  z-index: 10;
+  width: clamp(340px, 42vw, 560px);
+  transform-origin: center center;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
+
+  @media (max-width: 1100px) {
+    width: 420px;
+  }
+
+  @media (max-width: 960px) {
+    width: 360px;
+  }
+
+  @media (max-width: 600px) {
+    width: 290px;
+  }
+}
+
+.landingTapeTopRight {
+  position: absolute !important;
+  top: -8px !important;
+  right: -12px !important;
+  z-index: 25 !important;
+}
+
+/* Stack Spread on Hover or Tap (.isSpread) */
+.stackSpreadContainer:hover,
+.stackSpreadContainer.isSpread {
+  .rearListingsCard {
+    transform: translate3d(-52px, -18px, 0) rotate(7.5deg) scale(1.02) !important;
+    .screenshotFrame {
+      box-shadow: 0 20px 42px rgba(23, 21, 18, 0.18), 0 4px 10px rgba(23, 21, 18, 0.08);
+    }
+  }
+
+  .focalLandingCard {
+    transform: translate3d(8px, -6px, 0) rotate(-1.5deg) !important;
+    .screenshotFrame {
+      box-shadow: 0 22px 48px rgba(23, 21, 18, 0.2), 0 5px 12px rgba(23, 21, 18, 0.09);
+    }
+  }
+}
+
+.screenshotFrame {
+  background-color: #FAF6EF;
+  padding: 6px;
+  border-radius: 2px;
+  border: 1px solid rgba(215, 202, 182, 0.65);
+  box-shadow: 0 14px 32px rgba(23, 21, 18, 0.12), 0 3px 8px rgba(23, 21, 18, 0.06);
+  overflow: hidden;
+  position: relative;
+}
+
+.screenshotImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Handwritten Annotations */
+.annotationTopLeft {
+  position: absolute;
+  top: -40px;
+  left: 20px;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  transform: rotate(-3deg);
+
+  @media (max-width: 960px) {
+    display: none;
+  }
+}
+
+.annotationTopRight {
+  position: absolute;
+  top: -35px;
+  right: 35px;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: none;
+  transform: rotate(3deg);
+
+  @media (max-width: 960px) {
+    display: none;
+  }
+}
+
+.handwrittenNote {
+  font-family: var(--font-handwriting);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #171512;
+  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(244, 235, 221, 0.85);
+  white-space: nowrap;
+}
+
+.annotationArrowSvg {
+  width: 55px;
+  height: 38px;
+  margin-left: 25px;
+  margin-top: -4px;
+}
+
+.annotationArrowSvgRight {
+  width: 55px;
+  height: 38px;
+  margin-right: 35px;
+  margin-top: -4px;
+}
+
+/* Farmer Red Printed Seal Stamp */
+.farmerSealStamp {
+  position: absolute;
+  bottom: -22px;
+  right: -15px;
+  width: 125px;
+  height: 125px;
+  z-index: 12;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  transform: rotate(-6deg);
+  filter: drop-shadow(0 2px 4px rgba(23, 21, 18, 0.08));
+
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+    bottom: -15px;
+    right: -5px;
+  }
+}
+
+.farmerSealSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* =========================================================================
+   3. SECONDARY ROW: AQUATRACE & ARRA
+   ========================================================================= */
+
+.secondaryProjectsGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+  gap: clamp(2rem, 3.5vw, 3.5rem);
+  margin-top: 1rem;
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+}
+
+.secondaryProjectArticle {
+  position: relative;
+  background-color: #FAF6EF;
+  border: 1px solid rgba(215, 202, 182, 0.65);
+  padding: 2.25rem 2rem 2.5rem;
+  border-radius: 2px;
+  box-shadow: 0 10px 24px rgba(23, 21, 18, 0.06);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  @media (max-width: 600px) {
+    padding: 1.75rem 1.25rem 2rem;
+  }
+}
+
+/* Ship & Train Engravings in background */
+.shipEngravingWrap {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 360px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.14;
+  mix-blend-mode: multiply;
+  mask-image: radial-gradient(ellipse at center, black 45%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 45%, transparent 80%);
+
+  @media (max-width: 768px) {
+    width: 260px;
+    opacity: 0.11;
+  }
+}
+
+.shipEngravingImg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.railwayEngravingWrap {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 360px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.14;
+  mix-blend-mode: multiply;
+  mask-image: radial-gradient(ellipse at center, black 45%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 45%, transparent 80%);
+
+  @media (max-width: 768px) {
+    width: 260px;
+    opacity: 0.11;
+  }
+}
+
+.railwayEngravingImg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* AquaTrace Visual */
+.aquatraceVisualWrap {
+  position: relative;
+  margin-top: 1.85rem;
+  z-index: 5;
+  width: 100%;
+}
+
+.aquatraceCard {
+  position: relative;
+  width: 100%;
+  transform: rotate(1.5deg);
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: rotate(0deg) scale(1.01);
+  }
+}
+
+.aquatraceTape {
+  position: absolute !important;
+  top: -8px !important;
+  right: 15px !important;
+  z-index: 15 !important;
+}
+
+.nauticalRouteOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 8;
+}
+
+.nauticalRouteSvg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ARRA Custom Railway Response Console Visual */
+.arraVisualWrap {
+  position: relative;
+  margin-top: 1.85rem;
+  z-index: 5;
+  width: 100%;
+}
+
+.arraConsoleCard {
+  position: relative;
+  background-color: #121519;
+  border: 1px solid #2B333B;
+  border-radius: 3px;
+  padding: 1.25rem 1.25rem 1.1rem;
+  color: #E5E7EB;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+  transform: rotate(-1.5deg);
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: rotate(0deg) scale(1.01);
+  }
+
+  @media (max-width: 600px) {
+    padding: 1rem 0.85rem 0.9rem;
+  }
+}
+
+.arraTape {
+  position: absolute !important;
+  top: -8px !important;
+  left: 20px !important;
+  z-index: 15 !important;
+}
+
+.railwayConsoleHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.65rem;
+  margin-bottom: 0.85rem;
+  font-family: var(--font-condensed);
+}
+
+.consoleStatusRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.livePulseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #10B981;
+  box-shadow: 0 0 8px #10B981;
+  animation: pulseBeacon 2s infinite ease-in-out;
+}
+
+@keyframes pulseBeacon {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+}
+
+.consoleTitleText {
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  color: #9CA3AF;
+  font-weight: 700;
+}
+
+.consoleStatusTag {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: #38BDF8;
+  font-weight: 700;
+}
+
+.stageGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.45rem;
+  margin-bottom: 0.85rem;
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem;
+  }
+}
+
+.stageButton {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  padding: 0.55rem 0.45rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-vermilion);
+    outline-offset: 2px;
+  }
+}
+
+.stageActive {
+  background-color: rgba(255, 255, 255, 0.09) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.stageTopRow {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.stagePill {
+  font-family: var(--font-condensed);
+  font-size: 0.65rem;
+  font-weight: 800;
+  border: 1px solid currentColor;
+  padding: 0.05rem 0.28rem;
+  border-radius: 2px;
+  line-height: 1;
+}
+
+.stageCode {
+  font-family: var(--font-condensed);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+}
+
+.stageLabel {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  color: #9CA3AF;
+  line-height: 1.25;
+}
+
+.railwayDiagramContainer {
+  position: relative;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  padding: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.railwayTrackSvg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.stageStatusFooter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: monospace;
+  font-size: 0.74rem;
+  padding-top: 0.25rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.statusIndicatorLabel {
+  color: var(--color-vermilion);
+  font-weight: 700;
+}
+
+.statusMessageText {
+  color: #D1D5DB;
+}
+
+/* =========================================================================
+   4. REUSABLE MASKING TAPE
+   ========================================================================= */
+
+.maskingTape {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    rgba(246, 240, 226, 0.88) 0%,
+    rgba(235, 224, 202, 0.78) 45%,
+    rgba(224, 210, 184, 0.84) 100%
+  );
+  box-shadow: 0 1.5px 3px rgba(23, 21, 18, 0.1),
+              inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(1px);
+  clip-path: polygon(
+    0% 12%, 4% 0%, 9% 10%, 15% 2%, 22% 11%, 28% 0%, 35% 9%,
+    100% 3%,
+    96% 88%, 91% 100%, 85% 90%, 78% 98%, 72% 89%,
+    0% 97%
+  );
+  pointer-events: none;
+}
+
+.tapeTexture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(23, 21, 18, 0.22) 2px,
+    rgba(23, 21, 18, 0.22) 3px
+  );
+}
+
+.tapeHighlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+}
