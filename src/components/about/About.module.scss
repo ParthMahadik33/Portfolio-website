@@ -1,0 +1,755 @@
+.aboutSection {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow: hidden;
+  padding: 5.5rem 3rem 4rem;
+  box-sizing: border-box;
+
+  @media (max-width: 1200px) {
+    padding: 4.5rem 2rem 3.5rem;
+  }
+
+  @media (max-width: 960px) {
+    padding: 3.8rem 1.5rem 3rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 3rem 1.15rem 2.5rem;
+  }
+}
+
+.aboutBgPaper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.aboutContainer {
+  position: relative;
+  z-index: 5;
+  max-width: 1380px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(400px, 1fr) minmax(480px, 1.2fr);
+  gap: 2.75rem;
+  align-items: center;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr 1.15fr;
+    gap: 2rem;
+  }
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* =========================================================================
+   LEFT EDITORIAL COLUMN
+   ========================================================================= */
+
+.editorialLeft {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 6;
+}
+
+/* Fort Bastion Antique Engraving at Bottom Left */
+.fortEngravingWrapper {
+  position: absolute;
+  bottom: -45px;
+  left: -50px;
+  width: 320px;
+  height: 275px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.16;
+  mix-blend-mode: multiply;
+
+  @media (max-width: 1024px) {
+    width: 260px;
+    height: 220px;
+    bottom: -25px;
+    left: -25px;
+    opacity: 0.13;
+  }
+
+  @media (max-width: 768px) {
+    width: 190px;
+    height: 160px;
+    bottom: -15px;
+    left: -15px;
+    opacity: 0.11;
+  }
+}
+
+.fortEngravingImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom left;
+}
+
+/* Section Header Row */
+.sectionHeaderRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.4rem;
+  z-index: 2;
+}
+
+.sectionTag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-family: var(--font-condensed);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+}
+
+.tagNum {
+  color: var(--color-vermilion);
+}
+
+.tagSep {
+  color: var(--color-muted-grey);
+}
+
+.tagText {
+  color: var(--color-text);
+}
+
+.headerRule {
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-vermilion);
+  opacity: 0.38;
+  transform-origin: left center;
+}
+
+/* Devanagari Accent: परिचय */
+.devanagariIntro {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-devanagari);
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--color-vermilion);
+  line-height: 1.2;
+  margin-bottom: 0.45rem;
+  letter-spacing: 0.01em;
+
+  @media (max-width: 768px) {
+    font-size: 1.35rem;
+  }
+}
+
+/* Editorial Headline */
+.editorialHeadline {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.35rem, 4.1vw, 3.95rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+
+  @media (max-width: 768px) {
+    font-size: clamp(2rem, 7vw, 2.75rem);
+    margin-bottom: 1.5rem;
+  }
+}
+
+.headlineCharcoal {
+  color: var(--color-text);
+}
+
+.headlineVermilion {
+  color: var(--color-vermilion);
+}
+
+/* Body Copy */
+.bodyCopy {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.bodyParagraph {
+  font-family: var(--font-sans);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #2a2521;
+  font-weight: 400;
+
+  @media (max-width: 768px) {
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+}
+
+/* Closing Accent */
+.closingAccent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-top: 0.25rem;
+}
+
+.closingDevanagariRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.closingDevanagari {
+  font-family: var(--font-devanagari);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-vermilion);
+  white-space: nowrap;
+
+  @media (max-width: 768px) {
+    font-size: 1.15rem;
+  }
+}
+
+.closingFlourishSvg {
+  width: 130px;
+  height: 12px;
+  opacity: 0.7;
+}
+
+.closingTranslation {
+  font-family: var(--font-condensed);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--color-muted-grey);
+}
+
+/* =========================================================================
+   RIGHT PHOTOGRAPHIC COLLAGE
+   ========================================================================= */
+
+.collageContainer {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 7;
+
+  @media (max-width: 960px) {
+    min-height: 420px;
+    justify-content: center;
+  }
+
+  @media (max-width: 600px) {
+    min-height: 360px;
+  }
+}
+
+/* Torn Scraps Positions */
+.kraftScrapPos {
+  position: absolute !important;
+  top: 15px;
+  left: 28px;
+  width: 36px !important;
+  height: 380px !important;
+  z-index: 3;
+  pointer-events: none;
+
+  @media (max-width: 1200px) {
+    left: 20px;
+    width: 32px !important;
+  }
+
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+.vermilionScrapPos {
+  position: absolute !important;
+  top: -18px;
+  left: 65px;
+  width: 58px !important;
+  height: 72px !important;
+  z-index: 2;
+  pointer-events: none;
+  transform: rotate(-4deg);
+
+  @media (max-width: 768px) {
+    left: 45px;
+    top: -12px;
+    width: 48px !important;
+    height: 60px !important;
+  }
+}
+
+/* Handwritten Note Position */
+.handwritingPos {
+  position: absolute;
+  top: 110px;
+  left: -40px;
+  z-index: 12;
+
+  @media (max-width: 1200px) {
+    left: -25px;
+    top: 95px;
+  }
+
+  @media (max-width: 960px) {
+    left: 10px;
+    top: 35px;
+  }
+
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+.handwritingNoteWrap {
+  display: flex;
+  flex-direction: column;
+  transform: rotate(-4deg);
+  pointer-events: none;
+}
+
+.handwrittenText {
+  font-family: var(--font-handwriting);
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: #171512;
+  opacity: 0.88;
+  text-shadow: 0 1px 2px rgba(244, 235, 221, 0.8);
+}
+
+.handwritingArrowSvg {
+  width: 70px;
+  height: 50px;
+  margin-left: 20px;
+  margin-top: -3px;
+}
+
+/* Guiding Pillars Position */
+.pillarsPos {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+
+  @media (max-width: 1200px) {
+    right: 5px;
+    top: 10px;
+  }
+
+  @media (max-width: 600px) {
+    right: 5px;
+    top: 0px;
+  }
+}
+
+.pillarsBlock {
+  display: flex;
+  align-items: stretch;
+  gap: 0.6rem;
+}
+
+.pillarsLine {
+  width: 1.5px;
+  background-color: var(--color-vermilion);
+  opacity: 0.85;
+}
+
+.pillarsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+
+.pillarItem {
+  font-family: var(--font-condensed);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-text);
+  line-height: 1.25;
+}
+
+/* Botanical Foliage */
+.botanicalsPos {
+  position: absolute;
+  top: 35px;
+  right: -25px;
+  width: 140px;
+  height: 140px;
+  z-index: 5;
+  pointer-events: none;
+
+  @media (max-width: 768px) {
+    width: 95px;
+    height: 95px;
+    right: -10px;
+    top: 50px;
+    opacity: 0.6;
+  }
+}
+
+.botanicalSvg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Primary Color Speaking Photo */
+.mainPhotoWrapper {
+  position: relative;
+  z-index: 8;
+  width: 295px;
+  margin-left: 55px;
+  filter: drop-shadow(0 14px 30px rgba(23, 21, 18, 0.13))
+         drop-shadow(0 3px 8px rgba(23, 21, 18, 0.07));
+
+  @media (max-width: 1200px) {
+    width: 275px;
+    margin-left: 40px;
+  }
+
+  @media (max-width: 960px) {
+    margin-left: 0;
+  }
+
+  @media (max-width: 768px) {
+    width: 240px;
+  }
+
+  @media (max-width: 480px) {
+    width: 215px;
+  }
+}
+
+.mainPhotoFrame {
+  background-color: #FAF6EF;
+  padding: 6px 6px 9px 6px;
+  border-radius: 1px;
+  border: 1px solid rgba(215, 202, 182, 0.55);
+}
+
+.mainPhotoInner {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+  background-color: #E2D7C5;
+
+  @media (max-width: 1200px) {
+    height: 335px;
+  }
+
+  @media (max-width: 768px) {
+    height: 295px;
+  }
+
+  @media (max-width: 480px) {
+    height: 260px;
+  }
+}
+
+.mainPhotoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 10%;
+  display: block;
+}
+
+.mainPhotoTapeTopRight {
+  position: absolute !important;
+  top: -8px !important;
+  right: -16px !important;
+  z-index: 25 !important;
+}
+
+/* Polaroids Stack (Right side) */
+.polaroidsStack {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 250px;
+  height: 440px;
+  z-index: 9;
+
+  @media (max-width: 1200px) {
+    width: 220px;
+    height: 410px;
+    right: 5px;
+  }
+
+  @media (max-width: 768px) {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+    max-width: 310px;
+    height: 280px;
+    margin: -30px auto 0 auto;
+  }
+}
+
+.polaroidItem {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              z-index 0.2s ease,
+              filter 0.35s ease;
+  filter: drop-shadow(0 12px 24px rgba(23, 21, 18, 0.12))
+         drop-shadow(0 2px 5px rgba(23, 21, 18, 0.06));
+
+  &:hover {
+    filter: drop-shadow(0 18px 34px rgba(23, 21, 18, 0.2))
+           drop-shadow(0 3px 10px rgba(23, 21, 18, 0.1));
+    z-index: 22 !important;
+  }
+}
+
+.polaroidActive {
+  z-index: 26 !important;
+  transform: scale(1.05) rotate(0deg) !important;
+}
+
+.polaroidCard {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.polaroidImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+
+/* Polaroid 1 (Top right): Parth at Fort */
+.polaroidTop {
+  top: 15px;
+  right: 20px;
+  width: 185px;
+  z-index: 10;
+
+  @media (max-width: 1200px) {
+    width: 165px;
+    right: 15px;
+  }
+
+  @media (max-width: 768px) {
+    top: 0;
+    right: 10px;
+    width: 145px;
+  }
+}
+
+.polaroidTape1 {
+  position: absolute !important;
+  top: -5px !important;
+  left: 12px !important;
+  z-index: 25 !important;
+}
+
+/* Polaroid 2 (Bottom right): Parth on Stone Stairs */
+.polaroidBottom {
+  bottom: 20px;
+  right: 15px;
+  width: 185px;
+  z-index: 12;
+
+  @media (max-width: 1200px) {
+    width: 165px;
+    bottom: 15px;
+    right: 10px;
+  }
+
+  @media (max-width: 768px) {
+    bottom: 5px;
+    left: 10px;
+    right: auto;
+    width: 145px;
+  }
+}
+
+.polaroidTape2 {
+  position: absolute !important;
+  bottom: -4px !important;
+  right: 14px !important;
+  z-index: 25 !important;
+}
+
+/* Polaroid 3 (Layered behind/left): Parth with Bicycle */
+.polaroidBack {
+  top: 105px;
+  right: 70px;
+  width: 170px;
+  z-index: 7;
+  opacity: 0.95;
+
+  @media (max-width: 1200px) {
+    width: 150px;
+    right: 55px;
+  }
+
+  @media (max-width: 768px) {
+    top: 50px;
+    right: 45px;
+    width: 135px;
+  }
+}
+
+/* Editorial Stamp Position */
+.stampPos {
+  position: absolute;
+  bottom: -10px;
+  right: 5px;
+  z-index: 15;
+
+  @media (max-width: 768px) {
+    right: 10px;
+    bottom: -15px;
+    transform: scale(0.85);
+  }
+}
+
+.editorialStampWrap {
+  position: relative;
+  display: inline-block;
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 2px 4px rgba(23, 21, 18, 0.08));
+}
+
+.stampSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* =========================================================================
+   MASKING TAPE COMPONENT
+   ========================================================================= */
+
+.maskingTape {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    rgba(246, 240, 226, 0.88) 0%,
+    rgba(235, 224, 202, 0.78) 45%,
+    rgba(224, 210, 184, 0.84) 100%
+  );
+  box-shadow: 0 1.5px 3px rgba(23, 21, 18, 0.1),
+              inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(1px);
+  clip-path: polygon(
+    0% 12%, 4% 0%, 9% 10%, 15% 2%, 22% 11%, 28% 0%, 35% 9%,
+    100% 3%,
+    96% 88%, 91% 100%, 85% 90%, 78% 98%, 72% 89%,
+    0% 97%
+  );
+  pointer-events: none;
+}
+
+.tapeTexture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(23, 21, 18, 0.22) 2px,
+    rgba(23, 21, 18, 0.22) 3px
+  );
+}
+
+.tapeHighlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+}
+
+/* =========================================================================
+   TORN KRAFT & CRIMSON SCRAPS
+   ========================================================================= */
+
+.kraftTornStrip {
+  display: block;
+}
+
+.kraftTornSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.vermilionTornScrap {
+  display: block;
+}
+
+.vermilionTornSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* =========================================================================
+   SUBTLE DECKLED SECTION TRANSITION
+   ========================================================================= */
+
+.tornBottomContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  z-index: 4;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.tornBottomSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

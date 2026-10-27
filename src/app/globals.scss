@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@400;500;600;700;800&family=Martel:wght@700;800;900&family=Noto+Serif+Devanagari:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Caveat:wght@400;600;700&family=Inter:wght@400;500;600;700;800&family=Martel:wght@700;800;900&family=Noto+Serif+Devanagari:wght@400;600;700;800&display=swap');
 
 :root {
   --color-bg: #F4EBDD;
@@ -14,6 +14,7 @@
   --font-condensed: 'Barlow Condensed', 'Oswald', 'Arial Narrow', sans-serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-devanagari: 'Martel', 'Noto Serif Devanagari', 'Mangal', 'Lohit Devanagari', serif;
+  --font-handwriting: 'Caveat', 'Reenie Beanie', cursive, sans-serif;
 }
 
 *,
