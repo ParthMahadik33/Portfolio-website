@@ -1,0 +1,1013 @@
+/* =========================================================================
+   RECOGNITION & EXPERIENCE SECTION (SECTION 03)
+   Bespoke Editorial Printmaking & Scrapbook Aesthetic
+   ========================================================================= */
+
+.recognitionSection {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: clamp(3.5rem, 6vw, 6rem) 0 clamp(4.5rem, 7vw, 7.5rem);
+  overflow-x: clip;
+  overflow-y: visible;
+  isolation: isolate;
+  border-top: 1px solid rgba(23, 21, 18, 0.08);
+}
+
+.sectionAnchor {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.recognitionBgPaper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.recognitionContainer {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+  box-sizing: border-box;
+}
+
+/* =========================================================================
+   BACKGROUND ENGRAVED ORNAMENTS (RESTRICTED OPACITY, MIX-BLEND MULTIPLY)
+   ========================================================================= */
+
+.ornamentsContainer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* 1. Botanical Branch at Top Right */
+.ornamentBotanicalBranch {
+  position: absolute;
+  top: 10px;
+  right: -25px;
+  width: clamp(200px, 22vw, 360px);
+  height: auto;
+  opacity: 0.28;
+  mix-blend-mode: multiply;
+  transform: rotate(8deg);
+
+  @media (max-width: 900px) {
+    top: 0;
+    right: -40px;
+    width: 220px;
+    opacity: 0.20;
+  }
+}
+
+/* 2. City Skyline behind Main Award */
+.ornamentCitySkyline {
+  position: absolute;
+  top: 155px;
+  left: -20px;
+  width: clamp(380px, 48vw, 720px);
+  height: auto;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+
+  @media (max-width: 1080px) {
+    top: 220px;
+    width: 500px;
+    opacity: 0.14;
+  }
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+/* 3. Domed Capitol Building around center */
+.ornamentDomedBuilding {
+  position: absolute;
+  top: 210px;
+  left: 45%;
+  transform: translateX(-50%);
+  width: clamp(320px, 35vw, 540px);
+  height: auto;
+  opacity: 0.20;
+  mix-blend-mode: multiply;
+
+  @media (max-width: 1200px) {
+    left: 48%;
+    width: 380px;
+    opacity: 0.16;
+  }
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+
+/* 4. Mountain Landscape near bottom */
+.ornamentMountainLandscape {
+  position: absolute;
+  bottom: 40px;
+  left: 2%;
+  width: clamp(340px, 42vw, 680px);
+  height: auto;
+  opacity: 0.15;
+  mix-blend-mode: multiply;
+
+  @media (max-width: 900px) {
+    bottom: 20px;
+    width: 320px;
+    opacity: 0.12;
+  }
+}
+
+.ornamentImg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* =========================================================================
+   HEADER SECTION: EYEBROW, TWO-LINE HEADLINE & SANSKRIT SCRAP NOTE
+   ========================================================================= */
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: clamp(2.5rem, 4.5vw, 4rem);
+}
+
+.sectionHeaderRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.sectionTag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  font-family: var(--font-condensed);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+}
+
+.tagNum {
+  color: var(--color-vermilion);
+}
+
+.tagSep {
+  color: var(--color-muted-grey);
+}
+
+.tagText {
+  color: var(--color-text);
+}
+
+.headerRule {
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-vermilion);
+  opacity: 0.35;
+  transform-origin: left center;
+}
+
+.headerMainRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+}
+
+.headlineCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 780px;
+}
+
+.editorialHeadline {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.6vw, 4.4rem);
+  font-weight: 800;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 96, "wght" 800;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.headlineLineCharcoal {
+  color: var(--color-text);
+  display: block;
+}
+
+.headlineLineVermilion {
+  color: var(--color-vermilion);
+  display: block;
+}
+
+.supportingCopy {
+  font-family: var(--font-sans);
+  font-size: clamp(1.02rem, 1.2vw, 1.16rem);
+  color: #28231E;
+  max-width: 580px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Small Paper Note Scrap with Sanskrit Quote */
+.sanskritNoteScrap {
+  position: relative;
+  background-color: #EDE2CE;
+  border: 1px solid rgba(215, 202, 182, 0.85);
+  box-shadow: 0 6px 18px rgba(23, 21, 18, 0.08), 0 2px 5px rgba(23, 21, 18, 0.04);
+  padding: 1.25rem 1.45rem 1.15rem;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.35rem;
+  min-width: 210px;
+  transform-origin: center top;
+  margin-top: 0.5rem;
+  user-select: none;
+
+  @media (max-width: 960px) {
+    align-self: flex-start;
+    min-width: 190px;
+    padding: 1rem 1.25rem 0.9rem;
+  }
+}
+
+.sanskritNoteTape {
+  position: absolute !important;
+  top: -9px !important;
+  left: 50% !important;
+  transform: translateX(-50%) rotate(-4deg) !important;
+  z-index: 5 !important;
+}
+
+.sanskritScript {
+  font-family: var(--font-devanagari);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-vermilion);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.sanskritTranslation {
+  font-family: var(--font-handwriting);
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #171512;
+  line-height: 1.15;
+}
+
+/* =========================================================================
+   ASYMMETRIC TWO-COLUMN EDITORIAL GRID (LEFT ~55% / RIGHT ~45%)
+   ========================================================================= */
+
+.asymmetricGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(360px, 1fr);
+  gap: clamp(2rem, 4vw, 4.5rem);
+  align-items: flex-start;
+  width: 100%;
+
+  @media (max-width: 1080px) {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+}
+
+/* =========================================================================
+   LEFT COLUMN: DOMINANT FLAGSHIP AWARD (01 HACK-TECH INNOVATION 2025)
+   ========================================================================= */
+
+.dominantCol {
+  position: relative;
+  z-index: 6;
+  width: 100%;
+}
+
+.mainHackathonArticle {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  width: 100%;
+}
+
+.awardMetaHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  width: 100%;
+}
+
+.awardNumberRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.awardNumber {
+  font-family: var(--font-condensed);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-vermilion);
+  letter-spacing: 0.08em;
+}
+
+.awardRule {
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-vermilion);
+  opacity: 0.35;
+}
+
+.prizeRow {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.prizeAmount {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5.2vw, 4.5rem);
+  font-weight: 800;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 96, "wght" 800;
+  letter-spacing: -0.03em;
+  color: var(--color-vermilion);
+  line-height: 0.95;
+  margin: 0;
+}
+
+.prizeTrophyWrap {
+  width: clamp(42px, 4.5vw, 55px);
+  height: auto;
+  opacity: 0.85;
+  mix-blend-mode: multiply;
+  transform: translateY(4px);
+}
+
+.prizeTrophyImg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.awardTitleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.awardMainTitle {
+  font-family: var(--font-condensed);
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.awardBadgeRow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.15rem;
+}
+
+.teamBadge {
+  font-family: var(--font-condensed);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  background-color: #FAF6EF;
+  border: 1px solid rgba(23, 21, 18, 0.22);
+  padding: 0.24rem 0.75rem;
+  border-radius: 14px;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.awardDescription {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.15vw, 1.12rem);
+  line-height: 1.6;
+  color: #2E2822;
+  margin: 0.25rem 0 0;
+  max-width: 600px;
+}
+
+/* Photo Stage with Tilted Frame and Ideas Stamp */
+.mainPhotoStage {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stamped Red Seal on Left */
+.stampPositioned {
+  position: absolute;
+  top: 15px;
+  left: -22px;
+  z-index: 10;
+  pointer-events: none;
+
+  @media (max-width: 600px) {
+    top: -25px;
+    left: 0;
+    transform: scale(0.85);
+  }
+}
+
+.ideasStamp {
+  width: 96px;
+  height: 96px;
+  transform: rotate(-8deg);
+  mix-blend-mode: multiply;
+}
+
+.stampSvg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Large Tilted Printed Photo Frame */
+.mainChequePhotoFrame {
+  position: relative;
+  z-index: 4;
+  background-color: #FAF6ED;
+  padding: 10px 10px 14px 10px;
+  border: 1px solid rgba(23, 21, 18, 0.16);
+  border-radius: 2px;
+  box-shadow: 0 14px 34px rgba(23, 21, 18, 0.14), 0 3px 8px rgba(23, 21, 18, 0.08);
+  transform-origin: center center;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
+  cursor: pointer;
+  width: 100%;
+}
+
+.chequePhotoContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 668 / 376;
+  overflow: hidden;
+  border: 1px solid rgba(23, 21, 18, 0.12);
+  border-radius: 1px;
+}
+
+.chequePhotoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Masking Tape on Corners */
+.tapeTopLeft {
+  position: absolute !important;
+  top: -8px !important;
+  left: -12px !important;
+  z-index: 12 !important;
+}
+
+.tapeBottomRight {
+  position: absolute !important;
+  bottom: -8px !important;
+  right: -12px !important;
+  z-index: 12 !important;
+}
+
+.tapeTopCenter {
+  position: absolute !important;
+  top: -9px !important;
+  left: 50% !important;
+  transform: translateX(-50%) rotate(-6deg) !important;
+  z-index: 12 !important;
+}
+
+.tapeBottomLeft {
+  position: absolute !important;
+  bottom: -7px !important;
+  left: -10px !important;
+  z-index: 12 !important;
+}
+
+/* Handwritten Annotation below Photo */
+.photoAnnotationWrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  margin-left: clamp(2rem, 8vw, 6rem);
+  transform: rotate(-1.5deg);
+}
+
+.annotationArrowSvg {
+  width: 48px;
+  height: 38px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.photoAnnotationText {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-handwriting);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #171512;
+  line-height: 1.15;
+  text-shadow: 0 1px 2px rgba(244, 235, 221, 0.85);
+}
+
+/* Bottom-Left Reflection Note & Journey Link */
+.journeyNoteRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.journeyHandwrittenQuote {
+  font-family: var(--font-handwriting);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #24201C;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.journeyArrowSvg {
+  width: 44px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.journeyActionLink {
+  font-family: var(--font-condensed);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--color-vermilion);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.2s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: var(--color-vermilion);
+    transform: scaleX(0.4);
+    transform-origin: left center;
+    transition: transform 0.25s ease;
+  }
+
+  &:hover {
+    color: var(--color-vermilion-hover);
+
+    &::after {
+      transform: scaleX(1);
+    }
+
+    .journeyLinkArrow {
+      transform: translateX(3px);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px dashed var(--color-vermilion);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+}
+
+.journeyLinkArrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+/* =========================================================================
+   RIGHT COLUMN: STACKED COMPACT STORIES (02 EFOS, 03 DEVINE, 04 NOVITECH)
+   ========================================================================= */
+
+.supportingCol {
+  position: relative;
+  z-index: 6;
+  width: 100%;
+}
+
+.rightStoriesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  width: 100%;
+}
+
+.compactStoryItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Top annotation above Story 02 */
+.topAnnotationEfos {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+  padding-right: 1.5rem;
+  transform: rotate(-1.5deg);
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.handwrittenNoteText {
+  font-family: var(--font-handwriting);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #171512;
+  line-height: 1.12;
+  max-width: 240px;
+  text-align: right;
+}
+
+.efosTopArrowSvg {
+  width: 40px;
+  height: 28px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+/* Split Grid for each story: Left Metadata / Right Photo Frame */
+.storyContentGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(180px, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2.25rem);
+  align-items: center;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.storyMetaCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.storyNumberRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.15rem;
+}
+
+.storyNumber {
+  font-family: var(--font-condensed);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-vermilion);
+  letter-spacing: 0.08em;
+}
+
+.trainingEyebrow {
+  font-family: var(--font-condensed);
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: var(--color-vermilion);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.storyBigVermilion {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-weight: 800;
+  color: var(--color-vermilion);
+  line-height: 1;
+  margin: 0;
+}
+
+.storyBigCharcoal {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.storySubCategory {
+  font-family: var(--font-condensed);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-vermilion);
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.storyTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.25;
+  margin: 0.15rem 0 0;
+}
+
+.companyName {
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: 0.15rem;
+}
+
+.companyDates {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-muted-grey);
+  font-weight: 500;
+}
+
+.storyBadgeRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
+}
+
+.storyDescription {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #332D27;
+  margin: 0.25rem 0 0;
+}
+
+/* Right Column: Tilted Photo Frame & Annotation */
+.storyPhotoCol {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.storyPhotoFrame {
+  position: relative;
+  background-color: #FAF6ED;
+  padding: 8px 8px 10px 8px;
+  border: 1px solid rgba(23, 21, 18, 0.15);
+  border-radius: 2px;
+  box-shadow: 0 12px 28px rgba(23, 21, 18, 0.12), 0 3px 6px rgba(23, 21, 18, 0.06);
+  transform-origin: center center;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.45s ease;
+  width: 100%;
+  max-width: 230px;
+  cursor: pointer;
+}
+
+.storyCertificateFrame {
+  position: relative;
+  background-color: #FAF6ED;
+  padding: 8px 8px 10px 8px;
+  border: 1px solid rgba(23, 21, 18, 0.15);
+  border-radius: 2px;
+  box-shadow: 0 12px 28px rgba(23, 21, 18, 0.12), 0 3px 6px rgba(23, 21, 18, 0.06);
+  transform-origin: center center;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.45s ease;
+  width: 100%;
+  max-width: 230px;
+  cursor: pointer;
+}
+
+.photoContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: 1px solid rgba(23, 21, 18, 0.1);
+  border-radius: 1px;
+}
+
+.certificateContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 280 / 220;
+  overflow: hidden;
+  border: 1px solid rgba(23, 21, 18, 0.1);
+  border-radius: 1px;
+}
+
+.storyImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Side Handwritten Annotations */
+.sideAnnotationWrap {
+  position: absolute;
+  top: 15px;
+  right: -95px;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  pointer-events: none;
+  transform: rotate(2deg);
+  width: 110px;
+
+  @media (max-width: 1300px) {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-top: 0.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.sideArrowSvg {
+  width: 32px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.handwrittenSideText {
+  font-family: var(--font-handwriting);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #171512;
+  line-height: 1.1;
+  text-shadow: 0 1px 2px rgba(244, 235, 221, 0.85);
+}
+
+/* Stack of Books Ornament under Story 04 */
+.booksOrnamentWrap {
+  position: relative;
+  width: 160px;
+  margin-top: 1.25rem;
+  margin-left: auto;
+  opacity: 0.85;
+  mix-blend-mode: multiply;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 600px) {
+    margin: 1rem auto 0;
+  }
+}
+
+.booksImg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.booksSpinesList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 0.25rem;
+}
+
+.spineWord {
+  font-family: var(--font-condensed);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #3A322A;
+  border-right: 1px solid rgba(23, 21, 18, 0.25);
+  padding-right: 0.55rem;
+  line-height: 1;
+
+  &:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+}
+
+/* Story Dividing Hairline Rule */
+.storyDividerRule {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-vermilion);
+  opacity: 0.25;
+  margin-top: 2rem;
+}
+
+/* =========================================================================
+   REALISTIC MASKING TAPE STYLING
+   ========================================================================= */
+
+.maskingTape {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    rgba(246, 240, 226, 0.88) 0%,
+    rgba(235, 224, 202, 0.78) 45%,
+    rgba(224, 210, 184, 0.84) 100%
+  );
+  box-shadow: 0 1.5px 3px rgba(23, 21, 18, 0.1),
+              inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(1px);
+  clip-path: polygon(
+    0% 12%, 4% 0%, 9% 10%, 15% 2%, 22% 11%, 28% 0%, 35% 9%,
+    100% 3%,
+    96% 88%, 91% 100%, 85% 90%, 78% 98%, 72% 89%,
+    0% 97%
+  );
+  pointer-events: none;
+}
+
+.tapeTexture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(23, 21, 18, 0.22) 2px,
+    rgba(23, 21, 18, 0.22) 3px
+  );
+}
+
+.tapeHighlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+}
