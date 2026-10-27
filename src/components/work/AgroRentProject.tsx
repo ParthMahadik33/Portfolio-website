@@ -28,9 +28,10 @@ export const AgroRentProject: React.FC = () => {
     offset: ["start end", "center center"],
   });
 
-  const scrollSpreadX = useTransform(scrollYProgress, [0.1, 0.9], [0, -32]);
-  const scrollSpreadY = useTransform(scrollYProgress, [0.1, 0.9], [0, -12]);
-  const scrollRotate = useTransform(scrollYProgress, [0.1, 0.9], [2, 5.5]);
+  const scrollSpreadLeftX = useTransform(scrollYProgress, [0.1, 0.9], [0, -18]);
+  const scrollSpreadRightX = useTransform(scrollYProgress, [0.1, 0.9], [0, 18]);
+  const scrollRotateLeft = useTransform(scrollYProgress, [0.1, 0.9], [-4, -6.5]);
+  const scrollRotateRight = useTransform(scrollYProgress, [0.1, 0.9], [6, 8.5]);
 
   const easeCurve: [number, number, number, number] = [0.25, 1, 0.5, 1];
   const tags = ["Python", "Flask", "Gemini API", "Twilio", "Razorpay"];
@@ -41,29 +42,19 @@ export const AgroRentProject: React.FC = () => {
       className={styles.flagshipArticle}
       aria-labelledby="agrorent-title"
     >
-      {/* Background Vintage Tractor Engraving */}
-      <div className={styles.tractorEngravingWrap} aria-hidden="true">
-        <Image
-          src="/assets/projects/tractor-engraving.jpg"
-          alt=""
-          width={1600}
-          height={900}
-          className={styles.tractorEngravingImg}
-          priority={false}
-        />
-      </div>
-
       {/* Left Column: Project Editorial Metadata */}
       <div className={styles.projectInfoColumn}>
         <div className={styles.projectMetaHeader}>
-          <span className={styles.projectNumber}>01</span>
+          <div className={styles.projectNumberRow}>
+            <span className={styles.projectNumber}>01</span>
+            <div className={styles.projectRule} />
+          </div>
           <div className={styles.titleBadgeRow}>
             <h3 id="agrorent-title" className={styles.projectTitle}>
               AgroRent
             </h3>
             <span className={styles.liveBadge}>LIVE</span>
           </div>
-          <div className={styles.projectRule} />
         </div>
 
         <p className={styles.projectDescription}>
@@ -104,130 +95,157 @@ export const AgroRentProject: React.FC = () => {
             <span className={styles.linkArrow} aria-hidden="true">→</span>
           </a>
         </div>
+
+        {/* Vintage Tractor & Rolling Hills Engraving beneath links */}
+        <div className={styles.tractorEngravingWrap} aria-hidden="true">
+          <Image
+            src="/assets/projects/tractor-engraving.jpg"
+            alt=""
+            width={1200}
+            height={675}
+            className={styles.tractorEngravingImg}
+            priority={false}
+          />
+        </div>
       </div>
 
-      {/* Right Column: Tactile Stack Spread Screenshot Collage */}
+      {/* Right Column: Flagship Editorial Collage */}
       <div
-        className={`${styles.stackSpreadContainer} ${isSpread ? styles.isSpread : ""}`}
+        className={`${styles.agrorentCollageContainer} ${isSpread ? styles.isSpread : ""}`}
         onClick={toggleSpread}
         onKeyDown={handleKeyDown}
         tabIndex={0}
         role="region"
-        aria-label="AgroRent screenshot stack. Tap or hover to spread screenshots."
+        aria-label="AgroRent interactive editorial showcase. Tap or hover to fan out artifacts."
       >
-        {/* Handwritten Annotation 1: AI condition checks */}
-        <div className={styles.annotationTopLeft} aria-hidden="true">
-          <span className={styles.handwrittenNote}>
-            AI-assisted equipment condition checks
-          </span>
-          <svg
-            viewBox="0 0 65 45"
-            className={styles.annotationArrowSvg}
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M 5 10 Q 35 8 50 32"
-              stroke="#171512"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeDasharray="2 1"
-            />
-            <path
-              d="M 43 31 L 51 34 L 54 26"
-              stroke="#171512"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+        {/* Botanical Sprigs behind the collage (Top Right & Bottom Right) */}
+        <div className={styles.botanicalSprigTopRight} aria-hidden="true">
+          <Image
+            src="/assets/projects/botanical-sprigs.jpg"
+            alt=""
+            width={600}
+            height={600}
+            className={styles.botanicalSprigImg}
+          />
+        </div>
+        <div className={styles.botanicalSprigBottomRight} aria-hidden="true">
+          <Image
+            src="/assets/projects/botanical-sprigs.jpg"
+            alt=""
+            width={600}
+            height={600}
+            className={styles.botanicalSprigImg}
+          />
         </div>
 
-        {/* Handwritten Annotation 2: Rental marketplace */}
-        <div className={styles.annotationTopRight} aria-hidden="true">
-          <span className={styles.handwrittenNote}>
-            Rental marketplace for farmers
-          </span>
-          <svg
-            viewBox="0 0 65 45"
-            className={styles.annotationArrowSvgRight}
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M 55 8 Q 28 12 14 34"
-              stroke="#171512"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeDasharray="2 1"
-            />
-            <path
-              d="M 21 34 L 13 36 L 11 28"
-              stroke="#171512"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
+        {/* Archival Torn Paper Layer Backing */}
+        <div className={styles.archivalTornPaperBacking} aria-hidden="true" />
 
-        {/* Layer 3 (Background paper scrap): Warm Parchment Accent */}
-        <div className={styles.supplementalPaperSheet} aria-hidden="true">
-          <ProjectTape rotation={-14} width={50} height={16} className={styles.paperTape} />
-        </div>
-
-        {/* Layer 2 (Secondary Rear Screenshot): Equipment Listings Real */}
+        {/* LEFT ARTIFACT: AI Condition Analysis Card */}
         <motion.div
-          className={styles.rearListingsCard}
+          className={styles.aiConditionCard}
           style={
             shouldReduceMotion
               ? {}
               : {
-                  x: scrollSpreadX,
-                  y: scrollSpreadY,
-                  rotate: scrollRotate,
+                  x: scrollSpreadLeftX,
+                  rotate: scrollRotateLeft,
                 }
           }
           initial={
             shouldReduceMotion
               ? { opacity: 1 }
-              : { opacity: 0, x: 20, rotate: 2 }
+              : { opacity: 0, x: -10, rotate: -4 }
           }
-          whileInView={{ opacity: 1, x: 0, rotate: 4.5 }}
+          whileInView={{ opacity: 1, x: 0, rotate: -5.5 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{
             duration: shouldReduceMotion ? 0 : 0.85,
-            delay: 0.2,
+            delay: 0.15,
             ease: easeCurve,
           }}
         >
-          <div className={styles.screenshotFrame}>
-            <Image
-              src="/assets/projects/agrorent-listings-real.webp"
-              alt="AgroRent equipment listings page showing machinery inventory"
-              width={960}
-              height={402}
-              className={styles.screenshotImg}
-              priority={false}
-            />
+          {/* Handwritten Annotation 1 */}
+          <div className={styles.annotationCondition} aria-hidden="true">
+            <span className={styles.handwrittenText}>
+              AI-assisted<br />equipment<br />condition checks
+            </span>
+            <svg
+              viewBox="0 0 50 40"
+              className={styles.conditionArrowSvg}
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 12 6 Q 30 14 36 32"
+                stroke="#171512"
+                strokeWidth="1.3"
+                strokeLinecap="round"
+                strokeDasharray="2.5 1.5"
+              />
+              <path
+                d="M 30 28 L 36 33 L 39 25"
+                stroke="#171512"
+                strokeWidth="1.3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </div>
-          <ProjectTape
-            rotation={-8}
-            width={48}
-            height={16}
-            className={styles.listingsTapeTop}
-          />
+
+          <div className={styles.conditionCardInner}>
+            <div className={styles.conditionCardHeader}>
+              <span className={styles.conditionCardTitle}>AI Condition Analysis</span>
+            </div>
+
+            <div className={styles.conditionPhotoWrap}>
+              <Image
+                src="/assets/projects/tractor-condition.jpg"
+                alt="AI machinery inspection closeup of tractor wheel and engine"
+                width={320}
+                height={220}
+                className={styles.conditionPhotoImg}
+              />
+            </div>
+
+            <div className={styles.conditionBadgeRow}>
+              <span className={styles.goodConditionBadge}>
+                <span className={styles.checkIcon}>✓</span> Good Condition
+              </span>
+            </div>
+
+            <ul className={styles.conditionChecklist}>
+              <li className={styles.checkItem}>
+                <span className={styles.itemLabel}>✓ Tire condition</span>
+                <span className={styles.itemValue}>Good</span>
+              </li>
+              <li className={styles.checkItem}>
+                <span className={styles.itemLabel}>✓ Engine health</span>
+                <span className={styles.itemValue}>Good</span>
+              </li>
+              <li className={styles.checkItem}>
+                <span className={styles.itemLabel}>✓ Hydraulics</span>
+                <span className={styles.itemValue}>Good</span>
+              </li>
+              <li className={styles.checkItem}>
+                <span className={styles.itemLabel}>✓ Overall rating</span>
+                <span className={styles.ratingValue}>8.5/10</span>
+              </li>
+            </ul>
+          </div>
+
+          <ProjectTape rotation={-5} width={44} height={15} className={styles.conditionTape} />
         </motion.div>
 
-        {/* Layer 1 (Foreground Focal Screenshot): Landing Real */}
+        {/* CENTER ARTIFACT: Main AgroRent Desktop Window */}
         <motion.div
-          className={styles.focalLandingCard}
+          className={styles.mainDesktopWindow}
           initial={
             shouldReduceMotion
               ? { opacity: 1, y: 0 }
-              : { opacity: 0, y: 30, rotate: -3.5 }
+              : { opacity: 0, y: 24, rotate: 1.5 }
           }
-          whileInView={{ opacity: 1, y: 0, rotate: -2 }}
+          whileInView={{ opacity: 1, y: 0, rotate: 2.2 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{
             duration: shouldReduceMotion ? 0 : 0.9,
@@ -235,85 +253,134 @@ export const AgroRentProject: React.FC = () => {
             ease: easeCurve,
           }}
         >
-          <div className={styles.screenshotFrame}>
+          <div className={styles.desktopBezel}>
             <Image
-              src="/assets/projects/agrorent-landing-real.webp"
-              alt="AgroRent homepage showing farm machinery rental interface"
-              width={960}
-              height={485}
-              className={styles.screenshotImg}
+              src="/assets/projects/agrorent-marketplace-screen.jpg"
+              alt="AgroRent farm machinery rental homepage interface showing tractors and harvesting equipment"
+              width={1040}
+              height={585}
+              className={styles.desktopScreenshotImg}
               priority={false}
             />
           </div>
           <ProjectTape
-            rotation={18}
-            width={62}
+            rotation={16}
+            width={60}
             height={20}
-            className={styles.landingTapeTopRight}
+            className={styles.desktopTapeTopRight}
           />
         </motion.div>
 
-        {/* Circular Stamp: Supporting Farmers Through Technology */}
-        <div className={styles.farmerSealStamp} aria-hidden="true">
-          <svg viewBox="0 0 140 140" className={styles.farmerSealSvg}>
-            <circle
-              cx="70"
-              cy="70"
-              r="64"
-              stroke="#B5282D"
-              strokeWidth="1.4"
-              strokeDasharray="180 1.5 90 1"
-              opacity="0.85"
+        {/* RIGHT ARTIFACT: AgroRent WhatsApp Smartphone Workflow */}
+        <motion.div
+          className={styles.whatsappPhoneCard}
+          style={
+            shouldReduceMotion
+              ? {}
+              : {
+                  x: scrollSpreadRightX,
+                  rotate: scrollRotateRight,
+                }
+          }
+          initial={
+            shouldReduceMotion
+              ? { opacity: 1 }
+              : { opacity: 0, x: 12, rotate: 6 }
+          }
+          whileInView={{ opacity: 1, x: 0, rotate: 7.8 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{
+            duration: shouldReduceMotion ? 0 : 0.85,
+            delay: 0.25,
+            ease: easeCurve,
+          }}
+        >
+          {/* Handwritten Annotation 2 */}
+          <div className={styles.annotationWhatsapp} aria-hidden="true">
+            <span className={styles.handwrittenText}>
+              Multilingual<br />WhatsApp<br />workflow
+            </span>
+            <svg
+              viewBox="0 0 50 40"
+              className={styles.whatsappArrowSvg}
               fill="none"
-            />
-            <circle
-              cx="70"
-              cy="70"
-              r="58"
-              stroke="#B5282D"
-              strokeWidth="0.8"
-              opacity="0.6"
-              fill="none"
-            />
-            <defs>
-              <path id="sealTopArc" d="M 18,70 A 52,52 0 0,1 122,70" fill="none" />
-              <path id="sealBottomArc" d="M 22,70 A 48,48 0 0,0 118,70" fill="none" />
-            </defs>
-            <text
-              fill="#B5282D"
-              fontSize="7.8"
-              fontFamily="var(--font-condensed)"
-              fontWeight="700"
-              letterSpacing="0.2em"
-              opacity="0.9"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <textPath href="#sealTopArc" startOffset="50%" textAnchor="middle">
-                SUPPORTING FARMERS
-              </textPath>
-            </text>
-            <text
-              fill="#B5282D"
-              fontSize="7.8"
-              fontFamily="var(--font-condensed)"
-              fontWeight="700"
-              letterSpacing="0.2em"
-              opacity="0.9"
-            >
-              <textPath href="#sealBottomArc" startOffset="50%" textAnchor="middle">
-                THROUGH TECHNOLOGY
-              </textPath>
-            </text>
-            {/* Center leaf motif */}
-            <path
-              d="M 70 52 C 60 62 60 76 70 86 C 80 76 80 62 70 52 Z"
-              fill="none"
-              stroke="#B5282D"
-              strokeWidth="1.2"
-              opacity="0.75"
-            />
-            <path d="M 70 56 L 70 82" stroke="#B5282D" strokeWidth="0.9" opacity="0.65" />
-          </svg>
-        </div>
+              <path
+                d="M 38 6 Q 22 15 14 30"
+                stroke="#171512"
+                strokeWidth="1.3"
+                strokeLinecap="round"
+                strokeDasharray="2.5 1.5"
+              />
+              <path
+                d="M 21 28 L 13 32 L 11 23"
+                stroke="#171512"
+                strokeWidth="1.3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+
+          <div className={styles.smartphoneChassis}>
+            {/* WhatsApp Header */}
+            <div className={styles.whatsappHeader}>
+              <div className={styles.waProfileRow}>
+                <span className={styles.waBackBtn}>‹</span>
+                <div className={styles.waAvatar}>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="#FFFFFF">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                  </svg>
+                </div>
+                <div className={styles.waContactInfo}>
+                  <span className={styles.waName}>AgroRent</span>
+                  <span className={styles.waStatus}>Online</span>
+                </div>
+              </div>
+              <div className={styles.waIcons}>
+                <span>📞</span>
+                <span>⋮</span>
+              </div>
+            </div>
+
+            {/* WhatsApp Chat Messages */}
+            <div className={styles.whatsappChatArea}>
+              {/* Message 1: Incoming from Farmer */}
+              <div className={styles.waMessageIncoming}>
+                <p className={styles.waMsgText}>
+                  Hi! I&apos;m looking for a tractor in my area, is it available?
+                </p>
+                <span className={styles.waMsgTime}>10:24 AM</span>
+              </div>
+
+              {/* Message 2: Outgoing from AgroRent AI Bot */}
+              <div className={styles.waMessageOutgoing}>
+                <p className={styles.waMsgText}>
+                  Yes! We have a John Deere 5050D available for rent, ₹1,200 per day. Would you like to book it?
+                </p>
+                <span className={styles.waMsgTime}>10:25 AM <span className={styles.waChecks}>✓✓</span></span>
+              </div>
+
+              {/* Message 3: Incoming confirmation */}
+              <div className={styles.waMessageIncoming}>
+                <p className={styles.waMsgText}>Yes, please!</p>
+                <span className={styles.waMsgTime}>10:26 AM</span>
+              </div>
+            </div>
+
+            {/* WhatsApp Bottom Input Bar */}
+            <div className={styles.whatsappInputBar}>
+              <span className={styles.waInputPlaceholder}>Type a message...</span>
+              <div className={styles.waMicBtn}>
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="#FFFFFF">
+                  <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+                  <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </article>
   );

@@ -1,3 +1,7 @@
+/* =========================================================================
+   SELECTED WORK (SECTION 02) — BESPOKE EDITORIAL ENGINEERING JOURNAL
+   ========================================================================= */
+
 .workSection {
   position: relative;
   width: 100%;
@@ -37,11 +41,6 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 4.5rem;
-
-  @media (max-width: 960px) {
-    gap: 3.5rem;
-  }
 }
 
 /* =========================================================================
@@ -52,6 +51,11 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-bottom: 3rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+  }
 }
 
 .sectionHeaderRow {
@@ -132,7 +136,7 @@
 
 .supportingCopy {
   font-family: var(--font-sans);
-  font-size: clamp(1.08rem, 1.22vw, 1.2rem);
+  font-size: clamp(1.05rem, 1.2vw, 1.18rem);
   color: #24201C;
   max-width: 620px;
   line-height: 1.55;
@@ -151,48 +155,21 @@
   position: relative;
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(460px, 1.65fr);
-  gap: clamp(2.5rem, 4.2vw, 5rem);
-  align-items: center;
-  padding: 1.5rem 0 2rem;
+  grid-template-columns: minmax(0, 1.05fr) minmax(540px, 1.85fr);
+  gap: clamp(2.5rem, 4.5vw, 5rem);
+  align-items: flex-start;
+  padding: 1rem 0 2rem;
 
-  @media (max-width: 1100px) {
-    grid-template-columns: 1fr 1.35fr;
-    gap: 2.5rem;
+  @media (max-width: 1150px) {
+    grid-template-columns: 1fr 1.4fr;
+    gap: 2rem;
   }
 
   @media (max-width: 960px) {
     grid-template-columns: 1fr;
     gap: 3.5rem;
-    padding: 1rem 0;
+    padding: 0.5rem 0 1.5rem;
   }
-}
-
-.tractorEngravingWrap {
-  position: absolute;
-  bottom: -40px;
-  left: 18%;
-  width: clamp(380px, 44vw, 640px);
-  height: auto;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.18;
-  mix-blend-mode: multiply;
-  mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
-
-  @media (max-width: 960px) {
-    left: 5%;
-    width: 320px;
-    bottom: -20px;
-    opacity: 0.14;
-  }
-}
-
-.tractorEngravingImg {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
 }
 
 /* Project Info Column */
@@ -208,7 +185,14 @@
 .projectMetaHeader {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.45rem;
+}
+
+.projectNumberRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
 }
 
 .projectNumber {
@@ -218,6 +202,13 @@
   color: var(--color-vermilion);
   letter-spacing: 0.08em;
   display: inline-block;
+}
+
+.projectRule {
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-vermilion);
+  opacity: 0.35;
 }
 
 .titleBadgeRow {
@@ -249,14 +240,6 @@
   border-radius: 3px;
   background-color: rgba(181, 40, 45, 0.04);
   line-height: 1;
-}
-
-.projectRule {
-  width: 100%;
-  height: 1px;
-  background-color: var(--color-vermilion);
-  opacity: 0.35;
-  margin-top: 0.45rem;
 }
 
 .projectDescription {
@@ -347,17 +330,43 @@
   color: var(--color-vermilion);
 }
 
+/* Vintage Tractor & Rolling Hills Engraving anchored beneath left links */
+.tractorEngravingWrap {
+  position: relative;
+  width: clamp(280px, 34vw, 420px);
+  height: auto;
+  margin-top: 1.75rem;
+  margin-left: -12px;
+  margin-bottom: -15px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.88;
+  mix-blend-mode: multiply;
+
+  @media (max-width: 960px) {
+    width: 260px;
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+}
+
+.tractorEngravingImg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 /* =========================================================================
-   TACTILE STACK SPREAD COLLAGE (AGRORENT)
+   AGRORENT FLAGSHIP EDITORIAL COLLAGE
    ========================================================================= */
 
-.stackSpreadContainer {
+.agrorentCollageContainer {
   position: relative;
   width: 100%;
-  min-height: 480px;
+  min-height: 520px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   z-index: 6;
   user-select: none;
   cursor: pointer;
@@ -370,538 +379,1033 @@
   }
 
   @media (max-width: 960px) {
-    justify-content: center;
-    min-height: 440px;
-    margin-top: 1rem;
+    min-height: 480px;
+    margin-top: 1.5rem;
   }
 
   @media (max-width: 600px) {
-    min-height: 380px;
+    min-height: 420px;
   }
 }
 
-/* Supplemental Paper Sheet (Layer 3) */
-.supplementalPaperSheet {
+/* Archival Torn Paper Layer Backing */
+.archivalTornPaperBacking {
   position: absolute;
-  top: 15px;
+  top: 10px;
   right: -15px;
-  width: 130px;
-  height: 180px;
-  background-color: #FAF5EA;
-  border: 1px solid rgba(215, 202, 182, 0.6);
-  transform: rotate(7deg);
-  z-index: 4;
-  box-shadow: 0 8px 18px rgba(23, 21, 18, 0.08);
+  width: 94%;
+  height: 96%;
+  background-color: #EFE6D7;
+  border: 1px solid rgba(215, 202, 182, 0.65);
+  box-shadow: 0 12px 28px rgba(23, 21, 18, 0.08);
+  transform: rotate(1.2deg);
   pointer-events: none;
+  z-index: 2;
+  clip-path: polygon(
+    0% 2%, 3% 0%, 15% 1%, 28% 0%, 42% 2%, 60% 0%, 78% 1%, 95% 0%, 100% 2%,
+    99% 25%, 100% 50%, 98% 75%, 100% 98%,
+    85% 99%, 70% 98%, 55% 100%, 38% 98%, 20% 99%, 4% 98%, 0% 96%,
+    1% 70%, 0% 45%, 2% 20%
+  );
+}
+
+/* Botanical Sprigs */
+.botanicalSprigTopRight {
+  position: absolute;
+  top: -45px;
+  right: -30px;
+  width: 240px;
+  height: 240px;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0.65;
+  mix-blend-mode: multiply;
+  transform: rotate(25deg);
+
+  @media (max-width: 768px) {
+    width: 180px;
+    top: -30px;
+    right: -15px;
+    opacity: 0.45;
+  }
+}
+
+.botanicalSprigBottomRight {
+  position: absolute;
+  bottom: -45px;
+  right: -25px;
+  width: 220px;
+  height: 220px;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0.55;
+  mix-blend-mode: multiply;
+  transform: rotate(-15deg);
 
   @media (max-width: 768px) {
     display: none;
   }
 }
 
-.paperTape {
-  position: absolute !important;
-  top: -6px !important;
-  right: 15px !important;
+.botanicalSprigImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-/* Rear Listings Card (Layer 2) - ~40% visible in resting state, spreads out on scroll/hover */
-.rearListingsCard {
+/* LEFT ARTIFACT: AI Condition Analysis Card (z-index 15 in front of main screen) */
+.aiConditionCard {
   position: absolute;
+  left: -50px;
   top: 35px;
-  left: -20px;
-  z-index: 6;
-  width: clamp(260px, 32vw, 440px);
+  z-index: 15;
+  width: clamp(195px, 22vw, 240px);
   transform-origin: center center;
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
 
-  @media (max-width: 1100px) {
-    left: -10px;
-    width: 320px;
+  @media (max-width: 1150px) {
+    left: -30px;
+    width: 200px;
   }
 
   @media (max-width: 960px) {
     left: 10px;
     top: 25px;
-    width: 280px;
+    width: 185px;
   }
 
   @media (max-width: 600px) {
-    left: 0;
-    top: 20px;
-    width: 230px;
+    left: -8px;
+    top: 15px;
+    width: 155px;
   }
 }
 
-.listingsTapeTop {
-  position: absolute !important;
-  top: -6px !important;
-  left: 20px !important;
-  z-index: 20 !important;
-}
-
-/* Foreground Focal Landing Card (Layer 1) */
-.focalLandingCard {
-  position: relative;
-  z-index: 10;
-  width: clamp(340px, 42vw, 560px);
-  transform-origin: center center;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
-
-  @media (max-width: 1100px) {
-    width: 420px;
-  }
-
-  @media (max-width: 960px) {
-    width: 360px;
-  }
-
-  @media (max-width: 600px) {
-    width: 290px;
-  }
-}
-
-.landingTapeTopRight {
-  position: absolute !important;
-  top: -8px !important;
-  right: -12px !important;
-  z-index: 25 !important;
-}
-
-/* Stack Spread on Hover or Tap (.isSpread) */
-.stackSpreadContainer:hover,
-.stackSpreadContainer.isSpread {
-  .rearListingsCard {
-    transform: translate3d(-52px, -18px, 0) rotate(7.5deg) scale(1.02) !important;
-    .screenshotFrame {
-      box-shadow: 0 20px 42px rgba(23, 21, 18, 0.18), 0 4px 10px rgba(23, 21, 18, 0.08);
-    }
-  }
-
-  .focalLandingCard {
-    transform: translate3d(8px, -6px, 0) rotate(-1.5deg) !important;
-    .screenshotFrame {
-      box-shadow: 0 22px 48px rgba(23, 21, 18, 0.2), 0 5px 12px rgba(23, 21, 18, 0.09);
-    }
-  }
-}
-
-.screenshotFrame {
-  background-color: #FAF6EF;
-  padding: 6px;
-  border-radius: 2px;
-  border: 1px solid rgba(215, 202, 182, 0.65);
-  box-shadow: 0 14px 32px rgba(23, 21, 18, 0.12), 0 3px 8px rgba(23, 21, 18, 0.06);
-  overflow: hidden;
-  position: relative;
-}
-
-.screenshotImg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Handwritten Annotations */
-.annotationTopLeft {
-  position: absolute;
-  top: -40px;
-  left: 20px;
-  z-index: 15;
+.conditionCardInner {
+  background-color: #FAF5EC;
+  border: 1px solid rgba(215, 202, 182, 0.85);
+  border-radius: 3px;
+  padding: 0.85rem 0.75rem 0.8rem;
+  box-shadow: 0 10px 24px rgba(23, 21, 18, 0.12), 0 2px 6px rgba(23, 21, 18, 0.06);
   display: flex;
   flex-direction: column;
-  pointer-events: none;
-  transform: rotate(-3deg);
+  gap: 0.5rem;
 
-  @media (max-width: 960px) {
-    display: none;
+  @media (max-width: 600px) {
+    padding: 0.65rem 0.55rem;
+    gap: 0.35rem;
   }
 }
 
-.annotationTopRight {
+.conditionCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conditionCardTitle {
+  font-family: var(--font-condensed);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+  text-transform: uppercase;
+}
+
+.conditionPhotoWrap {
+  width: 100%;
+  height: 95px;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid rgba(23, 21, 18, 0.15);
+
+  @media (max-width: 600px) {
+    height: 70px;
+  }
+}
+
+.conditionPhotoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.conditionBadgeRow {
+  display: flex;
+  justify-content: center;
+}
+
+.goodConditionBadge {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #1B5E20;
+  background-color: #E8F5E9;
+  border: 1px solid #A5D6A7;
+  padding: 0.15rem 0.55rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.checkIcon {
+  font-weight: 800;
+}
+
+.conditionChecklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+  border-top: 1px dashed rgba(23, 21, 18, 0.15);
+  padding-top: 0.45rem;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  color: #37332D;
+
+  @media (max-width: 600px) {
+    font-size: 0.62rem;
+  }
+}
+
+.itemLabel {
+  font-weight: 500;
+}
+
+.itemValue {
+  font-weight: 700;
+  color: #1B5E20;
+}
+
+.ratingValue {
+  font-weight: 800;
+  color: var(--color-text);
+  background-color: #EFE6D7;
+  padding: 0.08rem 0.35rem;
+  border-radius: 3px;
+}
+
+.conditionTape {
+  position: absolute !important;
+  top: -7px !important;
+  left: 50% !important;
+  transform: translateX(-50%) rotate(-5deg) !important;
+  z-index: 15 !important;
+}
+
+/* Handwritten Annotation (Condition Card) */
+.annotationCondition {
   position: absolute;
-  top: -35px;
-  right: 35px;
-  z-index: 15;
+  top: -65px;
+  left: -20px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   pointer-events: none;
-  transform: rotate(3deg);
+  z-index: 20;
+  transform: rotate(-4deg);
 
   @media (max-width: 960px) {
     display: none;
   }
 }
 
-.handwrittenNote {
+.handwrittenText {
   font-family: var(--font-handwriting);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: #171512;
-  opacity: 0.9;
+  line-height: 1.05;
   text-shadow: 0 1px 2px rgba(244, 235, 221, 0.85);
   white-space: nowrap;
 }
 
-.annotationArrowSvg {
-  width: 55px;
-  height: 38px;
-  margin-left: 25px;
-  margin-top: -4px;
+.conditionArrowSvg {
+  width: 44px;
+  height: 32px;
+  margin-top: 2px;
+  margin-right: 12px;
 }
 
-.annotationArrowSvgRight {
-  width: 55px;
-  height: 38px;
-  margin-right: 35px;
-  margin-top: -4px;
-}
+/* CENTER ARTIFACT: Main AgroRent Desktop Window */
+.mainDesktopWindow {
+  position: relative;
+  z-index: 10;
+  width: clamp(340px, 44vw, 580px);
+  transform-origin: center center;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
 
-/* Farmer Red Printed Seal Stamp */
-.farmerSealStamp {
-  position: absolute;
-  bottom: -22px;
-  right: -15px;
-  width: 125px;
-  height: 125px;
-  z-index: 12;
-  pointer-events: none;
-  mix-blend-mode: multiply;
-  transform: rotate(-6deg);
-  filter: drop-shadow(0 2px 4px rgba(23, 21, 18, 0.08));
-
-  @media (max-width: 768px) {
-    width: 100px;
-    height: 100px;
-    bottom: -15px;
-    right: -5px;
+  @media (max-width: 1150px) {
+    width: 440px;
   }
-}
-
-.farmerSealSvg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* =========================================================================
-   3. SECONDARY ROW: AQUATRACE & ARRA
-   ========================================================================= */
-
-.secondaryProjectsGrid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
-  gap: clamp(2rem, 3.5vw, 3.5rem);
-  margin-top: 1rem;
 
   @media (max-width: 960px) {
-    grid-template-columns: 1fr;
-    gap: 3.5rem;
+    width: 380px;
+  }
+
+  @media (max-width: 600px) {
+    width: 300px;
   }
 }
 
-.secondaryProjectArticle {
-  position: relative;
-  background-color: #FAF6EF;
-  border: 1px solid rgba(215, 202, 182, 0.65);
-  padding: 2.25rem 2rem 2.5rem;
+.desktopBezel {
+  background-color: #1A1714;
+  padding: 7px;
+  border-radius: 4px;
+  box-shadow: 0 16px 36px rgba(23, 21, 18, 0.16), 0 3px 10px rgba(23, 21, 18, 0.08);
+  overflow: hidden;
+}
+
+.desktopScreenshotImg {
+  width: 100%;
+  height: auto;
+  display: block;
   border-radius: 2px;
-  box-shadow: 0 10px 24px rgba(23, 21, 18, 0.06);
+}
+
+.desktopTapeTopRight {
+  position: absolute !important;
+  top: -9px !important;
+  right: 25px !important;
+  z-index: 22 !important;
+}
+
+/* RIGHT ARTIFACT: WhatsApp Smartphone Workflow (z-index 15 in front of main screen) */
+.whatsappPhoneCard {
+  position: absolute;
+  right: -40px;
+  top: 15px;
+  z-index: 15;
+  width: clamp(175px, 19vw, 215px);
+  transform-origin: center center;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
+
+  @media (max-width: 1150px) {
+    right: -25px;
+    width: 185px;
+  }
+
+  @media (max-width: 960px) {
+    right: 10px;
+    top: 30px;
+    width: 170px;
+  }
+
+  @media (max-width: 600px) {
+    right: -10px;
+    top: 30px;
+    width: 140px;
+  }
+}
+
+.smartphoneChassis {
+  background-color: #111B21;
+  border: 2px solid #202C33;
+  border-radius: 24px;
+  padding: 6px 5px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18), 0 3px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-
-  @media (max-width: 600px) {
-    padding: 1.75rem 1.25rem 2rem;
-  }
 }
 
-/* Ship & Train Engravings in background */
-.shipEngravingWrap {
-  position: absolute;
-  bottom: -20px;
-  left: -20px;
-  width: 360px;
-  height: auto;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.14;
-  mix-blend-mode: multiply;
-  mask-image: radial-gradient(ellipse at center, black 45%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 45%, transparent 80%);
-
-  @media (max-width: 768px) {
-    width: 260px;
-    opacity: 0.11;
-  }
-}
-
-.shipEngravingImg {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-.railwayEngravingWrap {
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  width: 360px;
-  height: auto;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.14;
-  mix-blend-mode: multiply;
-  mask-image: radial-gradient(ellipse at center, black 45%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 45%, transparent 80%);
-
-  @media (max-width: 768px) {
-    width: 260px;
-    opacity: 0.11;
-  }
-}
-
-.railwayEngravingImg {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* AquaTrace Visual */
-.aquatraceVisualWrap {
-  position: relative;
-  margin-top: 1.85rem;
-  z-index: 5;
-  width: 100%;
-}
-
-.aquatraceCard {
-  position: relative;
-  width: 100%;
-  transform: rotate(1.5deg);
-  transform-origin: center center;
-  transition: transform 0.4s ease;
-
-  &:hover {
-    transform: rotate(0deg) scale(1.01);
-  }
-}
-
-.aquatraceTape {
-  position: absolute !important;
-  top: -8px !important;
-  right: 15px !important;
-  z-index: 15 !important;
-}
-
-.nauticalRouteOverlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 8;
-}
-
-.nauticalRouteSvg {
-  width: 100%;
-  height: 100%;
-}
-
-/* ARRA Custom Railway Response Console Visual */
-.arraVisualWrap {
-  position: relative;
-  margin-top: 1.85rem;
-  z-index: 5;
-  width: 100%;
-}
-
-.arraConsoleCard {
-  position: relative;
-  background-color: #121519;
-  border: 1px solid #2B333B;
-  border-radius: 3px;
-  padding: 1.25rem 1.25rem 1.1rem;
-  color: #E5E7EB;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
-  transform: rotate(-1.5deg);
-  transform-origin: center center;
-  transition: transform 0.4s ease;
-
-  &:hover {
-    transform: rotate(0deg) scale(1.01);
-  }
-
-  @media (max-width: 600px) {
-    padding: 1rem 0.85rem 0.9rem;
-  }
-}
-
-.arraTape {
-  position: absolute !important;
-  top: -8px !important;
-  left: 20px !important;
-  z-index: 15 !important;
-}
-
-.railwayConsoleHeader {
+.whatsappHeader {
+  background-color: #075E54;
+  padding: 0.45rem 0.5rem;
+  border-radius: 18px 18px 0 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 0.65rem;
-  margin-bottom: 0.85rem;
-  font-family: var(--font-condensed);
+  color: #FFFFFF;
 }
 
-.consoleStatusRow {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.livePulseDot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: #10B981;
-  box-shadow: 0 0 8px #10B981;
-  animation: pulseBeacon 2s infinite ease-in-out;
-}
-
-@keyframes pulseBeacon {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.45;
-    transform: scale(0.85);
-  }
-}
-
-.consoleTitleText {
-  font-size: 0.76rem;
-  letter-spacing: 0.12em;
-  color: #9CA3AF;
-  font-weight: 700;
-}
-
-.consoleStatusTag {
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  color: #38BDF8;
-  font-weight: 700;
-}
-
-.stageGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.45rem;
-  margin-bottom: 0.85rem;
-
-  @media (max-width: 480px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.4rem;
-  }
-}
-
-.stageButton {
-  background-color: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 2px;
-  padding: 0.55rem 0.45rem;
-  text-align: left;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-1px);
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--color-vermilion);
-    outline-offset: 2px;
-  }
-}
-
-.stageActive {
-  background-color: rgba(255, 255, 255, 0.09) !important;
-  border-color: rgba(255, 255, 255, 0.35) !important;
-}
-
-.stageTopRow {
+.waProfileRow {
   display: flex;
   align-items: center;
   gap: 0.35rem;
 }
 
-.stagePill {
-  font-family: var(--font-condensed);
-  font-size: 0.65rem;
-  font-weight: 800;
-  border: 1px solid currentColor;
-  padding: 0.05rem 0.28rem;
-  border-radius: 2px;
+.waBackBtn {
+  font-size: 0.95rem;
+  font-weight: 700;
   line-height: 1;
 }
 
-.stageCode {
-  font-family: var(--font-condensed);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: #FFFFFF;
+.waAvatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #128C7E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.stageLabel {
+.waContactInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.waName {
   font-family: var(--font-sans);
   font-size: 0.68rem;
-  color: #9CA3AF;
-  line-height: 1.25;
+  font-weight: 700;
+  line-height: 1.1;
 }
 
-.railwayDiagramContainer {
+.waStatus {
+  font-family: var(--font-sans);
+  font-size: 0.52rem;
+  color: #A7F3D0;
+}
+
+.waIcons {
+  font-size: 0.65rem;
+  display: flex;
+  gap: 0.35rem;
+  opacity: 0.85;
+}
+
+.whatsappChatArea {
+  background-color: #EFEAE2;
+  padding: 0.65rem 0.45rem;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+
+  @media (max-width: 600px) {
+    min-height: 110px;
+    padding: 0.45rem 0.35rem;
+    gap: 0.35rem;
+  }
+}
+
+.waMessageIncoming {
+  align-self: flex-start;
+  background-color: #FFFFFF;
+  border-radius: 6px 6px 6px 1px;
+  padding: 0.35rem 0.5rem;
+  max-width: 90%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.waMessageOutgoing {
+  align-self: flex-end;
+  background-color: #D9FDD3;
+  border-radius: 6px 6px 1px 6px;
+  padding: 0.35rem 0.5rem;
+  max-width: 92%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.waMsgText {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  color: #111B21;
+  line-height: 1.3;
+  margin: 0;
+
+  @media (max-width: 600px) {
+    font-size: 0.54rem;
+  }
+}
+
+.waMsgTime {
+  font-family: var(--font-sans);
+  font-size: 0.48rem;
+  color: #667781;
+  display: block;
+  text-align: right;
+  margin-top: 0.15rem;
+}
+
+.waChecks {
+  color: #53BDEB;
+  font-weight: 800;
+}
+
+.whatsappInputBar {
+  background-color: #F0F2F5;
+  padding: 0.35rem 0.45rem;
+  border-radius: 0 0 18px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.waInputPlaceholder {
+  font-family: var(--font-sans);
+  font-size: 0.52rem;
+  color: #8696A0;
+}
+
+.waMicBtn {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #00A884;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Handwritten Annotation (WhatsApp) */
+.annotationWhatsapp {
+  position: absolute;
+  top: -65px;
+  right: -10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: none;
+  z-index: 20;
+  transform: rotate(4deg);
+
+  @media (max-width: 960px) {
+    display: none;
+  }
+}
+
+.whatsappArrowSvg {
+  width: 44px;
+  height: 32px;
+  margin-top: 2px;
+  margin-left: 12px;
+}
+
+/* Fanned-out Stack Spread on Hover or Tap (.isSpread) */
+.agrorentCollageContainer:hover,
+.agrorentCollageContainer.isSpread {
+  .aiConditionCard {
+    transform: translate3d(-28px, -10px, 0) rotate(-7.5deg) !important;
+    .conditionCardInner {
+      box-shadow: 0 18px 36px rgba(23, 21, 18, 0.18);
+    }
+  }
+
+  .whatsappPhoneCard {
+    transform: translate3d(26px, -8px, 0) rotate(9.5deg) !important;
+    .smartphoneChassis {
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  .mainDesktopWindow {
+    transform: translate3d(0, -4px, 0) rotate(1.5deg) scale(1.01) !important;
+    .desktopBezel {
+      box-shadow: 0 22px 46px rgba(23, 21, 18, 0.22);
+    }
+  }
+}
+
+/* =========================================================================
+   3. SECTION DIVIDER RULE
+   ========================================================================= */
+
+.sectionDividerRule {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-vermilion);
+  opacity: 0.35;
+  margin: 3.5rem 0 2.8rem;
+
+  @media (max-width: 768px) {
+    margin: 2rem 0;
+  }
+}
+
+/* =========================================================================
+   4. SECONDARY PROJECTS SPREAD (AQUATRACE & ARRA)
+   ========================================================================= */
+
+.secondaryProjectsSpread {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  width: 100%;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+}
+
+.secondaryProjectColLeft {
+  padding-right: clamp(1.25rem, 2.2vw, 2.5rem);
+  border-right: 1px solid rgba(181, 40, 45, 0.32);
+
+  @media (max-width: 900px) {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(181, 40, 45, 0.32);
+    padding-bottom: 3rem;
+  }
+}
+
+.secondaryProjectColRight {
+  padding-left: clamp(1.25rem, 2.2vw, 2.5rem);
+
+  @media (max-width: 900px) {
+    padding-left: 0;
+  }
+}
+
+.secondaryProjectColLeft,
+.secondaryProjectColRight {
+  .projectTitle {
+    font-size: clamp(1.85rem, 2.4vw, 2.7rem);
+  }
+
+  .projectDescription {
+    font-size: clamp(0.92rem, 1.05vw, 1.02rem);
+    line-height: 1.55;
+  }
+
+  .techTagItem {
+    font-size: 0.76rem;
+    padding: 0.2rem 0.58rem;
+  }
+
+  .editorialActionLink {
+    font-size: 0.8rem;
+    gap: 0.35rem;
+  }
+}
+
+.editorialSplitProject {
   position: relative;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 2px;
-  padding: 0.35rem;
-  margin-bottom: 0.75rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(200px, 1.25fr);
+  gap: clamp(0.85rem, 1.5vw, 1.5rem);
+  align-items: center;
+
+  @media (max-width: 680px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
-.railwayTrackSvg {
+.secondaryInfoCol {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  width: 100%;
+}
+
+.secondaryVisualCol {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+}
+
+/* Ship & Railway Tracks Engravings */
+.sailingShipEngravingWrap {
+  position: absolute;
+  bottom: -20px;
+  left: -25px;
+  width: 280px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  mask-image: radial-gradient(ellipse at center, black 45%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 45%, transparent 80%);
+
+  @media (max-width: 768px) {
+    width: 200px;
+    opacity: 0.12;
+  }
+}
+
+.sailingShipImg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.railwayTracksEngravingWrap {
+  position: absolute;
+  bottom: -30px;
+  right: -20px;
+  width: 320px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.22;
+  mix-blend-mode: multiply;
+  mask-image: radial-gradient(ellipse at center, black 45%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 45%, transparent 80%);
+
+  @media (max-width: 768px) {
+    width: 220px;
+    opacity: 0.14;
+  }
+}
+
+.railwayTracksSunImg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* AquaTrace Visual: Framed Screenshot with 4 Corner Tapes */
+.aquatraceFrameWrap {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: rotate(0deg) scale(1.015) !important;
+  }
+}
+
+.decklePaperMount {
+  background-color: #EFE5D5;
+  padding: 8px;
+  border: 1px solid rgba(215, 202, 182, 0.7);
+  box-shadow: 0 12px 28px rgba(23, 21, 18, 0.1);
+  border-radius: 2px;
+}
+
+.screenshotFrameDark {
+  background-color: #0F141C;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.aquatraceScreenshotImg {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.stageStatusFooter {
+.tapeTopLeft {
+  position: absolute !important;
+  top: -8px !important;
+  left: -8px !important;
+  z-index: 15 !important;
+}
+
+.tapeTopRight {
+  position: absolute !important;
+  top: -8px !important;
+  right: -8px !important;
+  z-index: 15 !important;
+}
+
+.tapeBottomLeft {
+  position: absolute !important;
+  bottom: -8px !important;
+  left: -8px !important;
+  z-index: 15 !important;
+}
+
+.tapeBottomRight {
+  position: absolute !important;
+  bottom: -8px !important;
+  right: -8px !important;
+  z-index: 15 !important;
+}
+
+/* ARRA Visual: Tactical Dark Console */
+.arraConsoleWrap {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: rotate(0deg) scale(1.015) !important;
+  }
+}
+
+.decklePaperMountArra {
+  background-color: #EFE5D5;
+  padding: 8px;
+  border: 1px solid rgba(215, 202, 182, 0.7);
+  box-shadow: 0 12px 28px rgba(23, 21, 18, 0.1);
+  border-radius: 2px;
+}
+
+.arraTacticalCard {
+  background-color: #0C1016;
+  border: 1px solid #1E293B;
+  border-radius: 3px;
+  padding: 0.85rem 0.85rem 0.75rem;
+  color: #E2E8F0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.arraHeaderBar {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: monospace;
-  font-size: 0.74rem;
-  padding-top: 0.25rem;
-  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.45rem;
 }
 
-.statusIndicatorLabel {
-  color: var(--color-vermilion);
+.arraTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.arraLogoIcon {
+  color: #38BDF8;
+  font-size: 0.85rem;
+}
+
+.arraHeaderTitle {
+  font-family: var(--font-condensed);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+}
+
+.arraHeaderSub {
+  font-family: var(--font-condensed);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: #94A3B8;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
+
+.arraLiveIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-condensed);
+  font-size: 0.65rem;
   font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #10B981;
 }
 
-.statusMessageText {
-  color: #D1D5DB;
+.greenRadarPulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10B981;
+  box-shadow: 0 0 6px #10B981;
+  animation: radarPulse 2s infinite ease-in-out;
+}
+
+@keyframes radarPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+}
+
+.arraConsoleBody {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 0.65rem;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+}
+
+.arraMapSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.incidentAlertBanner {
+  background-color: rgba(181, 40, 45, 0.14);
+  border: 1px solid rgba(181, 40, 45, 0.4);
+  border-radius: 2px;
+  padding: 0.4rem 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.alertIconCircle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #B5282D;
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.alertTextWrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.alertHeading {
+  font-family: var(--font-sans);
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: #FCA5A5;
+  line-height: 1.1;
+}
+
+.alertSub {
+  font-family: var(--font-sans);
+  font-size: 0.54rem;
+  color: #CBD5E1;
+}
+
+.priorityPill {
+  font-family: var(--font-condensed);
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #EF4444;
+  border: 1px solid #EF4444;
+  padding: 0.05rem 0.3rem;
+  border-radius: 2px;
+}
+
+.trackNetworkMap {
+  background-color: #070B0F;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.networkMapSvg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.stageChecklistCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.checklistTitle {
+  font-family: var(--font-condensed);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #94A3B8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.1rem;
+}
+
+.stageCheckItem {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  padding: 0.32rem 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+}
+
+.stageCheckSelected {
+  background-color: rgba(56, 189, 248, 0.08) !important;
+  border-color: rgba(56, 189, 248, 0.35) !important;
+}
+
+.checkCircle {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1px solid #64748B;
+  color: #64748B;
+  font-size: 0.58rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.checkDone {
+  border-color: #10B981;
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #10B981;
+}
+
+.stageTextWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.stageName {
+  font-family: var(--font-condensed);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.1;
+}
+
+.stageDetail {
+  font-family: var(--font-sans);
+  font-size: 0.56rem;
+  color: #94A3B8;
+}
+
+.arraTapeTop {
+  position: absolute !important;
+  top: -8px !important;
+  left: 25px !important;
+  z-index: 15 !important;
+}
+
+.arraTapeBottom {
+  position: absolute !important;
+  bottom: -8px !important;
+  right: 25px !important;
+  z-index: 15 !important;
 }
 
 /* =========================================================================
-   4. REUSABLE MASKING TAPE
+   REUSABLE MASKING TAPE
    ========================================================================= */
 
 .maskingTape {

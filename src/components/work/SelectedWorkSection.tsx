@@ -68,15 +68,22 @@ export const SelectedWorkSection: React.FC = () => {
           </motion.p>
         </header>
 
-        {/* Flagship Project 01: AgroRent (Dominant visual presence with Stack Spread) */}
+        {/* Flagship Project 01: AgroRent (Dominant visual presence) */}
         <div className={styles.flagshipContainer}>
           <AgroRentProject />
         </div>
 
+        {/* Section Dividing Hairline Rule between Project 01 and Projects 02 & 03 */}
+        <div className={styles.sectionDividerRule} aria-hidden="true" />
+
         {/* Secondary Row: Project 02 (AquaTrace) and Project 03 (ARRA) */}
-        <div className={styles.secondaryProjectsGrid}>
-          <AquaTraceProject />
-          <ArraProject />
+        <div className={styles.secondaryProjectsSpread}>
+          <div className={styles.secondaryProjectColLeft}>
+            <AquaTraceProject />
+          </div>
+          <div className={styles.secondaryProjectColRight}>
+            <ArraProject />
+          </div>
         </div>
       </div>
 
