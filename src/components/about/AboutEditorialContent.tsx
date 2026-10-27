@@ -11,13 +11,13 @@ export const AboutEditorialContent: React.FC = () => {
 
   return (
     <div className={styles.editorialLeft}>
-      {/* Background Fort Engraving at Bottom Left */}
+      {/* Background Fort Engraving at Bottom Left from assets/about/ */}
       <div className={styles.fortEngravingWrapper} aria-hidden="true">
         <Image
-          src="/assets/maratha-bastion-etching.png"
+          src="/assets/about/about-fort-mountain-engraving.png"
           alt=""
-          width={440}
-          height={380}
+          width={2172}
+          height={608}
           className={styles.fortEngravingImg}
           priority={false}
         />
@@ -58,7 +58,7 @@ export const AboutEditorialContent: React.FC = () => {
         परिचय
       </motion.div>
 
-      {/* Headline in Bodoni Moda */}
+      {/* Bold Editorial Headline in Bodoni Moda Didone Display Style */}
       <motion.h2
         className={styles.editorialHeadline}
         initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 22 }}
@@ -70,7 +70,7 @@ export const AboutEditorialContent: React.FC = () => {
         <span className={styles.headlineVermilion}>Builder by choice.</span>
       </motion.h2>
 
-      {/* Body Copy */}
+      {/* Readable Body Copy */}
       <motion.div
         className={styles.bodyCopy}
         initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}

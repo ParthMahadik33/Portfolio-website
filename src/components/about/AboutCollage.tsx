@@ -6,7 +6,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import { AboutTape } from "./AboutTape";
 import { AboutStamp } from "./AboutStamp";
 import { AboutBotanicals } from "./AboutBotanicals";
-import { AboutPillars } from "./AboutPillars";
 import { AboutHandwriting } from "./AboutHandwriting";
 import { KraftTornStrip, VermilionTornScrap } from "./AboutTornScraps";
 import styles from "./About.module.scss";
@@ -42,40 +41,29 @@ export const AboutCollage: React.FC = () => {
       <VermilionTornScrap className={styles.vermilionScrapPos} />
       <KraftTornStrip className={styles.kraftScrapPos} />
 
-      {/* 2. Small Casual Handwritten Note & Curved Arrow */}
+      {/* 2. Casual Handwritten Note & Curved Arrow on the Left */}
       <AboutHandwriting className={styles.handwritingPos} />
 
-      {/* 3. Upper Right Guiding Pillars */}
-      <motion.div
-        className={styles.pillarsPos}
-        initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: 12 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: 0.25, ease: easeCurve }}
-      >
-        <AboutPillars />
-      </motion.div>
-
-      {/* 4. Natural Hand-Drawn Botanical Ink SVG Artwork */}
+      {/* 3. Authentic Botanical Foliage on Middle-Right Edge (from assets/about/) */}
       <motion.div
         className={styles.botanicalsPos}
         initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.96 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: shouldReduceMotion ? 0 : 0.8, delay: 0.4, ease: easeCurve }}
+        transition={{ duration: shouldReduceMotion ? 0 : 0.8, delay: 0.35, ease: easeCurve }}
       >
         <AboutBotanicals />
       </motion.div>
 
-      {/* 5. Main Focal Point: Foreground Color Speaking Photo (z-index: 10) */}
+      {/* 4. Main Focal Point: Foreground Color Speaking Photo (z-index: 10) */}
       <motion.div
         className={styles.mainPhotoWrapper}
         initial={
           shouldReduceMotion
-            ? { opacity: 1, y: 0, rotate: -2 }
+            ? { opacity: 1, y: 0, rotate: -2.5 }
             : { opacity: 0, y: 22, rotate: -3.5 }
         }
-        whileInView={{ opacity: 1, y: 0, rotate: -2 }}
+        whileInView={{ opacity: 1, y: 0, rotate: -2.5 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: shouldReduceMotion ? 0 : 0.85, delay: 0.15, ease: easeCurve }}
       >
@@ -101,9 +89,9 @@ export const AboutCollage: React.FC = () => {
         />
       </motion.div>
 
-      {/* 6. Three Black & White Polaroids Tucked Behind Main Photo */}
+      {/* 5. Three Black & White Polaroids Tucked Behind Main Photo (35-50% visible in resting state) */}
       <div className={styles.tuckedPolaroidsStack}>
-        {/* Polaroid 1 (Tucked behind Upper-Right edge): Parth at Fort Bastion */}
+        {/* Polaroid 1 (Upper-Right): Parth at Fort Bastion */}
         <div className={`${styles.tuckedPolaroid} ${styles.polaroidFort}`}>
           <div className={styles.polaroidCard}>
             <Image
@@ -114,7 +102,6 @@ export const AboutCollage: React.FC = () => {
               className={styles.polaroidImg}
             />
           </div>
-          {/* Small piece of tape on polaroid corner */}
           <AboutTape
             className={styles.polaroidTape1}
             rotation={-12}
@@ -123,7 +110,7 @@ export const AboutCollage: React.FC = () => {
           />
         </div>
 
-        {/* Polaroid 2 (Tucked behind Lower-Right edge): Parth on Stone Stairs */}
+        {/* Polaroid 2 (Lower-Right): Parth on Stone Stairs */}
         <div className={`${styles.tuckedPolaroid} ${styles.polaroidStairs}`}>
           <div className={styles.polaroidCard}>
             <Image
@@ -134,7 +121,6 @@ export const AboutCollage: React.FC = () => {
               className={styles.polaroidImg}
             />
           </div>
-          {/* Small piece of tape on polaroid corner */}
           <AboutTape
             className={styles.polaroidTape2}
             rotation={14}
@@ -143,7 +129,7 @@ export const AboutCollage: React.FC = () => {
           />
         </div>
 
-        {/* Polaroid 3 (Tucked behind Lower edge): Parth with Bicycle in nature */}
+        {/* Polaroid 3 (Lower-Left edge): Parth with Bicycle in nature */}
         <div className={`${styles.tuckedPolaroid} ${styles.polaroidCycling}`}>
           <div className={styles.polaroidCard}>
             <Image
@@ -154,7 +140,6 @@ export const AboutCollage: React.FC = () => {
               className={styles.polaroidImg}
             />
           </div>
-          {/* Small piece of tape on polaroid corner */}
           <AboutTape
             className={styles.polaroidTape3}
             rotation={-8}
@@ -164,7 +149,7 @@ export const AboutCollage: React.FC = () => {
         </div>
       </div>
 
-      {/* 7. Circular Printed Seal Stamp: STILL LEARNING / STILL BUILDING */}
+      {/* 6. Circular Printed Mountain Seal Stamp from assets/about/ */}
       <motion.div
         className={styles.stampPos}
         initial={
@@ -174,9 +159,9 @@ export const AboutCollage: React.FC = () => {
         }
         whileInView={{ opacity: 1, scale: 1, rotate: -5 }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: shouldReduceMotion ? 0 : 0.75, delay: 0.65, ease: easeCurve }}
+        transition={{ duration: shouldReduceMotion ? 0 : 0.75, delay: 0.55, ease: easeCurve }}
       >
-        <AboutStamp size={110} rotation={-5} />
+        <AboutStamp size={124} rotation={-5} />
       </motion.div>
     </div>
   );
