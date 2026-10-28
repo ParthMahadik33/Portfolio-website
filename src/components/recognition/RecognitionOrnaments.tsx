@@ -69,21 +69,6 @@ export const RecognitionOrnaments: React.FC<RecognitionOrnamentsProps> = ({
           priority={false}
         />
       </motion.div>
-
-      {/* 4. Mountain Landscape near bottom */}
-      <motion.div
-        className={styles.ornamentMountainLandscape}
-        style={{ y: yGentle }}
-      >
-        <Image
-          src="/assets/recognition/mountain-landscape.png"
-          alt=""
-          width={1256}
-          height={649}
-          className={styles.ornamentImg}
-          priority={false}
-        />
-      </motion.div>
     </div>
   );
 };

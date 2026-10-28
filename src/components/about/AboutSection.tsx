@@ -15,8 +15,8 @@ export const AboutSection: React.FC = () => {
 
   return (
     <section className={styles.aboutSection} id="about" aria-label="About the Builder">
-      {/* Background paper texture overlay */}
-      <div className={styles.aboutBgPaper} />
+      {/* Anchor for #journey link */}
+      <span id="journey" className={styles.sectionAnchor} aria-hidden="true" />
 
       <div className={styles.aboutContainer}>
         {/* Left Editorial Text Column (Dominant 65% area) */}
@@ -38,18 +38,6 @@ export const AboutSection: React.FC = () => {
           {/* Layered Photo Collage */}
           <AboutCollage />
         </div>
-      </div>
-
-      {/* Subtle Botanical Grass & Foliage Border along Lower Edge from assets/about/ */}
-      <div className={styles.botanicalGrassWrapper} aria-hidden="true">
-        <Image
-          src="/assets/about/about-botanical-grass-border.png"
-          alt=""
-          width={2172}
-          height={721}
-          className={styles.botanicalGrassImg}
-          priority={false}
-        />
       </div>
 
       {/* Continuous Torn Paper Edge along the bottom */}

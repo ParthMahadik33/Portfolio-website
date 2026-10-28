@@ -25,7 +25,12 @@
   padding: 0;
 }
 
-html,
+html {
+  width: 100%;
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
   min-height: 100%;
@@ -35,9 +40,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
-/* Subtle organic paper texture overlay */
+/* Subtle organic paper texture overlay (isolated GPU compositor layer) */
 body::before {
   content: "";
   position: fixed;
@@ -45,6 +51,7 @@ body::before {
   pointer-events: none;
   z-index: 999;
   opacity: 0.035;
+  transform: translateZ(0);
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
@@ -60,6 +67,60 @@ button {
   font: inherit;
 }
 
+/* =========================================================================
+   CUSTOM ARCHIVAL CURSORS (FINE POINTER & HOVER DEVICES ONLY)
+   ========================================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body {
+    cursor: url('/assets/cursors/cursor-default.svg') 2 2,
+            url('/assets/cursors/cursor-default.png') 2 2,
+            auto;
+  }
+
+  /* Interactive Elements: links, buttons, and clickable controls */
+  a,
+  a *,
+  button,
+  button *,
+  [role="button"],
+  [role="button"] *,
+  input[type="submit"],
+  input[type="button"],
+  input[type="reset"],
+  summary,
+  select,
+  label[for],
+  [tabindex="0"]:not(body):not(html):not([contenteditable="true"]) {
+    cursor: url('/assets/cursors/cursor-link.svg') 2 2,
+            url('/assets/cursors/cursor-link.png') 2 2,
+            pointer;
+  }
+
+  /* Preserve native text editing and inputs */
+  input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]),
+  textarea,
+  [contenteditable="true"] {
+    cursor: text !important;
+  }
+
+  /* Preserve native disabled state */
+  [disabled],
+  :disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed !important;
+  }
+
+  /* Preserve native drag and drop */
+  [draggable="true"] {
+    cursor: grab;
+  }
+  [draggable="true"]:active {
+    cursor: grabbing;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -70,3 +131,4 @@ button {
     scroll-behavior: auto !important;
   }
 }
+

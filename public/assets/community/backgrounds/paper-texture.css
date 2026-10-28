@@ -1,0 +1,9 @@
+/* Optional low-cost parchment texture. Use only if the website does not already provide its paper texture. */
+.community-paper-texture {
+  background-color: #F4EBDD;
+  background-image:
+    radial-gradient(circle at 18% 21%, rgba(104, 82, 61, .045) 0 0.6px, transparent .8px),
+    radial-gradient(circle at 75% 63%, rgba(104, 82, 61, .035) 0 0.6px, transparent .9px),
+    linear-gradient(180deg, rgba(255,255,255,.12), rgba(125,95,64,.025));
+  background-size: 13px 15px, 17px 19px, 100% 100%;
+}

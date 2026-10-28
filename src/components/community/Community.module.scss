@@ -1,0 +1,871 @@
+/* =========================================================================
+   SECTION 04: COMMUNITY & LEADERSHIP — EDITORIAL ARCHIVAL STYLING
+   Golden reference design: reference/target-design-mockup.png
+   ========================================================================= */
+
+.communitySection {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: clip;
+  padding: 5rem clamp(1.5rem, 4vw, 4.5rem) 6.5rem;
+  box-sizing: border-box;
+  scroll-margin-top: 1.5rem;
+
+  @media (max-width: 1200px) {
+    padding: 4.5rem clamp(1.25rem, 3vw, 2.5rem) 5.5rem;
+  }
+
+  @media (max-width: 960px) {
+    padding: 3.5rem 1.5rem 4.5rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 2.75rem 1.15rem 3.75rem;
+  }
+}
+
+.sectionAnchor {
+  position: absolute;
+  top: -1.5rem;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Screen reader only utility class */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Subtle organic paper background texture overlay */
+.communityBgPaper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseCommunity'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseCommunity)'/%3E%3C/svg%3E");
+}
+
+/* Campus Engraving Line Art — Soft masked background */
+.campusEngravingLineart {
+  position: absolute;
+  left: -2%;
+  top: 14%;
+  width: min(68vw, 1080px);
+  height: auto;
+  opacity: 0.20;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 48%, rgba(0, 0, 0, 0) 100%),
+                      linear-gradient(to right, rgba(0, 0, 0, 1) 68%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 48%, rgba(0, 0, 0, 0) 100%),
+              linear-gradient(to right, rgba(0, 0, 0, 1) 68%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+
+  @media (max-width: 960px) {
+    top: 8%;
+    width: 95vw;
+    opacity: 0.13;
+  }
+}
+
+.campusEngravingImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Botanical Branch Illustration at Top Right */
+.botanicalTopRight {
+  position: absolute;
+  top: 1.5rem;
+  right: -0.5rem;
+  width: clamp(140px, 15vw, 230px);
+  height: auto;
+  opacity: 0.35;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    width: 110px;
+    opacity: 0.2;
+    top: 1rem;
+    right: 0;
+  }
+}
+
+.botanicalImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Main Container */
+.communityContainer {
+  position: relative;
+  z-index: 2;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 4.5vw, 4.5rem);
+}
+
+/* =========================================================================
+   TOP EDITORIAL ROW: Left (Header + Sahakarya) & Right (Presentation Video)
+   ========================================================================= */
+
+.communityTopRow {
+  display: grid;
+  grid-template-columns: minmax(380px, 1fr) minmax(460px, 1.25fr);
+  gap: clamp(2rem, 4vw, 4.5rem);
+  align-items: start;
+
+  @media (max-width: 1080px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   HEADER LEFT COLUMN
+   ------------------------------------------------------------------------- */
+
+.headerLeftCol {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sectionHeaderRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.sectionTag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  font-family: var(--font-condensed);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+}
+
+.tagNum {
+  color: var(--color-vermilion);
+}
+
+.tagSep {
+  color: var(--color-muted-grey);
+}
+
+.tagText {
+  color: var(--color-text);
+}
+
+.headerRule {
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-vermilion);
+  opacity: 0.65;
+  transform-origin: left;
+}
+
+/* Devanagari Accent: सहकार्य */
+.devanagariAccent {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.15rem;
+  width: fit-content;
+}
+
+.sahakaryaImg {
+  display: block;
+  width: clamp(140px, 15vw, 190px);
+  height: auto;
+}
+
+/* Editorial Headline: Exact 3 lines */
+.editorialHeadline {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 2.6vw, 3rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.35rem;
+}
+
+.headlineLineCharcoal {
+  color: var(--color-text);
+  display: block;
+  white-space: nowrap;
+
+  @media (max-width: 600px) {
+    white-space: normal;
+  }
+}
+
+.headlineLineTogether {
+  color: var(--color-vermilion);
+  display: block;
+  white-space: nowrap;
+}
+
+.headlineLineForward {
+  color: var(--color-vermilion);
+  display: block;
+  white-space: nowrap;
+
+  @media (max-width: 600px) {
+    white-space: normal;
+  }
+}
+
+/* Supporting Paragraph */
+.supportingCopy {
+  font-family: var(--font-sans);
+  font-size: clamp(0.98rem, 1.12vw, 1.1rem);
+  line-height: 1.58;
+  color: #4D473F;
+  max-width: 530px;
+  margin-bottom: 1.5rem;
+}
+
+/* Annotation: Ideas grow stronger when shared */
+.headerAnnotation {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-left: auto;
+  margin-right: clamp(2rem, 5vw, 4.5rem);
+  transform: rotate(-6deg);
+  width: fit-content;
+  user-select: none;
+
+  @media (max-width: 600px) {
+    margin-left: 1.5rem;
+    margin-right: 0;
+  }
+}
+
+.annotationNoteText {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-handwriting);
+  font-size: clamp(1.05rem, 1.25vw, 1.25rem);
+  line-height: 1.15;
+  color: #171512;
+  font-weight: 600;
+}
+
+.annotationArrowSvg {
+  width: 48px;
+  height: 34px;
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+}
+
+/* -------------------------------------------------------------------------
+   PRESENTATION VIDEO FEATURE (TOP RIGHT)
+   ------------------------------------------------------------------------- */
+
+.videoFeatureCol {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Annotation Top-Right: From idea to presentation */
+.videoAnnotationTopRight {
+  position: absolute;
+  top: -2.85rem;
+  right: 1.25rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.65rem;
+  user-select: none;
+  z-index: 5;
+  transform: rotate(-2deg);
+
+  @media (max-width: 768px) {
+    top: -2.25rem;
+    right: 0.5rem;
+  }
+}
+
+.videoArrowSvg {
+  width: 48px;
+  height: 34px;
+  flex-shrink: 0;
+}
+
+.videoAnnotationCopy {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-handwriting);
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.15;
+  color: #171512;
+  font-weight: 600;
+}
+
+/* Video Frame Card */
+.videoFrameCard {
+  position: relative;
+  background-color: #ffffff;
+  padding: 11px 11px 14px;
+  border-radius: 2px;
+  border: 1px solid rgba(23, 21, 18, 0.08);
+  box-shadow: 0 18px 42px -12px rgba(23, 21, 18, 0.14),
+              0 3px 10px rgba(23, 21, 18, 0.04);
+}
+
+.videoTapeTopLeft {
+  top: -14px;
+  left: -18px;
+}
+
+/* 16:9 Ambient Video Viewport */
+.videoViewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #171512;
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.videoPoster {
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.videoPosterHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ambientVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+
+/* Editorial Caption Bar */
+.videoCaptionContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.95rem;
+  margin-top: 1.25rem;
+  padding-left: 0.25rem;
+}
+
+.captionAccentBar {
+  width: 3.5px;
+  flex-shrink: 0;
+  align-self: stretch;
+  min-height: 44px;
+  background-color: var(--color-vermilion);
+  border-radius: 2px;
+}
+
+.captionTextCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.captionHeadline {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.38vw, 1.35rem);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.28;
+  margin-bottom: 0.35rem;
+}
+
+.captionParagraph {
+  font-family: var(--font-sans);
+  font-size: clamp(0.88rem, 1.02vw, 0.95rem);
+  color: #554F47;
+  line-height: 1.54;
+  max-width: 680px;
+}
+
+/* =========================================================================
+   BOTTOM EDITORIAL ROW: Left (GDG Photo & Card 02) & Right (Card 03 & 04)
+   ========================================================================= */
+
+.communityBottomRow {
+  display: grid;
+  grid-template-columns: minmax(660px, 1.85fr) minmax(360px, 1.15fr);
+  gap: clamp(2rem, 3.5vw, 3.5rem);
+  align-items: start;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: minmax(540px, 1.65fr) minmax(320px, 1.1fr);
+    gap: 2.25rem;
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   GDG SECTION WRAPPER: Photo Print (Left) + Card 02 (Right)
+   ------------------------------------------------------------------------- */
+
+.gdgSectionWrapper {
+  display: grid;
+  grid-template-columns: minmax(300px, 1.1fr) minmax(310px, 1.08fr);
+  gap: clamp(1.5rem, 2.5vw, 2.5rem);
+  align-items: start;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Photo Column */
+.gdgPhotoColumn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.gdgPhotoFrameWrap {
+  position: relative;
+  width: 100%;
+}
+
+.gdgTapeTopLeft {
+  top: -12px;
+  left: -14px;
+}
+
+.gdgTapeBottomRight {
+  bottom: -12px;
+  right: -14px;
+}
+
+.gdgPhotoMount {
+  position: relative;
+  background-color: #ffffff;
+  padding: 13px 13px 17px;
+  border-radius: 2px;
+  border: 1px solid rgba(23, 21, 18, 0.09);
+  box-shadow: 0 18px 38px -12px rgba(23, 21, 18, 0.16),
+              0 3px 10px rgba(23, 21, 18, 0.05);
+  transform: rotate(-2.2deg);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+  &:hover {
+    transform: rotate(-1.5deg) scale(1.01);
+  }
+
+  @media (max-width: 600px) {
+    transform: rotate(-1deg);
+  }
+}
+
+.gdgPhotoAspect {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #171512;
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.gdgPhotoImg {
+  object-fit: cover;
+  display: block;
+}
+
+/* Annotation Below Photo: Built by a community */
+.photoAnnotationRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 1.4rem;
+  margin-left: 2rem;
+  user-select: none;
+
+  @media (max-width: 600px) {
+    margin-left: 1rem;
+  }
+}
+
+.builtArrowSvg {
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.builtText {
+  font-family: var(--font-handwriting);
+  font-size: clamp(1.1rem, 1.3vw, 1.35rem);
+  color: #171512;
+  font-weight: 600;
+  transform: rotate(-1.5deg);
+}
+
+/* Card 02 Column */
+.gdgMetaColumn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Shared Card Index Row */
+.cardIndexRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.15rem;
+  width: 100%;
+}
+
+.cardIndexNum {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-vermilion);
+  line-height: 1;
+}
+
+.cardHairlineRule {
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-vermilion);
+  opacity: 0.65;
+}
+
+/* GDG Campus Lockup */
+.gdgLockupWrap {
+  margin-bottom: 0.85rem;
+  display: block;
+}
+
+.gdgLockupImg {
+  display: block;
+  width: clamp(210px, 22vw, 280px);
+  height: auto;
+}
+
+/* Shared Typography */
+.roleTitleVermilion {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 1.82vw, 1.95rem);
+  font-weight: 700;
+  color: var(--color-vermilion);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.65rem;
+  white-space: nowrap;
+
+  @media (max-width: 600px) {
+    white-space: normal;
+  }
+}
+
+.roleTitleVermilionSmall {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1.55vw, 1.55rem);
+  font-weight: 700;
+  color: var(--color-vermilion);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.45rem;
+  white-space: nowrap;
+
+  @media (max-width: 600px) {
+    white-space: normal;
+  }
+}
+
+.roleDescription {
+  font-family: var(--font-sans);
+  font-size: clamp(0.9rem, 1.05vw, 0.98rem);
+  color: #554F47;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+/* Skill / Activity Pills */
+.pillTagGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.pillTagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pillTag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: #171512;
+  background-color: rgba(244, 235, 221, 0.6);
+  border: 1px solid rgba(23, 21, 18, 0.22);
+  border-radius: 9999px;
+  padding: 0.32rem 0.95rem;
+  white-space: nowrap;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    border-color: rgba(23, 21, 18, 0.45);
+    background-color: rgba(244, 235, 221, 0.9);
+  }
+}
+
+/* -------------------------------------------------------------------------
+   LEADERSHIP STACK: Card 03 (CORE) + Card 04 (Gemini Ambassador)
+   ------------------------------------------------------------------------- */
+
+.leadershipStackWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 3.2vw, 3.25rem);
+  width: 100%;
+}
+
+/* CARD 03: CORE, TCOER */
+.leadershipCard03 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.coreCardBody {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 1.25rem;
+  align-items: flex-start;
+  margin-bottom: 1.15rem;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 72px 1fr;
+    gap: 1rem;
+  }
+}
+
+.coreLogoWrapper {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+
+  @media (max-width: 600px) {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+.coreLogoImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.coreDetailsCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.orgOverline {
+  font-family: var(--font-condensed);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #171512;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.pillTagGroupCore {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-left: 2rem;
+
+  @media (max-width: 600px) {
+    margin-left: 0;
+  }
+}
+
+/* CARD 04: Gemini Student Ambassador */
+.leadershipCard04 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.geminiCardBody {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.15rem;
+  margin-bottom: 1.15rem;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+}
+
+.googleAmbassadorLockup {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+
+.geminiSparkImg {
+  display: block;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.ambassadorStackedText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.ambassadorBrandGoogle {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #171512;
+}
+
+.ambassadorBrandSub {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #2D2A26;
+}
+
+.geminiVerticalDivider {
+  width: 1px;
+  align-self: stretch;
+  min-height: 48px;
+  background-color: var(--color-vermilion);
+  opacity: 0.6;
+  flex-shrink: 0;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.geminiDetailsCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.pillTagGroupGemini {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 85%;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+}
+
+/* Bottom Right Corner Botanical Branch */
+.cornerBotanicalAccent {
+  position: absolute;
+  right: -2.5rem;
+  bottom: -3rem;
+  width: clamp(130px, 13vw, 190px);
+  height: auto;
+  opacity: 0.85;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    right: -1rem;
+    bottom: -1rem;
+    width: 110px;
+    opacity: 0.4;
+  }
+}
+
+.cornerBotanicalImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* =========================================================================
+   WASHI TAPE COMPONENT
+   ========================================================================= */
+
+.communityTape {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.08));
+}
+
+.tapeSvg {
+  display: block;
+}

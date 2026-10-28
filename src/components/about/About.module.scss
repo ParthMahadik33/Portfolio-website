@@ -4,21 +4,31 @@
   background-color: var(--color-bg);
   color: var(--color-text);
   overflow: hidden;
-  padding: 2.25rem 3.5rem 4rem;
+  padding: 2.25rem 3.5rem 3rem;
   box-sizing: border-box;
-  scroll-margin-top: 0;
+  scroll-margin-top: 1.5rem;
 
   @media (max-width: 1200px) {
-    padding: 2rem 2.25rem 3.5rem;
+    padding: 2rem 2.25rem 2.5rem;
   }
 
   @media (max-width: 960px) {
-    padding: 1.75rem 1.5rem 3rem;
+    padding: 1.75rem 1.5rem 2.25rem;
   }
 
   @media (max-width: 600px) {
-    padding: 1.5rem 1.15rem 2.5rem;
+    padding: 1.5rem 1.15rem 1.75rem;
   }
+}
+
+.sectionAnchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+  scroll-margin-top: 1.5rem;
 }
 
 .aboutBgPaper {
@@ -330,7 +340,7 @@
   position: relative;
   width: 100%;
   max-width: 490px;
-  min-height: 520px;
+  min-height: 460px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -348,15 +358,15 @@
 
   @media (max-width: 1200px) {
     max-width: 440px;
-    min-height: 490px;
+    min-height: 440px;
   }
 
   @media (max-width: 960px) {
-    min-height: 480px;
+    min-height: 430px;
   }
 
   @media (max-width: 600px) {
-    min-height: 420px;
+    min-height: 380px;
     max-width: 360px;
   }
 }
@@ -694,18 +704,30 @@
   }
 }
 
-/* Editorial Printed Seal Stamp at Bottom Right from assets/about/ */
+/* Editorial Printed Seal Stamp positioned beside trailing polaroids */
 .stampPos {
   position: absolute;
-  bottom: 8px;
-  right: 15px;
+  top: clamp(210px, 46%, 265px);
+  right: clamp(-15px, -1vw, 8px);
   z-index: 15;
   pointer-events: none;
 
+  @media (max-width: 1200px) {
+    top: clamp(190px, 44%, 245px);
+    right: clamp(-10px, -1vw, 2px);
+  }
+
   @media (max-width: 768px) {
-    right: 5px;
-    bottom: -5px;
-    transform: scale(0.88);
+    top: clamp(170px, 42%, 215px);
+    right: 0;
+    transform: scale(0.85);
+    transform-origin: center right;
+  }
+
+  @media (max-width: 480px) {
+    top: clamp(150px, 40%, 195px);
+    right: -5px;
+    transform: scale(0.78);
   }
 }
 
@@ -810,31 +832,7 @@
    BOTANICAL GRASS BORDER & DECKLED LOWER SECTION TRANSITION
    ========================================================================= */
 
-.botanicalGrassWrapper {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: clamp(60px, 8.5vw, 110px);
-  pointer-events: none;
-  z-index: 3;
-  opacity: 0.28;
-  mix-blend-mode: multiply;
-  overflow: hidden;
 
-  @media (max-width: 768px) {
-    height: 48px;
-    opacity: 0.22;
-  }
-}
-
-.botanicalGrassImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: bottom center;
-}
 
 .tornBottomContainer {
   position: absolute;

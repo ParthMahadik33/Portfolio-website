@@ -1,0 +1,20 @@
+/* Example only. Adapt selector to the actual component. Do not change global styles. */
+.community-campus-engraving {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: min(55vw, 850px);
+  height: auto;
+  opacity: 0.16;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  object-fit: contain;
+  object-position: left bottom;
+  -webkit-mask-image: linear-gradient(to top, #000 58%, transparent 100%), linear-gradient(to right, #000 75%, transparent 100%);
+  mask-image: linear-gradient(to top, #000 58%, transparent 100%), linear-gradient(to right, #000 75%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+/* Keep content above the decoration; never apply the class to text or media. */
+.community-section__content { position: relative; z-index: 1; }

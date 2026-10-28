@@ -29,10 +29,7 @@ export const RecognitionSection: React.FC = () => {
       {/* Anchor for alternative #recognition link */}
       <span id="recognition" className={styles.sectionAnchor} aria-hidden="true" />
 
-      {/* Background paper texture overlay */}
-      <div className={styles.recognitionBgPaper} />
-
-      {/* Engraved Vintage Ornaments (Skyline, Domed Capitol, Mountains, Botanicals) */}
+      {/* Engraved Vintage Ornaments (Skyline, Domed Capitol, Botanicals) */}
       <RecognitionOrnaments
         scrollYProgress={scrollYProgress}
         shouldReduceMotion={shouldReduceMotion}

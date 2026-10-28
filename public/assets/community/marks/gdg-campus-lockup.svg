@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 148" role="img" aria-labelledby="title desc">
+<title id="title">Google Developer Group on Campus TCOER — visual lockup</title><desc id="desc">Editable GDG-inspired multicolor geometric mark and text. Replace with an official supplied logo file if available.</desc>
+<g transform="translate(10 22)" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-width="18">
+ <path d="M76 9 L27 52 L76 95" stroke="#4285F4"/>
+ <path d="M88 9 L137 52 L88 95" stroke="#34A853"/>
+ <path d="M89 9 L137 52" stroke="#FBBC04" stroke-width="16"/>
+ <path d="M27 52 L76 95" stroke="#EA4335" stroke-width="16"/>
+</g>
+<g fill="#27323A" font-family="Arial, Helvetica, sans-serif">
+ <text x="176" y="62" font-size="29" font-weight="700">Google Developer Group</text>
+ <text x="177" y="96" font-size="23" font-weight="500" fill="#328653">On Campus <tspan fill="#27323A">— TCOER</tspan></text>
+</g></svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-labelledby="title">
+<title id="title">Ideas, people, impact seal</title>
+<g fill="none" stroke="#B5282D" stroke-width="2.3" opacity=".88"><circle cx="110" cy="110" r="99"/><circle cx="110" cy="110" r="87" stroke-dasharray="2 5"/><path d="M64 124 Q110 84 156 124"/><path d="M78 132 Q110 105 142 132"/></g>
+<g fill="#B5282D" font-family="Georgia, serif" font-weight="700" text-anchor="middle"><text x="110" y="74" font-size="16" letter-spacing="3">IDEAS</text><text x="110" y="161" font-size="16" letter-spacing="3">PEOPLE</text><text x="110" y="181" font-size="12" letter-spacing="2">IMPACT</text></g>
+<circle cx="110" cy="111" r="5" fill="#B5282D"/><path d="M110 96 L115 108 L110 120 L105 108Z" fill="#B5282D" opacity=".85"/>
+</svg>

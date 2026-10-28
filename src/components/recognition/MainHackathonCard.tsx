@@ -164,43 +164,57 @@ export const MainHackathonCard: React.FC<MainHackathonCardProps> = ({
         </div>
       </div>
 
-      {/* 3. Bottom-Left Reflection Note & Journey Link */}
-      <div className={styles.journeyNoteRow}>
-        <p className={styles.journeyHandwrittenQuote}>
-          The rejections and near-misses belong to the longer story.
-        </p>
-
-        <svg
-          viewBox="0 0 48 20"
-          className={styles.journeyArrowSvg}
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          <path
-            d="M 2 10 Q 22 4 42 10"
-            stroke="#171512"
-            strokeWidth="1.3"
-            strokeLinecap="round"
-            strokeDasharray="2.5 1.5"
+      {/* 3. Bottom-Left Reflection Note & Journey Link with Faded Engraving Backdrop */}
+      <div className={styles.journeyContainer}>
+        {/* Soft atmospheric landscape engraving emerging from parchment behind the note */}
+        <div className={styles.journeyLandscapeBackdrop} aria-hidden="true">
+          <Image
+            src="/assets/recognition/mountain-landscape.png"
+            alt=""
+            width={1256}
+            height={649}
+            className={styles.journeyLandscapeImg}
+            priority={false}
           />
-          <path
-            d="M 36 5 L 44 10 L 36 15"
-            stroke="#171512"
-            strokeWidth="1.3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        </div>
 
-        <a
-          href="#journey"
-          className={styles.journeyActionLink}
-          aria-label="View the longer story and journey (jumps to journey section)"
-        >
-          <span>/ JOURNEY</span>
-          <span className={styles.journeyLinkArrow} aria-hidden="true">→</span>
-        </a>
+        <div className={styles.journeyNoteRow}>
+          <p className={styles.journeyHandwrittenQuote}>
+            The rejections and near-misses belong to the longer story.
+          </p>
+
+          <svg
+            viewBox="0 0 48 20"
+            className={styles.journeyArrowSvg}
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M 2 10 Q 22 4 42 10"
+              stroke="#171512"
+              strokeWidth="1.3"
+              strokeLinecap="round"
+              strokeDasharray="2.5 1.5"
+            />
+            <path
+              d="M 36 5 L 44 10 L 36 15"
+              stroke="#171512"
+              strokeWidth="1.3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+
+          <a
+            href="#journey"
+            className={styles.journeyActionLink}
+            aria-label="View the longer story and journey (jumps to journey section)"
+          >
+            <span>/ JOURNEY</span>
+            <span className={styles.journeyLinkArrow} aria-hidden="true">→</span>
+          </a>
+        </div>
       </div>
     </article>
   );

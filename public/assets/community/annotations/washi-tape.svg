@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 56" role="img" aria-label="Translucent cream masking tape">
+<defs><pattern id="stripes" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="8" height="8" fill="#F0E5CF" fill-opacity=".78"/><path d="M0 0 V8" stroke="#C8B99E" stroke-width="1.4" stroke-opacity=".45"/></pattern></defs>
+<path d="M8 9 L171 5 L176 45 L5 50Z" fill="url(#stripes)" stroke="#D3C3A9" stroke-opacity=".55" stroke-width="1"/>
+</svg>

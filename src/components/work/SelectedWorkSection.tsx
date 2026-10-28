@@ -14,9 +14,6 @@ export const SelectedWorkSection: React.FC = () => {
 
   return (
     <section className={styles.workSection} id="work" aria-label="Selected Engineering Work">
-      {/* Background paper texture overlay */}
-      <div className={styles.workBgPaper} />
-
       <div className={styles.workContainer}>
         {/* Section Header */}
         <header className={styles.sectionHeader}>
@@ -47,10 +44,10 @@ export const SelectedWorkSection: React.FC = () => {
           {/* High-Contrast Editorial Serif Headline in Bodoni Moda */}
           <motion.h2
             className={styles.editorialHeadline}
-            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 22 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: shouldReduceMotion ? 0 : 0.8, delay: 0.2, ease: easeCurve }}
+            viewport={{ once: true, amount: "some" }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: 0.1, ease: easeCurve }}
           >
             <span className={styles.headlineCharcoal}>Built to solve</span>
             <span className={styles.headlineVermilion}>something.</span>
@@ -59,10 +56,10 @@ export const SelectedWorkSection: React.FC = () => {
           {/* Supporting Copy */}
           <motion.p
             className={styles.supportingCopy}
-            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: 0.35, ease: easeCurve }}
+            viewport={{ once: true, amount: "some" }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: 0.2, ease: easeCurve }}
           >
             A selection of projects where engineering meets real-world problems.
           </motion.p>

@@ -1,0 +1,15 @@
+Community section annotation copy (render as editable HTML text, not as an image):
+
+सहकार्य
+Meaning: cooperation / collaboration.
+
+From idea to presentation.
+Ideas grow stronger when shared.
+Built by a community.
+
+Recommended note styling: a handwritten font already present in the project if available, charcoal ink, 16–20px desktop, 14–16px mobile, slight rotation only on annotations, and no rotation on the main content.
+
+For the main supporting sentence use this exact copy:
+Some of the best work happens when people learn together, share ideas, and build beyond their individual projects.
+
+Accessibility: provide the visible Devanagari word as semantic HTML text where practical. Do not rely on the SVG title alone to communicate its meaning.

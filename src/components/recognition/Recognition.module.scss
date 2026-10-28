@@ -118,22 +118,7 @@
   }
 }
 
-/* 4. Mountain Landscape near bottom */
-.ornamentMountainLandscape {
-  position: absolute;
-  bottom: 40px;
-  left: 2%;
-  width: clamp(340px, 42vw, 680px);
-  height: auto;
-  opacity: 0.15;
-  mix-blend-mode: multiply;
 
-  @media (max-width: 900px) {
-    bottom: 20px;
-    width: 320px;
-    opacity: 0.12;
-  }
-}
 
 .ornamentImg {
   width: 100%;
@@ -563,12 +548,62 @@
   text-shadow: 0 1px 2px rgba(244, 235, 221, 0.85);
 }
 
-/* Bottom-Left Reflection Note & Journey Link */
+/* Bottom-Left Reflection Note & Journey Link with Faded Engraving Backdrop */
+.journeyContainer {
+  position: relative;
+  margin-top: 1.75rem;
+  padding: 1.25rem 0.75rem 1.25rem 0.25rem;
+  width: 100%;
+  max-width: 580px;
+  overflow: visible;
+}
+
+.journeyLandscapeBackdrop {
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  width: clamp(340px, 42vw, 520px);
+  height: clamp(130px, 16vw, 190px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.20;
+  mix-blend-mode: multiply;
+  filter: grayscale(100%) contrast(1.1) sepia(15%);
+  overflow: hidden;
+  /* Multi-directional CSS mask with soft transparent fades on all 4 sides */
+  mask-image: radial-gradient(ellipse at 50% 50%, black 35%, rgba(0, 0, 0, 0.75) 60%, transparent 88%),
+              linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%),
+              linear-gradient(to bottom, transparent 0%, black 16%, black 84%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 35%, rgba(0, 0, 0, 0.75) 60%, transparent 88%),
+                     linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%),
+                     linear-gradient(to bottom, transparent 0%, black 16%, black 84%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+
+  @media (max-width: 768px) {
+    width: clamp(280px, 86vw, 380px);
+    height: 120px;
+    opacity: 0.15;
+    left: -10px;
+    top: -5px;
+  }
+}
+
+.journeyLandscapeImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;
+  display: block;
+}
+
 .journeyNoteRow {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 0;
   flex-wrap: wrap;
 }
 

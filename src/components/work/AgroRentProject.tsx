@@ -28,10 +28,15 @@ export const AgroRentProject: React.FC = () => {
     offset: ["start end", "center center"],
   });
 
-  const scrollSpreadLeftX = useTransform(scrollYProgress, [0.1, 0.9], [0, -18]);
-  const scrollSpreadRightX = useTransform(scrollYProgress, [0.1, 0.9], [0, 18]);
-  const scrollRotateLeft = useTransform(scrollYProgress, [0.1, 0.9], [-4, -6.5]);
-  const scrollRotateRight = useTransform(scrollYProgress, [0.1, 0.9], [6, 8.5]);
+  const motionSpreadLeftX = useTransform(scrollYProgress, [0.1, 0.9], [0, -18]);
+  const motionSpreadRightX = useTransform(scrollYProgress, [0.1, 0.9], [0, 18]);
+  const motionRotateLeft = useTransform(scrollYProgress, [0.1, 0.9], [-4, -6.5]);
+  const motionRotateRight = useTransform(scrollYProgress, [0.1, 0.9], [6, 8.5]);
+
+  const scrollSpreadLeftX = shouldReduceMotion ? 0 : motionSpreadLeftX;
+  const scrollSpreadRightX = shouldReduceMotion ? 0 : motionSpreadRightX;
+  const scrollRotateLeft = shouldReduceMotion ? -4 : motionRotateLeft;
+  const scrollRotateRight = shouldReduceMotion ? 6 : motionRotateRight;
 
   const easeCurve: [number, number, number, number] = [0.25, 1, 0.5, 1];
   const tags = ["Python", "Flask", "Gemini API", "Twilio", "Razorpay"];
@@ -97,18 +102,6 @@ export const AgroRentProject: React.FC = () => {
         </div>
       </div>
 
-      {/* Central Vintage Farm Tractor Engraving bridging text & collage */}
-      <div className={styles.tractorEngravingWrap} aria-hidden="true">
-        <Image
-          src="/assets/projects/tractor-isolated.png"
-          alt=""
-          width={1325}
-          height={710}
-          className={styles.tractorEngravingImg}
-          priority={false}
-        />
-      </div>
-
       {/* Right Column: Flagship Editorial Collage */}
       <div
         className={`${styles.agrorentCollageContainer} ${isSpread ? styles.isSpread : ""}`}
@@ -118,6 +111,18 @@ export const AgroRentProject: React.FC = () => {
         role="region"
         aria-label="AgroRent interactive editorial showcase. Tap or hover to fan out artifacts."
       >
+        {/* Atmospheric Vintage Agricultural Panorama integrated behind collage */}
+        <div className={styles.agriculturalPanoramaWrap} aria-hidden="true">
+          <Image
+            src="/assets/projects/agricultural-engraving-panorama.png"
+            alt=""
+            width={2400}
+            height={820}
+            className={styles.agriculturalPanoramaImg}
+            priority={false}
+          />
+        </div>
+
         {/* Botanical Sprigs behind the collage (Top Right & Bottom Right) */}
         <div className={styles.botanicalSprigTopRight} aria-hidden="true">
           <Image
@@ -137,9 +142,6 @@ export const AgroRentProject: React.FC = () => {
             className={styles.botanicalSprigImg}
           />
         </div>
-
-        {/* Archival Torn Paper Layer Backing */}
-        <div className={styles.archivalTornPaperBacking} aria-hidden="true" />
 
         {/* LEFT ARTIFACT: AI Condition Analysis Card */}
         <motion.div
