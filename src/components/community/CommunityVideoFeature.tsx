@@ -74,54 +74,65 @@ export const CommunityVideoFeature: React.FC<CommunityVideoFeatureProps> = ({
     >
       {/* Upper-Right Video Container with Pinned Washi Tape & Handwritten Note */}
       <div className={styles.videoCardOuterWrap}>
-        {/* Taped Archival Video Frame (Slight organic tilt) */}
-        <div className={styles.videoPhotoFrame}>
-          {/* Tape #1: Angled across top-right corner */}
-          <WashiTape
-            rotation={16}
-            width="68px"
-            height="22px"
-            patternId="videoTapeRight"
-            className={styles.videoTapeTopRight}
-          />
-
-          {/* Tape #2: Holding the upper-left edge */}
-          <WashiTape
-            rotation={-22}
-            width="64px"
-            height="22px"
-            patternId="videoTapeLeft"
-            className={styles.videoTapeTopLeft}
-          />
-
-          {/* 16:9 Ambient Video Viewport */}
-          <div className={styles.videoViewport}>
-            <Image
-              src="/assets/community/agrorent-presentation-poster.jpg"
-              alt="Parth Mahadik presenting at a Google Developer Group event in GDG attire"
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 480px"
-              priority={false}
-              className={`${styles.videoPoster} ${
-                isPlaying && videoLoaded ? styles.videoPosterHidden : ""
-              }`}
+        {/* Dedicated container grouping the enlarged video frame and its caption */}
+        <div className={styles.videoFrameContainer}>
+          {/* Taped Archival Video Frame (Slight organic tilt) */}
+          <div className={styles.videoPhotoFrame}>
+            {/* Tape #1: Angled across top-right corner */}
+            <WashiTape
+              rotation={16}
+              width="72px"
+              height="24px"
+              patternId="videoTapeRight"
+              className={styles.videoTapeTopRight}
             />
 
-            {!shouldReduceMotion && (
-              <video
-                ref={videoRef}
-                src="/assets/community/agrorent-presentation.mp4"
-                poster="/assets/community/agrorent-presentation-poster.jpg"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                aria-label="Silent video of Parth Mahadik presenting at a Google Developer Group community event"
-                className={styles.ambientVideo}
-                onLoadedData={() => setVideoLoaded(true)}
+            {/* Tape #2: Holding the upper-left edge */}
+            <WashiTape
+              rotation={-22}
+              width="68px"
+              height="24px"
+              patternId="videoTapeLeft"
+              className={styles.videoTapeTopLeft}
+            />
+
+            {/* 16:9 Ambient Video Viewport */}
+            <div className={styles.videoViewport}>
+              <Image
+                src="/assets/community/agrorent-presentation-poster.jpg"
+                alt="Parth Mahadik presenting at a Google Developer Group event in GDG attire"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 640px"
+                priority={false}
+                className={`${styles.videoPoster} ${
+                  isPlaying && videoLoaded ? styles.videoPosterHidden : ""
+                }`}
               />
-            )}
+
+              {!shouldReduceMotion && (
+                <video
+                  ref={videoRef}
+                  src="/assets/community/agrorent-presentation.mp4"
+                  poster="/assets/community/agrorent-presentation-poster.jpg"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label="Silent video of Parth Mahadik presenting at a Google Developer Group community event"
+                  className={styles.ambientVideo}
+                  onLoadedData={() => setVideoLoaded(true)}
+                />
+              )}
+            </div>
+          </div>
+
+          {/* Short Editorial Caption directly beneath the video frame */}
+          <div className={styles.videoCaptionRow}>
+            <span className={styles.captionBulletDot} aria-hidden="true" />
+            <span className={styles.captionText}>
+              GDG TCOER &middot; A moment from the community
+            </span>
           </div>
         </div>
 
@@ -154,14 +165,6 @@ export const CommunityVideoFeature: React.FC<CommunityVideoFeatureProps> = ({
             />
           </svg>
         </div>
-      </div>
-
-      {/* Short Editorial Caption directly beneath the video frame */}
-      <div className={styles.videoCaptionRow}>
-        <span className={styles.captionBulletDot} aria-hidden="true" />
-        <span className={styles.captionText}>
-          GDG TCOER &middot; A moment from the community
-        </span>
       </div>
     </motion.div>
   );
