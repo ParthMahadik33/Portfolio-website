@@ -7,7 +7,7 @@
   width: 100%;
   background-color: var(--color-bg);
   color: var(--color-text);
-  overflow: visible;
+  overflow-x: clip;
   padding: 4rem clamp(1.25rem, 3.5vw, 3.5rem) 5rem;
   box-sizing: border-box;
   scroll-margin-top: 1.5rem;
@@ -25,6 +25,18 @@
   }
 }
 
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .workBgPaper {
   position: absolute;
   inset: 0;
@@ -32,6 +44,130 @@
   z-index: 1;
   opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseWork'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseWork)'/%3E%3C/svg%3E");
+}
+
+/* =========================================================================
+   BACKGROUND AGRICULTURAL & BOTANICAL ENGRAVINGS
+   ========================================================================= */
+
+/* 1. Upper-Right Delicate Botanical / Harvest Branch */
+.upperRightBotanical {
+  position: absolute;
+  top: 1.5rem;
+  right: -0.5rem;
+  width: clamp(140px, 15vw, 240px);
+  height: auto;
+  opacity: 0.32;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  transform: rotate(-10deg);
+  mix-blend-mode: multiply;
+
+  @media (max-width: 768px) {
+    width: 110px;
+    opacity: 0.22;
+    top: 1rem;
+    right: -0.5rem;
+  }
+}
+
+.botanicalImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 2. Main Antique Agricultural Tractor Engraving (Behind lower AgroRent visuals) */
+.tractorEngravingBackground {
+  position: absolute;
+  top: 22%;
+  right: -1%;
+  width: min(54vw, 760px);
+  height: auto;
+  opacity: 0.15;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+  mix-blend-mode: multiply;
+  /* Multi-directional soft feathered masks so no hard rectangular edges exist */
+  -webkit-mask-image: radial-gradient(ellipse at 58% 50%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.6) 68%, transparent 92%),
+                      linear-gradient(to left, rgba(0, 0, 0, 1) 60%, transparent 100%),
+                      linear-gradient(to top, rgba(0, 0, 0, 1) 70%, transparent 100%);
+  mask-image: radial-gradient(ellipse at 58% 50%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.6) 68%, transparent 92%),
+              linear-gradient(to left, rgba(0, 0, 0, 1) 60%, transparent 100%),
+              linear-gradient(to top, rgba(0, 0, 0, 1) 70%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+
+  @media (max-width: 1080px) {
+    top: 26%;
+    right: -4%;
+    width: 68vw;
+    opacity: 0.12;
+  }
+
+  @media (max-width: 640px) {
+    top: 30%;
+    width: 88vw;
+    opacity: 0.09;
+  }
+}
+
+.tractorEngravingImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 3. Traditional Cultivated Fields & Crop Rows Panorama (Grounding AgroRent) */
+.fieldsEngravingBackground {
+  position: absolute;
+  left: 2%;
+  top: 42%;
+  width: min(92vw, 1360px);
+  height: auto;
+  opacity: 0.12;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  mix-blend-mode: multiply;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 1) 42%, rgba(0, 0, 0, 0.5) 72%, transparent 94%),
+                      linear-gradient(to top, rgba(0, 0, 0, 1) 40%, transparent 100%),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, transparent 100%);
+  mask-image: radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 1) 42%, rgba(0, 0, 0, 0.5) 72%, transparent 94%),
+              linear-gradient(to top, rgba(0, 0, 0, 1) 40%, transparent 100%),
+              linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+
+  @media (max-width: 960px) {
+    top: 46%;
+    width: 98vw;
+    opacity: 0.09;
+  }
+}
+
+.fieldsEngravingImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 4. Ground crop-row line along bottom edge */
+.groundCropRowEngraving {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 28px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.16;
+  background: radial-gradient(ellipse at bottom, rgba(181, 40, 45, 0.22) 0%, transparent 72%);
 }
 
 .workContainer {
@@ -98,6 +234,50 @@
   transform-origin: left center;
 }
 
+.headerMainContent {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+}
+
+.headerTitleGroup {
+  display: flex;
+  flex-direction: column;
+  max-width: 680px;
+}
+
+/* Devanagari Accent: सृजन (Srijan — Creation) */
+.devanagariAccentWrap {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom: 0.85rem;
+  width: fit-content;
+}
+
+.devanagariText {
+  font-family: var(--font-devanagari);
+  font-size: clamp(1.85rem, 2.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--color-vermilion);
+  line-height: 1.15;
+}
+
+.devanagariUnderlineSvg {
+  width: 120px;
+  height: 18px;
+  margin-top: -3px;
+  flex-shrink: 0;
+}
+
 .editorialHeadline {
   position: relative;
   font-family: var(--font-display);
@@ -147,6 +327,44 @@
   opacity: 1;
   visibility: visible;
   overflow: visible;
+}
+
+/* Handwritten Editorial Annotation bridging the header and AgroRent showcase */
+.headerAnnotationBridge {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+  margin-right: clamp(1rem, 5vw, 6rem);
+  user-select: none;
+  transform: rotate(-3deg);
+  flex-shrink: 0;
+
+  @media (max-width: 900px) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.annotationNoteText {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-handwriting);
+  font-size: clamp(1.18rem, 1.4vw, 1.42rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #171512;
+  white-space: nowrap;
+}
+
+.headerArrowSvg {
+  width: 52px;
+  height: 40px;
+  flex-shrink: 0;
 }
 
 /* =========================================================================
