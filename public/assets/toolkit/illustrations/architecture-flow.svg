@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="340" viewBox="0 0 900 340" fill="none">
+<defs></defs>
+
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0L6 3.5L0 7Z" fill="#B5282D"/></marker></defs>
+<g stroke="#B5282D" stroke-width="1.7" fill="none" marker-end="url(#arrow)" stroke-linecap="round" stroke-dasharray="4 5">
+<path d="M150 108H285"/><path d="M405 108H540"/><path d="M660 108H795"/><path d="M345 150V230H600V150"/><path d="M855 150V230H600"/>
+</g>
+<g stroke="#1A1A18" stroke-width="2.2" fill="none" stroke-linejoin="round" stroke-linecap="round">
+<!-- browser icon --> <rect x="55" y="55" width="92" height="80" rx="3"/><path d="M55 75H147M67 65h2m9 0h2m9 0h2"/><rect x="69" y="86" width="64" height="37"/><path d="M75 95h50M75 102h40M75 109h45"/>
+<!-- api/back end --> <rect x="310" y="54" width="88" height="83" rx="3"/><path d="M329 72h50v21h-50zM335 78h38M335 85h24M334 106l-5 6 5 6M368 106l5 6-5 6M345 104l-4 16"/>
+<!-- database --> <ellipse cx="600" cy="65" rx="40" ry="12"/><path d="M560 65v60c0 7 18 12 40 12s40-5 40-12V65M560 86c0 7 18 12 40 12s40-5 40-12M560 105c0 7 18 12 40 12s40-5 40-12"/>
+<!-- cloud --> <path d="M790 121c-20 0-24-26-6-35 2-23 32-28 43-10 23-3 35 25 14 39-4 3-10 6-17 6z"/>
+<!-- ai brain --> <path d="M328 243c-12-4-19-19-10-30-5-13 7-25 20-22 8-13 27-7 28 7 16 0 21 19 10 29 7 13-7 25-20 21-8 10-24 8-28-5z"/><path d="M346 203v52M330 213l12 9-7 10 12 9M363 211l-8 12 10 7-10 12"/>
+</g>
+<g fill="#1A1A18" font-family="Georgia,serif" font-size="17" text-anchor="middle">
+<text x="101" y="164">Frontend</text><text x="354" y="165">Backend / API</text><text x="600" y="164">Database</text><text x="831" y="164">Cloud Deploy</text><text x="346" y="282">AI Integration</text>
+</g>
+<g fill="#8A8278" font-family="Arial,sans-serif" font-size="12" text-anchor="middle"><text x="101" y="181">Next.js · TypeScript</text><text x="354" y="182">Flask · REST</text><text x="600" y="181">SQLite</text><text x="831" y="181">Vercel · Render · GCP</text><text x="346" y="300">Gemini API · ML</text></g>
+<g stroke="#8A8278" stroke-width="1" stroke-dasharray="2 6"><path d="M25 28H865M25 320H865M25 28V320M865 28V320"/></g>
+<g fill="#B5282D"><circle cx="218" cy="108" r="4"/><circle cx="470" cy="108" r="4"/><circle cx="725" cy="108" r="4"/><circle cx="600" cy="230" r="4"/></g>
+
+</svg>

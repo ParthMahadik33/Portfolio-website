@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="570" viewBox="0 0 880 570" fill="none">
+<defs></defs>
+
+<!-- construction marks -->
+<g stroke="#8A8278" stroke-width="1" opacity=".45" stroke-dasharray="3 7">
+<path d="M75 60V530M180 35V550M330 40V550M490 20V550M655 30V550M810 55V510M45 135H850M35 235H860M35 340H860M55 445H850"/>
+<path d="M70 80L830 485M90 480L810 80"/>
+</g>
+<g stroke="#B5282D" stroke-width="2" opacity=".75" stroke-dasharray="5 8">
+<path d="M100 150H250L310 205H495L560 155H745"/><path d="M155 445H275L340 390H560L640 430H790"/>
+</g>
+<g fill="#B5282D"><circle cx="100" cy="150" r="4"/><circle cx="250" cy="150" r="4"/><circle cx="310" cy="205" r="4"/><circle cx="495" cy="205" r="4"/><circle cx="560" cy="155" r="4"/><circle cx="745" cy="155" r="4"/><circle cx="155" cy="445" r="4"/><circle cx="340" cy="390" r="4"/><circle cx="560" cy="390" r="4"/><circle cx="790" cy="430" r="4"/></g>
+<!-- rear code screen -->
+<g stroke="#1A1A18" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M446 96Q448 86 461 84L735 62Q748 62 751 75L769 283Q770 296 756 299L468 324Q454 324 452 312Z" fill="#EEE4D4" fill-opacity=".4"/>
+<path d="M458 98L738 76L754 282L470 306Z" fill="#272725"/>
+<path d="M458 98L738 76L754 282L470 306Z" stroke="#8A8278" stroke-width="1"/>
+<path d="M468 113L732 93" stroke="#D8C7A9" stroke-width="1" opacity=".6"/>
+<circle cx="477" cy="104" r="3" fill="#B5282D" stroke="none"/><circle cx="489" cy="103" r="3" fill="#D8C7A9" stroke="none"/><circle cx="501" cy="102" r="3" fill="#8E9A84" stroke="none"/>
+</g>
+<g font-family="monospace" font-size="12" opacity=".95">
+<text x="485" y="137" fill="#E9D9C0">export default function Home() {</text>
+<text x="505" y="158" fill="#D7A293">return (</text><text x="524" y="180" fill="#E9D9C0">&lt;main&gt;</text>
+<text x="544" y="202" fill="#9EB7A1">&lt;Hero /&gt;</text><text x="544" y="224" fill="#9EB7A1">&lt;Projects /&gt;</text>
+<text x="524" y="246" fill="#E9D9C0">&lt;/main&gt;</text><text x="505" y="267" fill="#D7A293">);</text><text x="485" y="287" fill="#E9D9C0">}</text>
+</g>
+<!-- front browser / laptop screen -->
+<g stroke="#1A1A18" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+<path d="M131 191Q132 180 145 179L432 188Q443 189 444 201L451 360Q451 372 439 373L151 361Q140 360 139 348Z" fill="#F5EBDD"/>
+<path d="M145 201L431 208L437 344L151 334Z" fill="#E9DCC8"/>
+<path d="M145 201L431 208L437 344L151 334Z" stroke="#8A8278" stroke-width="1"/>
+<path d="M145 201L431 208L432 222L146 215Z" fill="#F9F3E7"/>
+<circle cx="154" cy="208" r="2.5" fill="#B5282D" stroke="none"/><circle cx="163" cy="209" r="2.5" fill="#D8C7A9" stroke="none"/><circle cx="172" cy="209" r="2.5" fill="#9BA18B" stroke="none"/>
+<!-- website landscape banner -->
+<path d="M160 230L417 236L419 281L162 275Z" fill="#D3C3A7"/>
+<path d="M160 270L209 248L243 263L280 241L329 268L372 244L417 269" stroke="#1A1A18" stroke-width="1.4"/>
+<path d="M160 270L209 248L243 263L280 241L329 268L372 244L417 269" fill="none"/>
+<path d="M162 275L197 261L221 272L252 257L282 273L318 260L354 276L384 263L419 281" stroke="#8A8278" stroke-width="1" opacity=".7"/>
+<!-- cards below banner -->
+<rect x="164" y="288" width="77" height="34" rx="1" fill="#F7F0E3" stroke="#8A8278" stroke-width="1"/><rect x="249" y="290" width="77" height="34" rx="1" fill="#F7F0E3" stroke="#8A8278" stroke-width="1"/><rect x="334" y="292" width="77" height="34" rx="1" fill="#F7F0E3" stroke="#8A8278" stroke-width="1"/>
+<path d="M171 297H230M171 304H220M256 299H315M256 306H306M341 301H400M341 308H393" stroke="#8A8278" stroke-width="1"/>
+<!-- laptop keyboard base -->
+<path d="M139 363L450 375L500 403Q504 407 492 410L205 416Q194 416 184 410L126 375Q123 371 139 363Z" fill="#DED0B7"/>
+<path d="M148 369L442 381L475 399L207 405Z" fill="#EDE2D0"/>
+<path d="M161 373L433 384M175 378L445 390M189 383L456 396" stroke="#8A8278" stroke-width=".9" opacity=".9"/>
+<path d="M180 376L194 402M207 377L221 403M234 378L248 403M261 379L275 402M288 380L302 402M315 381L329 401M342 382L356 400M369 383L383 400M396 384L410 399" stroke="#8A8278" stroke-width=".8" opacity=".7"/>
+<path d="M269 396L353 398L335 403L285 402Z" fill="#D1C2AA" stroke="#8A8278" stroke-width=".8"/>
+</g>
+<!-- connector nodal points -->
+<g stroke="#B5282D" stroke-width="1.6" fill="#F6EBDD">
+<circle cx="451" cy="375" r="5"/><circle cx="490" cy="410" r="5"/><circle cx="432" cy="208" r="5"/><circle cx="735" cy="76" r="5"/>
+</g>
+<g stroke="#1A1A18" stroke-width="1.3" fill="none" opacity=".72"><path d="M40 108H82M40 108V140M797 330H843M843 330V363M72 515H108"/><path d="M30 48h22m-11 -11v22M825 478h22m-11 -11v22"/></g>
+
+</svg>

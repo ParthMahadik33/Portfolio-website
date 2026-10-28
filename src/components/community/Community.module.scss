@@ -1,6 +1,8 @@
 /* =========================================================================
-   SECTION 04: COMMUNITY & LEADERSHIP — EDITORIAL ARCHIVAL STYLING
+   SECTION 04: COMMUNITY & LEADERSHIP — FINAL EDITORIAL SCRAPBOOK COLLAGE
    Golden reference design: reference/target-design-mockup.png
+   Open parchment canvas, fine annotations, authentic media, washi tape.
+   No cards, no boxes, no equal-grid dashboard panels.
    ========================================================================= */
 
 .communitySection {
@@ -9,26 +11,26 @@
   background-color: var(--color-bg);
   color: var(--color-text);
   overflow-x: clip;
-  padding: 5rem clamp(1.5rem, 4vw, 4.5rem) 6.5rem;
+  padding: 4.5rem clamp(1.5rem, 4vw, 5rem) 5.5rem;
   box-sizing: border-box;
-  scroll-margin-top: 1.5rem;
+  scroll-margin-top: 2rem;
 
   @media (max-width: 1200px) {
-    padding: 4.5rem clamp(1.25rem, 3vw, 2.5rem) 5.5rem;
+    padding: 3.75rem clamp(1.25rem, 3vw, 2.5rem) 4.5rem;
   }
 
   @media (max-width: 960px) {
-    padding: 3.5rem 1.5rem 4.5rem;
+    padding: 3.25rem 1.5rem 4rem;
   }
 
   @media (max-width: 600px) {
-    padding: 2.75rem 1.15rem 3.75rem;
+    padding: 2.75rem 1.15rem 3.5rem;
   }
 }
 
 .sectionAnchor {
   position: absolute;
-  top: -1.5rem;
+  top: -2rem;
   left: 0;
   width: 0;
   height: 0;
@@ -59,14 +61,14 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseCommunity'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseCommunity)'/%3E%3C/svg%3E");
 }
 
-/* Campus Engraving Line Art — Soft masked background */
-.campusEngravingLineart {
+/* Campus Engraving Line Art — Background architectural backdrop across upper region */
+.campusEngravingBackground {
   position: absolute;
   left: -2%;
-  top: 14%;
-  width: min(68vw, 1080px);
+  top: 9%;
+  width: min(72vw, 1140px);
   height: auto;
-  opacity: 0.20;
+  opacity: 0.18;
   pointer-events: none;
   user-select: none;
   z-index: 1;
@@ -78,9 +80,9 @@
   mask-composite: intersect;
 
   @media (max-width: 960px) {
-    top: 8%;
-    width: 95vw;
-    opacity: 0.13;
+    top: 6%;
+    width: 98vw;
+    opacity: 0.12;
   }
 }
 
@@ -91,23 +93,24 @@
   object-fit: contain;
 }
 
-/* Botanical Branch Illustration at Top Right */
-.botanicalTopRight {
+
+/* Botanical Branch Illustration at Bottom Right */
+.botanicalBottomRight {
   position: absolute;
-  top: 1.5rem;
-  right: -0.5rem;
-  width: clamp(140px, 15vw, 230px);
+  bottom: 2rem;
+  right: -1rem;
+  width: clamp(140px, 15vw, 240px);
   height: auto;
-  opacity: 0.35;
+  opacity: 0.42;
   pointer-events: none;
   user-select: none;
   z-index: 1;
 
   @media (max-width: 768px) {
-    width: 110px;
-    opacity: 0.2;
-    top: 1rem;
-    right: 0;
+    width: 120px;
+    opacity: 0.25;
+    bottom: 1.5rem;
+    right: -0.5rem;
   }
 }
 
@@ -118,42 +121,56 @@
   object-fit: contain;
 }
 
-/* Main Container */
+/* Faint ground contour line at bottom */
+.groundLineEngraving {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 24px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.15;
+  background: radial-gradient(ellipse at bottom, rgba(181, 40, 45, 0.25) 0%, transparent 70%);
+}
+
+/* Main Content Container */
 .communityContainer {
   position: relative;
   z-index: 2;
-  max-width: 1440px;
+  max-width: 1360px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: clamp(3rem, 4.5vw, 4.5rem);
+  gap: clamp(2rem, 3.2vw, 3.25rem);
 }
 
 /* =========================================================================
-   TOP EDITORIAL ROW: Left (Header + Sahakarya) & Right (Presentation Video)
+   1. EDITORIAL TOP AREA: Header (Left) & Compact GDG Video (Right)
    ========================================================================= */
 
-.communityTopRow {
+.editorialTopArea {
   display: grid;
-  grid-template-columns: minmax(380px, 1fr) minmax(460px, 1.25fr);
+  grid-template-columns: minmax(320px, 1.15fr) minmax(380px, 1fr);
   gap: clamp(2rem, 4vw, 4.5rem);
   align-items: start;
 
   @media (max-width: 1080px) {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2.5rem;
   }
 }
 
 /* -------------------------------------------------------------------------
-   HEADER LEFT COLUMN
+   HEADER COLUMN (Top-Left)
    ------------------------------------------------------------------------- */
 
-.headerLeftCol {
+.headerColumn {
   position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 520px;
 }
 
 .sectionHeaderRow {
@@ -197,32 +214,43 @@
 }
 
 /* Devanagari Accent: सहकार्य */
-.devanagariAccent {
+.devanagariAccentWrap {
   position: relative;
-  display: inline-block;
-  margin-bottom: 1.15rem;
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
   width: fit-content;
 }
 
-.sahakaryaImg {
-  display: block;
-  width: clamp(140px, 15vw, 190px);
-  height: auto;
+.devanagariText {
+  font-family: var(--font-devanagari);
+  font-size: clamp(1.85rem, 2.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--color-vermilion);
+  line-height: 1.15;
 }
 
-/* Editorial Headline: Exact 3 lines */
+.devanagariUnderlineSvg {
+  width: 150px;
+  height: 20px;
+  margin-top: -4px;
+  flex-shrink: 0;
+}
+
+/* Editorial Headline */
 .editorialHeadline {
   display: flex;
   flex-direction: column;
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 2.6vw, 3rem);
+  font-size: clamp(1.85rem, 2.6vw, 2.95rem);
   font-weight: 700;
-  line-height: 1.08;
+  line-height: 1.12;
   letter-spacing: -0.015em;
-  margin-bottom: 1.35rem;
+  margin-bottom: 1.25rem;
+  max-width: 500px;
 }
 
-.headlineLineCharcoal {
+.headlineCharcoalLine {
   color: var(--color-text);
   display: block;
   white-space: nowrap;
@@ -232,14 +260,13 @@
   }
 }
 
-.headlineLineTogether {
+.headlineVermilionLine {
   color: var(--color-vermilion);
-  display: block;
-  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
 }
 
-.headlineLineForward {
-  color: var(--color-vermilion);
+.headlineBreakLine {
   display: block;
   white-space: nowrap;
 
@@ -248,113 +275,82 @@
   }
 }
 
-/* Supporting Paragraph */
+/* Supporting Copy */
 .supportingCopy {
   font-family: var(--font-sans);
-  font-size: clamp(0.98rem, 1.12vw, 1.1rem);
-  line-height: 1.58;
-  color: #4D473F;
-  max-width: 530px;
-  margin-bottom: 1.5rem;
-}
-
-/* Annotation: Ideas grow stronger when shared */
-.headerAnnotation {
-  position: relative;
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 0.65rem;
-  margin-left: auto;
-  margin-right: clamp(2rem, 5vw, 4.5rem);
-  transform: rotate(-6deg);
-  width: fit-content;
-  user-select: none;
-
-  @media (max-width: 600px) {
-    margin-left: 1.5rem;
-    margin-right: 0;
-  }
-}
-
-.annotationNoteText {
-  display: flex;
-  flex-direction: column;
-  font-family: var(--font-handwriting);
-  font-size: clamp(1.05rem, 1.25vw, 1.25rem);
-  line-height: 1.15;
-  color: #171512;
-  font-weight: 600;
-}
-
-.annotationArrowSvg {
-  width: 48px;
-  height: 34px;
-  flex-shrink: 0;
-  margin-top: 0.35rem;
+  font-size: clamp(0.98rem, 1.15vw, 1.12rem);
+  line-height: 1.62;
+  color: #4A443C;
+  max-width: 540px;
 }
 
 /* -------------------------------------------------------------------------
-   PRESENTATION VIDEO FEATURE (TOP RIGHT)
+   VIDEO FEATURE COLUMN (Top-Right)
    ------------------------------------------------------------------------- */
 
-.videoFeatureCol {
+.videoFeatureColumn {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
-}
-
-/* Annotation Top-Right: From idea to presentation */
-.videoAnnotationTopRight {
-  position: absolute;
-  top: -2.85rem;
-  right: 1.25rem;
-  display: flex;
   align-items: flex-end;
-  gap: 0.65rem;
-  user-select: none;
-  z-index: 5;
-  transform: rotate(-2deg);
+  width: 100%;
+  margin-top: clamp(0.75rem, 1.8vw, 1.85rem);
 
-  @media (max-width: 768px) {
-    top: -2.25rem;
-    right: 0.5rem;
+  @media (max-width: 1080px) {
+    margin-top: 0;
+    align-items: flex-start;
   }
 }
 
-.videoArrowSvg {
-  width: 48px;
-  height: 34px;
-  flex-shrink: 0;
-}
-
-.videoAnnotationCopy {
+.videoCardOuterWrap {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  font-family: var(--font-handwriting);
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
-  line-height: 1.15;
-  color: #171512;
-  font-weight: 600;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(0.75rem, 1.5vw, 1.5rem);
+  width: 100%;
+
+  @media (max-width: 1080px) {
+    justify-content: flex-start;
+  }
 }
 
-/* Video Frame Card */
-.videoFrameCard {
+.videoPhotoFrame {
   position: relative;
   background-color: #ffffff;
-  padding: 11px 11px 14px;
+  padding: 10px 10px 13px;
   border-radius: 2px;
   border: 1px solid rgba(23, 21, 18, 0.08);
-  box-shadow: 0 18px 42px -12px rgba(23, 21, 18, 0.14),
+  box-shadow: 0 16px 36px -10px rgba(23, 21, 18, 0.15),
               0 3px 10px rgba(23, 21, 18, 0.04);
+  transform: rotate(0.8deg);
+  width: 100%;
+  max-width: 480px;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+  &:hover {
+    transform: rotate(0deg) scale(1.01);
+  }
+
+  @media (max-width: 600px) {
+    transform: rotate(0deg);
+  }
+}
+
+.videoTapeTopRight {
+  position: absolute;
+  top: -12px;
+  right: -14px;
+  z-index: 10;
 }
 
 .videoTapeTopLeft {
-  top: -14px;
-  left: -18px;
+  position: absolute;
+  top: -12px;
+  left: 18%;
+  z-index: 10;
 }
 
-/* 16:9 Ambient Video Viewport */
 .videoViewport {
   position: relative;
   width: 100%;
@@ -384,127 +380,166 @@
   z-index: 2;
 }
 
-/* Editorial Caption Bar */
-.videoCaptionContainer {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.95rem;
-  margin-top: 1.25rem;
-  padding-left: 0.25rem;
-}
-
-.captionAccentBar {
-  width: 3.5px;
-  flex-shrink: 0;
-  align-self: stretch;
-  min-height: 44px;
-  background-color: var(--color-vermilion);
-  border-radius: 2px;
-}
-
-.captionTextCol {
+/* Handwritten Note beside the video: Learning, building, sharing. */
+.videoAnnotationSide {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  flex-shrink: 0;
+  user-select: none;
+  transform: rotate(-3deg);
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 }
 
-.captionHeadline {
-  font-family: var(--font-display);
-  font-size: clamp(1.15rem, 1.38vw, 1.35rem);
-  font-weight: 700;
-  color: var(--color-text);
-  line-height: 1.28;
-  margin-bottom: 0.35rem;
+.learningNoteText {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-handwriting);
+  font-size: clamp(1.15rem, 1.35vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #171512;
 }
 
-.captionParagraph {
-  font-family: var(--font-sans);
-  font-size: clamp(0.88rem, 1.02vw, 0.95rem);
-  color: #554F47;
-  line-height: 1.54;
-  max-width: 680px;
+.learningArrowSvg {
+  width: 42px;
+  height: 35px;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+/* Short Caption Row under the video frame */
+.videoCaptionRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.95rem;
+  margin-right: clamp(1rem, 2vw, 3rem);
+  font-family: var(--font-condensed);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #554E46;
+  text-transform: uppercase;
+
+  @media (max-width: 1080px) {
+    margin-right: 0;
+  }
+}
+
+.captionBulletDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-vermilion);
+  flex-shrink: 0;
+}
+
+.captionText {
+  white-space: nowrap;
 }
 
 /* =========================================================================
-   BOTTOM EDITORIAL ROW: Left (GDG Photo & Card 02) & Right (Card 03 & 04)
+   2. EDITORIAL BOTTOM AREA: GDG Dominant Photo & Role (Left) | Leadership (Right)
    ========================================================================= */
 
-.communityBottomRow {
+.editorialBottomArea {
   display: grid;
-  grid-template-columns: minmax(660px, 1.85fr) minmax(360px, 1.15fr);
-  gap: clamp(2rem, 3.5vw, 3.5rem);
+  grid-template-columns: minmax(360px, 1.05fr) minmax(360px, 1fr);
+  gap: clamp(2rem, 4vw, 4.5rem);
   align-items: start;
 
-  @media (max-width: 1200px) {
-    grid-template-columns: minmax(540px, 1.65fr) minmax(320px, 1.1fr);
-    gap: 2.25rem;
-  }
-
-  @media (max-width: 1024px) {
+  @media (max-width: 1080px) {
     grid-template-columns: 1fr;
-    gap: 3.5rem;
+    gap: 3rem;
   }
 }
 
 /* -------------------------------------------------------------------------
-   GDG SECTION WRAPPER: Photo Print (Left) + Card 02 (Right)
+   GDG DOMINANT PHOTO & ROLE (Bottom-Left)
    ------------------------------------------------------------------------- */
 
-.gdgSectionWrapper {
-  display: grid;
-  grid-template-columns: minmax(300px, 1.1fr) minmax(310px, 1.08fr);
-  gap: clamp(1.5rem, 2.5vw, 2.5rem);
-  align-items: start;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-}
-
-/* Photo Column */
-.gdgPhotoColumn {
+.gdgDominantColumn {
   position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.gdgPhotoFrameWrap {
+.photoPrintContainer {
   position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(0.75rem, 1.5vw, 1.35rem);
+  margin-bottom: 1.5rem;
   width: 100%;
 }
 
-.gdgTapeTopLeft {
-  top: -12px;
-  left: -14px;
+.photoSideAnnotation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  flex-shrink: 0;
+  user-select: none;
+  transform: rotate(-4deg);
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 }
 
-.gdgTapeBottomRight {
-  bottom: -12px;
-  right: -14px;
+.peopleNoteText {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-handwriting);
+  font-size: clamp(1.15rem, 1.35vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #171512;
 }
 
-.gdgPhotoMount {
+.peopleAccentSvg {
+  width: 38px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.photoMountFrame {
   position: relative;
   background-color: #ffffff;
-  padding: 13px 13px 17px;
+  padding: 11px 11px 15px;
   border-radius: 2px;
   border: 1px solid rgba(23, 21, 18, 0.09);
-  box-shadow: 0 18px 38px -12px rgba(23, 21, 18, 0.16),
+  box-shadow: 0 18px 40px -10px rgba(23, 21, 18, 0.16),
               0 3px 10px rgba(23, 21, 18, 0.05);
-  transform: rotate(-2.2deg);
+  transform: rotate(-1.8deg);
+  width: 100%;
+  max-width: 480px;
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 
   &:hover {
-    transform: rotate(-1.5deg) scale(1.01);
+    transform: rotate(-1deg) scale(1.01);
   }
 
   @media (max-width: 600px) {
-    transform: rotate(-1deg);
+    transform: rotate(0deg);
   }
 }
 
-.gdgPhotoAspect {
+.photoTapeTopLeft {
+  position: absolute;
+  top: -14px;
+  left: -16px;
+  z-index: 10;
+}
+
+.photoImageAspect {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -513,359 +548,310 @@
   overflow: hidden;
 }
 
-.gdgPhotoImg {
+.teamPhotoImg {
   object-fit: cover;
   display: block;
 }
 
-/* Annotation Below Photo: Built by a community */
-.photoAnnotationRow {
+/* GDG Role Block Directly Beneath the Photo */
+.gdgRoleBlock {
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  margin-top: 1.4rem;
-  margin-left: 2rem;
-  user-select: none;
-
-  @media (max-width: 600px) {
-    margin-left: 1rem;
-  }
-}
-
-.builtArrowSvg {
-  width: 44px;
-  height: 24px;
-  flex-shrink: 0;
-}
-
-.builtText {
-  font-family: var(--font-handwriting);
-  font-size: clamp(1.1rem, 1.3vw, 1.35rem);
-  color: #171512;
-  font-weight: 600;
-  transform: rotate(-1.5deg);
-}
-
-/* Card 02 Column */
-.gdgMetaColumn {
-  position: relative;
-  display: flex;
-  flex-direction: column;
   width: 100%;
+  max-width: 480px;
 }
 
-/* Shared Card Index Row */
-.cardIndexRow {
+.roleIndexRow {
   position: relative;
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  margin-bottom: 1.15rem;
+  margin-bottom: 1rem;
   width: 100%;
 }
 
-.cardIndexNum {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
+.roleIndexText {
+  font-family: var(--font-condensed);
+  font-size: 0.88rem;
   font-weight: 700;
+  letter-spacing: 0.16em;
   color: var(--color-vermilion);
-  line-height: 1;
+  white-space: nowrap;
 }
 
-.cardHairlineRule {
+.roleHairlineRule {
   flex: 1;
   height: 1px;
   background-color: var(--color-vermilion);
   opacity: 0.65;
 }
 
-/* GDG Campus Lockup */
-.gdgLockupWrap {
-  margin-bottom: 0.85rem;
-  display: block;
+.gdgDetailsLayout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
 }
 
-.gdgLockupImg {
+.gdgIconAndText {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.15rem;
+  flex: 1;
+}
+
+.gdgSymbolWrap {
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+  width: 44px;
+  height: 34px;
+}
+
+.gdgSymbolImg {
   display: block;
-  width: clamp(210px, 22vw, 280px);
+  width: 100%;
   height: auto;
 }
 
-/* Shared Typography */
-.roleTitleVermilion {
-  font-family: var(--font-display);
-  font-size: clamp(1.45rem, 1.82vw, 1.95rem);
-  font-weight: 700;
-  color: var(--color-vermilion);
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  margin-bottom: 0.65rem;
-  white-space: nowrap;
-
-  @media (max-width: 600px) {
-    white-space: normal;
-  }
+.gdgTextCol {
+  display: flex;
+  flex-direction: column;
 }
 
-.roleTitleVermilionSmall {
+.gdgChapterName {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #171512;
+  margin-bottom: 0.25rem;
+}
+
+.roleTitleVermilion {
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 1.55vw, 1.55rem);
+  font-size: clamp(1.45rem, 1.9vw, 2.05rem);
   font-weight: 700;
   color: var(--color-vermilion);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  margin-bottom: 0.45rem;
-  white-space: nowrap;
-
-  @media (max-width: 600px) {
-    white-space: normal;
-  }
+  line-height: 1.18;
+  margin-bottom: 0.55rem;
 }
 
 .roleDescription {
   font-family: var(--font-sans);
-  font-size: clamp(0.9rem, 1.05vw, 0.98rem);
-  color: #554F47;
-  line-height: 1.55;
-  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.58;
+  color: #4D473F;
 }
 
-/* Skill / Activity Pills */
-.pillTagGroup {
+.buildNoteWrap {
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
-}
-
-.pillTagRow {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.pillTag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-sans);
-  font-size: 0.84rem;
-  font-weight: 500;
-  color: #171512;
-  background-color: rgba(244, 235, 221, 0.6);
-  border: 1px solid rgba(23, 21, 18, 0.22);
-  border-radius: 9999px;
-  padding: 0.32rem 0.95rem;
-  white-space: nowrap;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
-
-  &:hover {
-    border-color: rgba(23, 21, 18, 0.45);
-    background-color: rgba(244, 235, 221, 0.9);
-  }
-}
-
-/* -------------------------------------------------------------------------
-   LEADERSHIP STACK: Card 03 (CORE) + Card 04 (Gemini Ambassador)
-   ------------------------------------------------------------------------- */
-
-.leadershipStackWrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(2.5rem, 3.2vw, 3.25rem);
-  width: 100%;
-}
-
-/* CARD 03: CORE, TCOER */
-.leadershipCard03 {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.coreCardBody {
-  display: grid;
-  grid-template-columns: 88px 1fr;
-  gap: 1.25rem;
-  align-items: flex-start;
-  margin-bottom: 1.15rem;
-
-  @media (max-width: 600px) {
-    grid-template-columns: 72px 1fr;
-    gap: 1rem;
-  }
-}
-
-.coreLogoWrapper {
-  position: relative;
-  width: 88px;
-  height: 88px;
+  align-items: flex-end;
+  gap: 0.25rem;
   flex-shrink: 0;
-
-  @media (max-width: 600px) {
-    width: 72px;
-    height: 72px;
-  }
-}
-
-.coreLogoImg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.coreDetailsCol {
-  display: flex;
-  flex-direction: column;
-}
-
-.orgOverline {
-  font-family: var(--font-condensed);
-  font-size: 0.88rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: #171512;
-  text-transform: uppercase;
-  margin-bottom: 0.25rem;
-}
-
-.pillTagGroupCore {
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-  margin-left: 2rem;
-
-  @media (max-width: 600px) {
-    margin-left: 0;
-  }
-}
-
-/* CARD 04: Gemini Student Ambassador */
-.leadershipCard04 {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.geminiCardBody {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.15rem;
-  margin-bottom: 1.15rem;
-
-  @media (max-width: 600px) {
-    flex-direction: column;
-    gap: 0.85rem;
-  }
-}
-
-.googleAmbassadorLockup {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  flex-shrink: 0;
-}
-
-.geminiSparkImg {
-  display: block;
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
-}
-
-.ambassadorStackedText {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-}
-
-.ambassadorBrandGoogle {
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #171512;
-}
-
-.ambassadorBrandSub {
-  font-family: var(--font-sans);
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #2D2A26;
-}
-
-.geminiVerticalDivider {
-  width: 1px;
-  align-self: stretch;
-  min-height: 48px;
-  background-color: var(--color-vermilion);
-  opacity: 0.6;
-  flex-shrink: 0;
+  user-select: none;
+  transform: rotate(3deg);
+  margin-top: 0.5rem;
 
   @media (max-width: 600px) {
     display: none;
   }
 }
 
-.geminiDetailsCol {
+.buildNoteText {
   display: flex;
   flex-direction: column;
+  font-family: var(--font-handwriting);
+  font-size: clamp(1.15rem, 1.35vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #171512;
+  text-align: right;
 }
 
-.pillTagGroupGemini {
+.buildArrowSvg {
+  width: 44px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+/* -------------------------------------------------------------------------
+   LEADERSHIP COLUMN (Bottom-Right: 02 CORE & 03 Gemini)
+   ------------------------------------------------------------------------- */
+
+.leadershipColumn {
   position: relative;
-  z-index: 2;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  max-width: 85%;
+  flex-direction: column;
+  gap: clamp(1.85rem, 2.8vw, 2.6rem);
+  width: 100%;
+  margin-top: 0;
 
-  @media (max-width: 768px) {
-    max-width: 100%;
+  @media (max-width: 1080px) {
+    margin-top: 1rem;
+    gap: 2rem;
   }
 }
 
-/* Bottom Right Corner Botanical Branch */
-.cornerBotanicalAccent {
-  position: absolute;
-  right: -2.5rem;
-  bottom: -3rem;
-  width: clamp(130px, 13vw, 190px);
-  height: auto;
-  opacity: 0.85;
-  pointer-events: none;
-  user-select: none;
-  z-index: 1;
-
-  @media (max-width: 768px) {
-    right: -1rem;
-    bottom: -1rem;
-    width: 110px;
-    opacity: 0.4;
-  }
+.roleEntryBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.cornerBotanicalImg {
+.roleContentRow {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  width: 100%;
+}
+
+.coreLogoWrapper {
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+  width: 72px;
+  height: 72px;
+}
+
+.coreLogoImg {
   display: block;
   width: 100%;
   height: auto;
   object-fit: contain;
 }
 
-/* =========================================================================
-   WASHI TAPE COMPONENT
-   ========================================================================= */
-
-.communityTape {
-  position: absolute;
-  z-index: 10;
-  pointer-events: none;
-  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.08));
+.geminiSparkWrapper {
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+  width: 52px;
+  height: 52px;
 }
 
-.tapeSvg {
+.geminiSparkImg {
   display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.roleDetailsCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sideAnnotationText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  flex-shrink: 0;
+  user-select: none;
+  transform: rotate(-3deg);
+  margin-top: 0.5rem;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.studentsNoteText,
+.aiFutureNoteText {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-handwriting);
+  font-size: clamp(1.15rem, 1.35vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #171512;
+}
+
+.noteAccentSvg {
+  width: 38px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Delicate Hairline Divider between CORE & Gemini */
+.leadershipDivider {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+  margin: 0.35rem 0;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-vermilion);
+  opacity: 0.35;
+}
+
+.dividerDiamond {
+  font-size: 0.65rem;
+  color: var(--color-vermilion);
+  opacity: 0.75;
+  user-select: none;
+}
+
+/* -------------------------------------------------------------------------
+   WASHI TAPE COMPONENT STYLES
+   ------------------------------------------------------------------------- */
+
+.washiTapeWrap {
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 2px 4px rgba(23, 21, 18, 0.12))
+          drop-shadow(0 1px 2px rgba(23, 21, 18, 0.08));
+}
+
+.washiTapeSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* -------------------------------------------------------------------------
+   ACTIVITY & SKILL PILL TAGS
+   ------------------------------------------------------------------------- */
+
+.pillTagGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 1.15rem;
+  width: 100%;
+}
+
+.pillTagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.pillTag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.32rem 0.85rem;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #38332C;
+  background-color: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(23, 21, 18, 0.14);
+  box-shadow: 0 1px 3px rgba(23, 21, 18, 0.04);
+  transition: all 0.22s ease;
+  white-space: nowrap;
+  user-select: none;
+
+  &:hover {
+    border-color: var(--color-vermilion);
+    color: var(--color-vermilion);
+    background-color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(181, 40, 45, 0.1);
+  }
 }

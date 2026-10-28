@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./Community.module.scss";
 
@@ -15,12 +14,12 @@ export const CommunityHeader: React.FC<CommunityHeaderProps> = ({
   const easeCurve: [number, number, number, number] = [0.25, 1, 0.5, 1];
 
   return (
-    <div className={styles.headerLeftCol}>
-      {/* 1. Section Tag: 04 / COMMUNITY & LEADERSHIP */}
+    <div className={styles.headerColumn}>
+      {/* 1. Section Tag: 04 / COMMUNITY & LEADERSHIP with Vermilion Accent Rule */}
       <div className={styles.sectionHeaderRow}>
         <motion.div
           className={styles.sectionTag}
-          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -14 }}
+          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -12 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: shouldReduceMotion ? 0 : 0.6, ease: easeCurve }}
@@ -37,84 +36,99 @@ export const CommunityHeader: React.FC<CommunityHeaderProps> = ({
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{
-            duration: shouldReduceMotion ? 0 : 0.85,
-            delay: shouldReduceMotion ? 0 : 0.15,
+            duration: shouldReduceMotion ? 0 : 0.75,
+            delay: shouldReduceMotion ? 0 : 0.1,
             ease: easeCurve,
           }}
         />
       </div>
 
-      {/* 2. Devanagari Accent: सहकार्य */}
+      {/* 2. Devanagari Accent: सहकार्य (rendered as real HTML text with Noto Serif Devanagari) */}
       <motion.div
-        className={styles.devanagariAccent}
+        className={styles.devanagariAccentWrap}
         initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{
           duration: shouldReduceMotion ? 0 : 0.6,
-          delay: shouldReduceMotion ? 0 : 0.1,
+          delay: shouldReduceMotion ? 0 : 0.08,
           ease: easeCurve,
         }}
-        aria-label="सहकार्य (Sahakarya) — Cooperation & Collaboration"
       >
-        <Image
-          src="/assets/community/annotations/sahakarya.svg"
-          alt="सहकार्य (Sahakarya) — Collaboration & Community"
-          width={180}
-          height={50}
-          className={styles.sahakaryaImg}
-          priority={false}
-        />
-        {/* Screen reader only announcement */}
+        <span className={styles.devanagariText} lang="hi">
+          सहकार्य
+        </span>
+        <svg
+          viewBox="0 0 160 22"
+          className={styles.devanagariUnderlineSvg}
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M 4 14 Q 38 6 82 13 T 156 10"
+            stroke="#B5282D"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+          />
+          <path
+            d="M 16 18 Q 52 10 92 16"
+            stroke="#B5282D"
+            strokeWidth="1.1"
+            strokeLinecap="round"
+            opacity="0.5"
+          />
+        </svg>
         <span className={styles.srOnly}>
           सहकार्य (Sahakarya) — Cooperation and Collaboration
         </span>
       </motion.div>
 
-      {/* 3. Editorial Headline: Exact 3 lines as in target design mockup */}
+      {/* 3. Main Editorial Headline: 2 sentences / 3 lines */}
       <h2 className={styles.editorialHeadline}>
         <motion.span
-          className={styles.headlineLineCharcoal}
-          initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+          className={styles.headlineCharcoalLine}
+          initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{
-            duration: shouldReduceMotion ? 0 : 0.75,
-            delay: shouldReduceMotion ? 0 : 0.15,
+            duration: shouldReduceMotion ? 0 : 0.7,
+            delay: shouldReduceMotion ? 0 : 0.14,
             ease: easeCurve,
           }}
         >
           Technology brings us
         </motion.span>
         <motion.span
-          className={styles.headlineLineTogether}
-          initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+          className={styles.headlineCharcoalLine}
+          initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{
-            duration: shouldReduceMotion ? 0 : 0.75,
-            delay: shouldReduceMotion ? 0 : 0.22,
+            duration: shouldReduceMotion ? 0 : 0.7,
+            delay: shouldReduceMotion ? 0 : 0.2,
             ease: easeCurve,
           }}
         >
           together.
         </motion.span>
         <motion.span
-          className={styles.headlineLineForward}
-          initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+          className={styles.headlineVermilionLine}
+          initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{
-            duration: shouldReduceMotion ? 0 : 0.75,
-            delay: shouldReduceMotion ? 0 : 0.28,
+            duration: shouldReduceMotion ? 0 : 0.7,
+            delay: shouldReduceMotion ? 0 : 0.26,
             ease: easeCurve,
           }}
         >
-          Community moves us forward.
+          <span className={styles.headlineBreakLine}>Community moves</span>
+          <span className={styles.headlineBreakLine}>us forward.</span>
         </motion.span>
       </h2>
 
-      {/* 4. Supporting Copy */}
+      {/* 4. Supporting Editorial Copy */}
       <motion.p
         className={styles.supportingCopy}
         initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
@@ -128,46 +142,6 @@ export const CommunityHeader: React.FC<CommunityHeaderProps> = ({
       >
         Some of the best work happens when people learn together, share ideas, and build beyond their individual projects.
       </motion.p>
-
-      {/* 5. Handwritten Annotation: Ideas grow stronger when shared */}
-      <motion.div
-        className={styles.headerAnnotation}
-        initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{
-          duration: shouldReduceMotion ? 0 : 0.7,
-          delay: shouldReduceMotion ? 0 : 0.4,
-          ease: easeCurve,
-        }}
-        aria-hidden="true"
-      >
-        <div className={styles.annotationNoteText}>
-          <span>Ideas grow</span>
-          <span>stronger when</span>
-          <span>shared.</span>
-        </div>
-        <svg
-          viewBox="0 0 70 50"
-          className={styles.annotationArrowSvg}
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M 10 10 Q 25 35 55 38"
-            stroke="#171512"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-          />
-          <path
-            d="M 45 32 L 56 38 L 47 45"
-            stroke="#171512"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </motion.div>
     </div>
   );
 };

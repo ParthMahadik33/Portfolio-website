@@ -4,9 +4,9 @@ import React from "react";
 import Image from "next/image";
 import { useReducedMotion } from "framer-motion";
 import { CommunityHeader } from "./CommunityHeader";
-import { AgroRentPresentationFeature } from "./AgroRentPresentationFeature";
-import { CommunityGdgCard } from "./CommunityGdgCard";
-import { CommunityLeadershipCards } from "./CommunityLeadershipCards";
+import { CommunityVideoFeature } from "./CommunityVideoFeature";
+import { CommunityGdgFeature } from "./CommunityGdgFeature";
+import { CommunityLeadershipRoles } from "./CommunityLeadershipRoles";
 import { TornEdgeBottom } from "../about/AboutTornScraps";
 import styles from "./Community.module.scss";
 
@@ -25,43 +25,48 @@ export const CommunitySection: React.FC = () => {
       {/* Subtle organic paper background texture */}
       <div className={styles.communityBgPaper} aria-hidden="true" />
 
-      {/* Decorative Campus Engraving Line Art Background */}
-      <div className={styles.campusEngravingLineart} aria-hidden="true">
+      {/* Decorative Campus Engraving Line Art Background (Middle & Top) */}
+      <div className={styles.campusEngravingBackground} aria-hidden="true">
         <Image
           src="/assets/community/backgrounds/campus-engraving-lineart.png"
           alt=""
-          width={1300}
-          height={434}
+          width={1800}
+          height={600}
           className={styles.campusEngravingImg}
           priority={false}
         />
       </div>
 
-      {/* Decorative Botanical Branch at Top Right */}
-      <div className={styles.botanicalTopRight} aria-hidden="true">
+
+      {/* Decorative Botanical Branch at Bottom Right with Vermilion Blossoms */}
+      <div className={styles.botanicalBottomRight} aria-hidden="true">
         <Image
-          src="/assets/community/illustrations/botanical-branch-ink.png"
+          src="/assets/community/illustrations/botanical-branch-original-transparent.png"
           alt=""
-          width={220}
-          height={184}
+          width={240}
+          height={200}
           className={styles.botanicalImg}
           priority={false}
         />
       </div>
 
+      {/* Main Editorial Canvas */}
       <div className={styles.communityContainer}>
-        {/* Top Editorial Row: Left is Header + Sahakarya + Copy + Annotation; Right is Presentation Video */}
-        <div className={styles.communityTopRow}>
+        {/* Upper Region: Header & Sahakarya (Left) | Compact Taped Video (Right) */}
+        <div className={styles.editorialTopArea}>
           <CommunityHeader shouldReduceMotion={shouldReduceMotion} />
-          <AgroRentPresentationFeature shouldReduceMotion={shouldReduceMotion} />
+          <CommunityVideoFeature shouldReduceMotion={shouldReduceMotion} />
         </div>
 
-        {/* Bottom Editorial Row: Left is GDG Photo Print & Card 02; Right is Card 03 & Card 04 */}
-        <div className={styles.communityBottomRow}>
-          <CommunityGdgCard shouldReduceMotion={shouldReduceMotion} />
-          <CommunityLeadershipCards shouldReduceMotion={shouldReduceMotion} />
+        {/* Lower Region: Dominant Taped GDG Photo & Role (Left) | Open Leadership Roles (Right) */}
+        <div className={styles.editorialBottomArea}>
+          <CommunityGdgFeature shouldReduceMotion={shouldReduceMotion} />
+          <CommunityLeadershipRoles shouldReduceMotion={shouldReduceMotion} />
         </div>
       </div>
+
+      {/* Faint ground contour line at bottom */}
+      <div className={styles.groundLineEngraving} aria-hidden="true" />
 
       {/* Continuous Torn Paper Edge along bottom */}
       <TornEdgeBottom />
