@@ -11,12 +11,12 @@ interface WordItem {
 }
 
 const WORDS: WordItem[] = [
-  { text: "HELLO", font: "var(--font-display)", lang: "en", durationMs: 560 },
-  { text: "नमस्कार", font: "var(--font-devanagari)", lang: "mr", durationMs: 360 },
-  { text: "नमस्ते", font: "var(--font-devanagari)", lang: "hi", durationMs: 360 },
-  { text: "BONJOUR", font: "var(--font-display)", lang: "fr", durationMs: 360 },
-  { text: "HOLA", font: "var(--font-display)", lang: "es", durationMs: 360 },
-  { text: "こんにちは", font: "var(--font-japanese)", lang: "ja", durationMs: 400 },
+  { text: "HELLO", font: "var(--font-display)", lang: "en", durationMs: 500 },
+  { text: "नमस्कार", font: "var(--font-devanagari)", lang: "mr", durationMs: 300 },
+  { text: "नमस्ते", font: "var(--font-devanagari)", lang: "hi", durationMs: 300 },
+  { text: "BONJOUR", font: "var(--font-display)", lang: "fr", durationMs: 300 },
+  { text: "HOLA", font: "var(--font-display)", lang: "es", durationMs: 300 },
+  { text: "こんにちは", font: "var(--font-japanese)", lang: "ja", durationMs: 320 },
 ];
 
 export interface PortfolioIntroProps {
@@ -35,9 +35,9 @@ export const PortfolioIntro: React.FC<PortfolioIntroProps> = ({
 
   useEffect(() => {
     const timeouts = timeoutsRef.current;
-    // Schedule word transforms with smooth readable cadence
-    // Scene 01: HELLO (0.00s - 0.56s)
-    // Scene 02: Transforming languages (0.56s - 2.40s)
+    // Schedule word transforms
+    // Scene 01: HELLO (0.00s - 0.50s)
+    // Scene 02: Transforming languages (0.50s - 2.02s)
     let accumulatedTime = WORDS[0].durationMs;
 
     for (let i = 1; i < WORDS.length; i++) {
@@ -49,17 +49,17 @@ export const PortfolioIntro: React.FC<PortfolioIntroProps> = ({
       accumulatedTime += WORDS[i].durationMs;
     }
 
-    // Scene 03: The Meaning - निर्माण (2.40s - 3.25s)
+    // Scene 03: The Meaning - निर्माण (2.02s - 2.65s)
     const tMeaning = setTimeout(() => {
       setShowMeaning(true);
-    }, accumulatedTime); // 2400ms
+    }, accumulatedTime); // 2020ms
     timeouts.push(tMeaning);
 
-    // Scene 04 Trigger: Smooth crossfade into Hero landscape starts at 3.25s
+    // Scene 04 Trigger: Landscape reveal starts at 2.65s
     const tLandscape = setTimeout(() => {
       setIsFadingOut(true);
       onStartLandscape();
-    }, accumulatedTime + 850); // 3250ms
+    }, accumulatedTime + 630); // 2650ms
     timeouts.push(tLandscape);
 
     return () => {

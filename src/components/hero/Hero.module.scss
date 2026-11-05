@@ -601,57 +601,60 @@
 
 /* =========================================================================
    GPU-COMPOSITED HERO ENTRANCE ANIMATIONS (SCENE 04 - SCENE 06)
-   Synced with PortfolioIntro crossfade starting at 3.20s
+   Exact 3-Act Choreography starting at tLandscape = 2.65s:
+   - Scene 04 (2.65s - 3.50s): Mountain bottom-to-top clip reveal + Birds drift
+   - Scene 05 (3.15s - 3.80s): Portrait upward clip reveal + PARTH / MAHADIK
+   - Scene 06 (3.70s - 4.25s): Navbar, Roles, Sanskrit, Tagline, CTAs, Pillars
    ========================================================================= */
 
 .animateNavbar {
-  animation: heroNavbarEnter 0.55s cubic-bezier(0.25, 1, 0.5, 1) 3.68s backwards;
+  animation: heroNavbarEnter 0.35s cubic-bezier(0.25, 1, 0.5, 1) 3.7s backwards;
 }
 
 .animateArtwork {
-  animation: heroArtworkReveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) 3.2s backwards;
+  animation: heroArtworkReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) 2.65s backwards;
 }
 
 .animatePortrait {
-  animation: heroPortraitReveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) 3.35s backwards;
+  animation: heroPortraitReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) 3.15s backwards;
 }
 
 .animateBirds {
-  animation: heroBirdsDrift 0.7s cubic-bezier(0.22, 1, 0.36, 1) 3.45s backwards;
+  animation: heroBirdsDrift 0.6s cubic-bezier(0.22, 1, 0.36, 1) 2.9s backwards;
 }
 
 .animateRoleGroup {
-  animation: heroFadeUp12 0.52s cubic-bezier(0.25, 1, 0.5, 1) 3.68s backwards;
+  animation: heroFadeUp10 0.35s cubic-bezier(0.25, 1, 0.5, 1) 3.7s backwards;
 }
 
 .animateNameCharcoal {
-  animation: heroNameReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) 3.4s backwards;
+  animation: heroNameReveal16 0.45s cubic-bezier(0.16, 1, 0.3, 1) 3.15s backwards;
 }
 
 .animateNameVermilion {
-  animation: heroNameReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) 3.52s backwards;
+  animation: heroNameReveal18 0.45s cubic-bezier(0.16, 1, 0.3, 1) 3.3s backwards;
 }
 
 .animateDescription {
-  animation: heroFadeUp12 0.52s cubic-bezier(0.25, 1, 0.5, 1) 3.78s backwards;
+  animation: heroFadeUp10 0.35s cubic-bezier(0.25, 1, 0.5, 1) 3.8s backwards;
 }
 
 .animateActions {
-  animation: heroFadeUp14 0.55s cubic-bezier(0.25, 1, 0.5, 1) 3.88s backwards;
+  animation: heroFadeUp12 0.35s cubic-bezier(0.25, 1, 0.5, 1) 3.85s backwards;
 }
 
 .animateSanskrit {
-  animation: heroSanskritReveal 0.5s cubic-bezier(0.25, 1, 0.5, 1) 3.78s backwards;
+  animation: heroSanskritReveal 0.35s cubic-bezier(0.25, 1, 0.5, 1) 3.75s backwards;
 }
 
 .animatePillar {
-  animation: heroPillarEnter 0.4s cubic-bezier(0.25, 1, 0.5, 1) backwards;
+  animation: heroPillarEnter 0.25s cubic-bezier(0.25, 1, 0.5, 1) backwards;
 }
 
 @keyframes heroNavbarEnter {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
   to {
     opacity: 1;
@@ -661,30 +664,30 @@
 
 @keyframes heroArtworkReveal {
   from {
-    opacity: 0;
-    transform: translateY(24px) scale(0.985);
+    clip-path: inset(100% 0% 0% 0%);
   }
   to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+    clip-path: inset(0% 0% 0% 0%);
   }
 }
 
 @keyframes heroPortraitReveal {
   from {
+    clip-path: inset(14% 0% 0% 0%);
     opacity: 0;
-    transform: translateY(20px) scale(0.985);
+    transform: translateY(18px) scale(0.985);
   }
   to {
+    clip-path: inset(0% 0% 0% 0%);
     opacity: 1;
     transform: translateY(0) scale(1);
   }
 }
 
-@keyframes heroNameReveal {
+@keyframes heroNameReveal16 {
   from {
     opacity: 0;
-    transform: translateY(22px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -692,10 +695,10 @@
   }
 }
 
-@keyframes heroFadeUp14 {
+@keyframes heroNameReveal18 {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
@@ -714,10 +717,21 @@
   }
 }
 
+@keyframes heroFadeUp10 {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes heroBirdsDrift {
   from {
     opacity: 0;
-    transform: translate(10px, -6px);
+    transform: translate(8px, -5px);
   }
   to {
     opacity: 1;

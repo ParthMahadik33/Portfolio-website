@@ -65,7 +65,6 @@ export const Hero: React.FC = () => {
       alreadySeen = false;
     }
 
-    let startTimerId: NodeJS.Timeout | null = null;
     const shouldReduceMotion =
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -77,16 +76,14 @@ export const Hero: React.FC = () => {
         return;
       }
 
-      // Allow Frame 1 (SSR Hero & LCP artwork) to paint first before starting the opening overlay
-      startTimerId = setTimeout(() => {
-        setIntroState("playing");
-        setShowIntroOverlay(true);
+      // Play cinematic multilingual opening animation
+      setIntroState("playing");
+      setShowIntroOverlay(true);
 
-        // Complete opening at 4.5s after smooth Hero reveal
-        timerRef.current = setTimeout(() => {
-          handleSkip();
-        }, 4500);
-      }, 60);
+      // Complete opening at 4.25s after 3-act Hero reveal
+      timerRef.current = setTimeout(() => {
+        handleSkip();
+      }, 4250);
     });
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -98,9 +95,6 @@ export const Hero: React.FC = () => {
 
     return () => {
       window.cancelAnimationFrame(rafId);
-      if (startTimerId) {
-        clearTimeout(startTimerId);
-      }
       if (timerRef.current) {
         clearTimeout(timerRef.current);
       }
@@ -116,6 +110,7 @@ export const Hero: React.FC = () => {
     <section
       className={styles.heroSection}
       id="home"
+      key={introState === "playing" ? "hero-playing" : "hero-static"}
     >
       {/* SCENE 01-03: Multilingual Cinematic Typographic Intro Overlay (0.0s - 1.75s) */}
       {animateIntro && showIntroOverlay && (
