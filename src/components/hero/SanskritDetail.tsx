@@ -11,10 +11,10 @@ export const SanskritDetail: React.FC<SanskritDetailProps> = ({
   animateIntro = false,
 }) => {
   const pillars = [
-    { text: "IDEAS", delay: "2.7s" },
-    { text: "DISCIPLINE", delay: "2.76s" },
-    { text: "EXECUTION", delay: "2.82s" },
-    { text: "IMPACT", delay: "2.88s" },
+    { text: "IDEAS", delay: "3.88s" },
+    { text: "DISCIPLINE", delay: "3.95s" },
+    { text: "EXECUTION", delay: "4.02s" },
+    { text: "IMPACT", delay: "4.09s" },
   ];
 
   return (

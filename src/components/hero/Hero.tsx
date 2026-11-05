@@ -82,10 +82,10 @@ export const Hero: React.FC = () => {
         setIntroState("playing");
         setShowIntroOverlay(true);
 
-        // Complete opening at 3.0s
+        // Complete opening at 4.5s after smooth Hero reveal
         timerRef.current = setTimeout(() => {
           handleSkip();
-        }, 3050);
+        }, 4500);
       }, 60);
     });
 

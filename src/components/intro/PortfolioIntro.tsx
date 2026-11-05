@@ -11,12 +11,12 @@ interface WordItem {
 }
 
 const WORDS: WordItem[] = [
-  { text: "HELLO", font: "var(--font-display)", lang: "en", durationMs: 350 },
-  { text: "नमस्कार", font: "var(--font-devanagari)", lang: "mr", durationMs: 160 },
-  { text: "नमस्ते", font: "var(--font-devanagari)", lang: "hi", durationMs: 160 },
-  { text: "BONJOUR", font: "var(--font-display)", lang: "fr", durationMs: 160 },
-  { text: "HOLA", font: "var(--font-display)", lang: "es", durationMs: 160 },
-  { text: "こんにちは", font: "var(--font-japanese)", lang: "ja", durationMs: 160 },
+  { text: "HELLO", font: "var(--font-display)", lang: "en", durationMs: 560 },
+  { text: "नमस्कार", font: "var(--font-devanagari)", lang: "mr", durationMs: 360 },
+  { text: "नमस्ते", font: "var(--font-devanagari)", lang: "hi", durationMs: 360 },
+  { text: "BONJOUR", font: "var(--font-display)", lang: "fr", durationMs: 360 },
+  { text: "HOLA", font: "var(--font-display)", lang: "es", durationMs: 360 },
+  { text: "こんにちは", font: "var(--font-japanese)", lang: "ja", durationMs: 400 },
 ];
 
 export interface PortfolioIntroProps {
@@ -35,9 +35,9 @@ export const PortfolioIntro: React.FC<PortfolioIntroProps> = ({
 
   useEffect(() => {
     const timeouts = timeoutsRef.current;
-    // Schedule word transforms
-    // Scene 01: HELLO (0.00s - 0.35s)
-    // Scene 02: Transforming languages (0.35s - 1.15s)
+    // Schedule word transforms with smooth readable cadence
+    // Scene 01: HELLO (0.00s - 0.56s)
+    // Scene 02: Transforming languages (0.56s - 2.40s)
     let accumulatedTime = WORDS[0].durationMs;
 
     for (let i = 1; i < WORDS.length; i++) {
@@ -49,17 +49,17 @@ export const PortfolioIntro: React.FC<PortfolioIntroProps> = ({
       accumulatedTime += WORDS[i].durationMs;
     }
 
-    // Scene 03: The Meaning (1.15s - 1.50s)
+    // Scene 03: The Meaning - निर्माण (2.40s - 3.25s)
     const tMeaning = setTimeout(() => {
       setShowMeaning(true);
-    }, accumulatedTime); // ~1150ms
+    }, accumulatedTime); // 2400ms
     timeouts.push(tMeaning);
 
-    // Scene 04 Trigger: Landscape reveal starts at 1.50s
+    // Scene 04 Trigger: Smooth crossfade into Hero landscape starts at 3.25s
     const tLandscape = setTimeout(() => {
       setIsFadingOut(true);
       onStartLandscape();
-    }, accumulatedTime + 350); // ~1500ms
+    }, accumulatedTime + 850); // 3250ms
     timeouts.push(tLandscape);
 
     return () => {
@@ -72,13 +72,16 @@ export const PortfolioIntro: React.FC<PortfolioIntroProps> = ({
       className={`${styles.introOverlay} ${isFadingOut ? styles.introOverlayFading : ""}`}
     >
       <div className={styles.centerContainer} aria-hidden="true">
-        {/* SCENE 01 & 02: Single Word Transform */}
+        {/* SCENE 01 & 02: Single Word Transform with enter, hold, and exit */}
         <div className={styles.wordBox}>
           {!showMeaning && currentIndex < WORDS.length && (
             <div
               key={WORDS[currentIndex].text}
-              className={`${styles.wordText} ${currentIndex > 0 ? styles.wordTextAnimated : ""}`}
-              style={{ fontFamily: WORDS[currentIndex].font }}
+              className={`${styles.wordText} ${styles.wordTextAnimated}`}
+              style={{
+                fontFamily: WORDS[currentIndex].font,
+                animationDuration: `${WORDS[currentIndex].durationMs}ms`,
+              }}
               lang={WORDS[currentIndex].lang}
             >
               {WORDS[currentIndex].text}

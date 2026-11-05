@@ -12,7 +12,7 @@
   pointer-events: auto;
   overflow: hidden;
   opacity: 0.995;
-  transition: opacity 0.28s ease-out;
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .introOverlayFading {
@@ -48,10 +48,13 @@
   letter-spacing: -0.02em;
   user-select: none;
   white-space: nowrap;
+  will-change: transform, opacity, filter;
 }
 
 .wordTextAnimated {
-  animation: introWordEnter 0.14s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-name: introWordLifecycle;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
 }
 
 .meaningContainer {
@@ -60,14 +63,14 @@
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  animation: introMeaningEnter 0.24s cubic-bezier(0.25, 1, 0.5, 1) both;
+  animation: introMeaningEnter 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .meaningContainerFading {
   opacity: 0;
-  transform: translateY(-24px);
-  transition: opacity 0.26s cubic-bezier(0.25, 1, 0.5, 1),
-    transform 0.26s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translateY(-20px) scale(0.985);
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .devanagariTitle {
@@ -87,7 +90,7 @@
   background-color: var(--color-vermilion);
   border-radius: 2px;
   transform-origin: left center;
-  animation: introLineDraw 0.26s cubic-bezier(0.22, 1, 0.36, 1) 0.08s both;
+  animation: introLineDraw 0.36s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
 }
 
 .translationText {
@@ -99,28 +102,42 @@
   margin-top: 0.25rem;
   user-select: none;
   text-align: center;
-  animation: introTranslationEnter 0.22s ease-out 0.14s both;
+  animation: introTranslationEnter 0.3s ease-out 0.18s both;
 }
 
-@keyframes introWordEnter {
-  from {
+@keyframes introWordLifecycle {
+  0% {
     opacity: 0;
-    transform: translateY(18px) scale(0.98);
+    transform: translateY(16px) scale(0.98);
+    filter: blur(3px);
   }
-  to {
+  26% {
     opacity: 1;
     transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+  76% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-14px) scale(0.99);
+    filter: blur(2px);
   }
 }
 
 @keyframes introMeaningEnter {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(16px) scale(0.985);
+    filter: blur(3px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
   }
 }
 
