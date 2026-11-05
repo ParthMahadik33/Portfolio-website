@@ -1,0 +1,148 @@
+.introOverlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg);
+  pointer-events: auto;
+  overflow: hidden;
+}
+
+.centerContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 200px;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 1.5rem;
+}
+
+.wordBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(4.5rem, 9vw, 7.5rem);
+  line-height: 1;
+}
+
+.wordText {
+  color: var(--color-text);
+  font-size: clamp(3.2rem, 7.2vw, 6.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.meaningContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.devanagariTitle {
+  font-family: var(--font-devanagari);
+  font-size: clamp(3.6rem, 8vw, 7.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+.vermilionLine {
+  width: clamp(140px, 24vw, 260px);
+  height: 2.5px;
+  background-color: var(--color-vermilion);
+  border-radius: 2px;
+  transform-origin: left center;
+}
+
+.translationText {
+  font-family: var(--font-condensed);
+  font-size: clamp(0.85rem, 1.25vw, 1.08rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-text);
+  margin-top: 0.25rem;
+  user-select: none;
+  text-align: center;
+}
+
+.skipButton {
+  position: absolute;
+  bottom: 26px;
+  right: 38px;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(244, 235, 221, 0.92);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(23, 21, 18, 0.22);
+  border-radius: 4px;
+  font-family: var(--font-condensed);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-text);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(23, 21, 18, 0.08);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background: #F4EBDD;
+    border-color: var(--color-vermilion);
+    color: var(--color-vermilion);
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-vermilion);
+    outline-offset: 2px;
+  }
+}
+
+.skipKeyBadge {
+  display: inline-block;
+  padding: 1px 5px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  border: 1px solid rgba(23, 21, 18, 0.2);
+  border-radius: 3px;
+  background: rgba(23, 21, 18, 0.04);
+  color: var(--color-vermilion);
+}
+
+@media (max-width: 768px) {
+  .skipButton {
+    bottom: 14px;
+    right: 16px;
+    padding: 5px 10px;
+    font-size: 0.72rem;
+  }
+
+  .devanagariTitle {
+    font-size: clamp(2.8rem, 13vw, 4.4rem);
+  }
+
+  .translationText {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+  }
+}

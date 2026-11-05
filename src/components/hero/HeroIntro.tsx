@@ -1,36 +1,115 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import styles from "./Hero.module.scss";
 
-export const HeroIntro: React.FC = () => {
+export interface HeroIntroProps {
+  animateIntro?: boolean;
+  isComplete?: boolean;
+}
+
+export const HeroIntro: React.FC<HeroIntroProps> = ({
+  animateIntro = false,
+  isComplete = false,
+}) => {
+  const textEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
+  const gentleEase: [number, number, number, number] = [0.25, 1, 0.5, 1];
+
   return (
     <div className={styles.introContainer}>
-      {/* Role labels */}
-      <div className={styles.roleGroup}>
+      {/* SCENE 06 (2.55s - 2.85s): Role labels fade in */}
+      <motion.div
+        className={styles.roleGroup}
+        initial={animateIntro ? { opacity: 0, y: 10 } : { opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: animateIntro ? 0.35 : 0,
+          delay: animateIntro ? 2.55 : 0,
+          ease: gentleEase,
+        }}
+      >
         <div className={styles.rolePrimary}>SOFTWARE DEVELOPER</div>
         <div className={styles.roleSecondary}>COMPUTER ENGINEERING STUDENT</div>
-      </div>
+      </motion.div>
 
-      {/* Main oversized headline */}
+      {/* SCENE 05 (2.00s - 2.55s): Oversized Bodoni headline with overflow masks */}
       <h1 className={styles.headline}>
-        <span className={styles.nameRow}>
-          <span className={styles.nameCharcoal}>PARTH</span>
+        <span
+          className={styles.nameRow}
+          style={{ overflow: isComplete ? "visible" : "hidden" }}
+        >
+          <motion.span
+            className={styles.nameCharcoal}
+            initial={animateIntro ? { y: 16, opacity: 0 } : { y: 0, opacity: 1 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: animateIntro ? 0.45 : 0,
+              delay: animateIntro ? 2.0 : 0,
+              ease: textEase,
+            }}
+            style={{
+              transform: isComplete ? "none" : undefined,
+            }}
+          >
+            PARTH
+          </motion.span>
         </span>
-        <span className={styles.nameRow}>
-          <span className={styles.nameVermilion}>MAHADIK</span>
+        <span
+          className={styles.nameRow}
+          style={{ overflow: isComplete ? "visible" : "hidden" }}
+        >
+          <motion.span
+            className={styles.nameVermilion}
+            initial={animateIntro ? { y: 18, opacity: 0 } : { y: 0, opacity: 1 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: animateIntro ? 0.45 : 0,
+              delay: animateIntro ? 2.15 : 0,
+              ease: textEase,
+            }}
+            style={{
+              transform: isComplete ? "none" : undefined,
+            }}
+          >
+            MAHADIK
+          </motion.span>
         </span>
       </h1>
 
-      {/* Description */}
-      <p className={styles.description}>
+      {/* SCENE 06 (2.65s - 2.95s): Description / Tagline */}
+      <motion.p
+        className={styles.description}
+        initial={animateIntro ? { opacity: 0, y: 10 } : { opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: animateIntro ? 0.35 : 0,
+          delay: animateIntro ? 2.65 : 0,
+          ease: gentleEase,
+        }}
+        style={{
+          transform: isComplete ? "none" : undefined,
+        }}
+      >
         I build software that solves
         <br />
         real problems.”
-      </p>
+      </motion.p>
 
-      {/* Action Buttons */}
-      <div className={styles.actionButtons}>
+      {/* SCENE 06 (2.70s - 3.00s): Action Buttons */}
+      <motion.div
+        className={styles.actionButtons}
+        initial={animateIntro ? { opacity: 0, y: 12 } : { opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: animateIntro ? 0.35 : 0,
+          delay: animateIntro ? 2.7 : 0,
+          ease: gentleEase,
+        }}
+        style={{
+          transform: isComplete ? "none" : undefined,
+        }}
+      >
         <a href="#journey" className={styles.btnPrimary}>
           <span>EXPLORE MY JOURNEY</span>
           <svg
@@ -58,7 +137,7 @@ export const HeroIntro: React.FC = () => {
           </span>
           <span>VIEW PROJECTS</span>
         </a>
-      </div>
+      </motion.div>
     </div>
   );
 };

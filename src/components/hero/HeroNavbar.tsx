@@ -1,17 +1,34 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import styles from "./Hero.module.scss";
 
-interface HeroNavbarProps {
-  animated?: boolean;
+export interface HeroNavbarProps {
+  animateIntro?: boolean;
 }
 
-export const HeroNavbar: React.FC<HeroNavbarProps> = () => {
+export const HeroNavbar: React.FC<HeroNavbarProps> = ({
+  animateIntro = false,
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const gentleEase: [number, number, number, number] = [0.25, 1, 0.5, 1];
 
   return (
-    <header className={styles.navbar}>
+    <motion.header
+      className={styles.navbar}
+      initial={
+        animateIntro
+          ? { opacity: 0, y: -8 }
+          : { opacity: 1, y: 0 }
+      }
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: animateIntro ? 0.35 : 0,
+        delay: animateIntro ? 2.55 : 0,
+        ease: gentleEase,
+      }}
+    >
       <a href="#home" className={styles.brand} aria-label="Parth Mahadik Home">
         <span className={styles.brandFirst}>PARTH</span>
         <span className={styles.brandLast}>MAHADIK</span>
@@ -96,6 +113,6 @@ export const HeroNavbar: React.FC<HeroNavbarProps> = () => {
           </ul>
         </div>
       )}
-    </header>
+    </motion.header>
   );
 };
