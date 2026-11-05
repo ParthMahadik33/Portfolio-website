@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { AboutTape } from "./AboutTape";
+import { MaskingTape } from "@/components/common/MaskingTape";
 import { AboutStamp } from "./AboutStamp";
 import { AboutBotanicals } from "./AboutBotanicals";
 import { AboutHandwriting } from "./AboutHandwriting";
@@ -74,14 +74,14 @@ export const AboutCollage: React.FC = () => {
               alt="Parth Mahadik speaking at technical event"
               width={640}
               height={544}
+              sizes="(max-width: 768px) 85vw, (max-width: 1200px) 40vw, 440px"
               className={styles.mainPhotoImg}
-              priority={false}
             />
           </div>
         </div>
 
         {/* Small translucent masking tape strip attached to top-right corner */}
-        <AboutTape
+        <MaskingTape
           className={styles.mainPhotoTapeTopRight}
           rotation={22}
           width={62}
@@ -99,10 +99,11 @@ export const AboutCollage: React.FC = () => {
               alt="Parth Mahadik at heritage fort bastion"
               width={225}
               height={263}
+              sizes="(max-width: 768px) 150px, 190px"
               className={styles.polaroidImg}
             />
           </div>
-          <AboutTape
+          <MaskingTape
             className={styles.polaroidTape1}
             rotation={-12}
             width={48}
@@ -118,10 +119,11 @@ export const AboutCollage: React.FC = () => {
               alt="Parth Mahadik on heritage stone stairs"
               width={225}
               height={263}
+              sizes="(max-width: 768px) 150px, 190px"
               className={styles.polaroidImg}
             />
           </div>
-          <AboutTape
+          <MaskingTape
             className={styles.polaroidTape2}
             rotation={14}
             width={48}
@@ -137,10 +139,11 @@ export const AboutCollage: React.FC = () => {
               alt="Parth Mahadik exploring trails with bicycle"
               width={210}
               height={247}
+              sizes="(max-width: 768px) 150px, 190px"
               className={styles.polaroidImg}
             />
           </div>
-          <AboutTape
+          <MaskingTape
             className={styles.polaroidTape3}
             rotation={-8}
             width={44}

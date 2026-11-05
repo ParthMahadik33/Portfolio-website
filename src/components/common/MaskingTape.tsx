@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Recognition.module.scss";
+import styles from "./MaskingTape.module.scss";
 
-interface RecognitionTapeProps {
+export interface MaskingTapeProps {
   className?: string;
   rotation?: number;
   width?: string | number;
@@ -9,11 +9,11 @@ interface RecognitionTapeProps {
   style?: React.CSSProperties;
 }
 
-export const RecognitionTape: React.FC<RecognitionTapeProps> = ({
+export const MaskingTape: React.FC<MaskingTapeProps> = ({
   className = "",
   rotation = 0,
-  width = "55px",
-  height = "18px",
+  width = "65px",
+  height = "20px",
   style = {},
 }) => {
   return (
@@ -32,3 +32,4 @@ export const RecognitionTape: React.FC<RecognitionTapeProps> = ({
     </div>
   );
 };
+

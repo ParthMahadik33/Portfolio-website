@@ -3,7 +3,7 @@
 import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
-import { ProjectTape } from "./ProjectTape";
+import { MaskingTape } from "@/components/common/MaskingTape";
 import styles from "./SelectedWork.module.scss";
 
 export const AgroRentProject: React.FC = () => {
@@ -84,7 +84,7 @@ export const AgroRentProject: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
-            aria-label="Explore AgroRent live application (opens in new tab)"
+            aria-label="Explore Project — AgroRent live application (opens in new tab)"
           >
             <span>EXPLORE PROJECT</span>
             <span className={styles.linkArrow} aria-hidden="true">→</span>
@@ -94,7 +94,7 @@ export const AgroRentProject: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
-            aria-label="View AgroRent source code on GitHub (opens in new tab)"
+            aria-label="View Source — AgroRent on GitHub (opens in new tab)"
           >
             <span>VIEW SOURCE</span>
             <span className={styles.linkArrow} aria-hidden="true">→</span>
@@ -116,10 +116,10 @@ export const AgroRentProject: React.FC = () => {
           <Image
             src="/assets/projects/agricultural-engraving-panorama.png"
             alt=""
-            width={2400}
-            height={820}
+            width={1400}
+            height={528}
+            sizes="(max-width: 768px) 240px, 750px"
             className={styles.agriculturalPanoramaImg}
-            priority={false}
           />
         </div>
 
@@ -128,8 +128,9 @@ export const AgroRentProject: React.FC = () => {
           <Image
             src="/assets/projects/botanical-sprigs.jpg"
             alt=""
-            width={600}
-            height={600}
+            width={480}
+            height={480}
+            sizes="128px"
             className={styles.botanicalSprigImg}
           />
         </div>
@@ -137,8 +138,9 @@ export const AgroRentProject: React.FC = () => {
           <Image
             src="/assets/projects/botanical-sprigs.jpg"
             alt=""
-            width={600}
-            height={600}
+            width={480}
+            height={480}
+            sizes="128px"
             className={styles.botanicalSprigImg}
           />
         </div>
@@ -206,6 +208,7 @@ export const AgroRentProject: React.FC = () => {
                 alt="AI machinery inspection closeup of tractor wheel and engine"
                 width={320}
                 height={220}
+                sizes="128px"
                 className={styles.conditionPhotoImg}
               />
             </div>
@@ -236,7 +239,7 @@ export const AgroRentProject: React.FC = () => {
             </ul>
           </div>
 
-          <ProjectTape rotation={-5} width={44} height={15} className={styles.conditionTape} />
+          <MaskingTape rotation={-5} width={44} height={15} className={styles.conditionTape} />
         </motion.div>
 
         {/* CENTER ARTIFACT: Main AgroRent Desktop Window */}
@@ -261,11 +264,11 @@ export const AgroRentProject: React.FC = () => {
               alt="AgroRent farm machinery rental homepage interface showing tractors and harvesting equipment"
               width={1040}
               height={585}
+              sizes="(max-width: 768px) 220px, (max-width: 1200px) 50vw, 640px"
               className={styles.desktopScreenshotImg}
-              priority={false}
             />
           </div>
-          <ProjectTape
+          <MaskingTape
             rotation={16}
             width={60}
             height={20}
@@ -359,7 +362,7 @@ export const AgroRentProject: React.FC = () => {
               {/* Message 2: Outgoing from AgroRent AI Bot */}
               <div className={styles.waMessageOutgoing}>
                 <p className={styles.waMsgText}>
-                  Yes! We have a John Deere 5050D available for rent, ₹1,200 per day. Would you like to book it?
+                  Yes! We have a John Deere 5050D available for rent, <span style={{ fontFamily: "system-ui, sans-serif" }}>₹</span>1,200 per day. Would you like to book it?
                 </p>
                 <span className={styles.waMsgTime}>10:25 AM <span className={styles.waChecks}>✓✓</span></span>
               </div>

@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { RecognitionTape } from "./RecognitionTape";
+import { MaskingTape } from "@/components/common/MaskingTape";
 import { IdeasStamp } from "./IdeasStamp";
 import styles from "./Recognition.module.scss";
 
@@ -34,7 +34,7 @@ export const MainHackathonCard: React.FC<MainHackathonCardProps> = ({
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: shouldReduceMotion ? 0 : 0.75, ease: easeCurve }}
           >
-            ₹1,00,000
+            <span style={{ fontFamily: "system-ui, sans-serif" }}>₹</span>1,00,000
           </motion.h3>
 
           {/* Small Sketched Winner Trophy */}
@@ -53,8 +53,9 @@ export const MainHackathonCard: React.FC<MainHackathonCardProps> = ({
             <Image
               src="/assets/recognition/ornate-trophy.png"
               alt=""
-              width={677}
-              height={908}
+              width={256}
+              height={343}
+              sizes="80px"
               className={styles.prizeTrophyImg}
             />
           </motion.div>
@@ -109,13 +110,13 @@ export const MainHackathonCard: React.FC<MainHackathonCardProps> = ({
           }
         >
           {/* Masking tape on top-left and bottom-right corners */}
-          <RecognitionTape
+          <MaskingTape
             rotation={-36}
             width="62px"
             height="20px"
             className={styles.tapeTopLeft}
           />
-          <RecognitionTape
+          <MaskingTape
             rotation={38}
             width="65px"
             height="21px"
@@ -128,8 +129,8 @@ export const MainHackathonCard: React.FC<MainHackathonCardProps> = ({
               alt="Parth Mahadik holding the ₹1,00,000 Hack-Tech Innovation Hackathon 2025 winner cheque for Team Synapse Trinity at Science and Technology Park"
               width={668}
               height={376}
+              sizes="(max-width: 768px) 92vw, (max-width: 1200px) 52vw, 668px"
               className={styles.chequePhotoImg}
-              priority={false}
             />
           </div>
         </motion.div>
@@ -171,10 +172,10 @@ export const MainHackathonCard: React.FC<MainHackathonCardProps> = ({
           <Image
             src="/assets/recognition/mountain-landscape.png"
             alt=""
-            width={1256}
-            height={649}
+            width={1100}
+            height={568}
+            sizes="(max-width: 768px) 90vw, 560px"
             className={styles.journeyLandscapeImg}
-            priority={false}
           />
         </div>
 
@@ -209,7 +210,7 @@ export const MainHackathonCard: React.FC<MainHackathonCardProps> = ({
           <a
             href="#journey"
             className={styles.journeyActionLink}
-            aria-label="View the longer story and journey (jumps to journey section)"
+            aria-label="Journey — View the longer story (jumps to journey section)"
           >
             <span>/ JOURNEY</span>
             <span className={styles.journeyLinkArrow} aria-hidden="true">→</span>

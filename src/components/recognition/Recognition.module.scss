@@ -13,6 +13,8 @@
   overflow-y: visible;
   isolation: isolate;
   border-top: 1px solid rgba(23, 21, 18, 0.08);
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1100px;
 }
 
 .sectionAnchor {
@@ -23,15 +25,6 @@
   height: 1px;
   opacity: 0;
   pointer-events: none;
-}
-
-.recognitionBgPaper {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.04;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 .recognitionContainer {
@@ -819,7 +812,7 @@
 .companyDates {
   font-family: var(--font-sans);
   font-size: 0.85rem;
-  color: var(--color-muted-grey);
+  color: #5C5349;
   font-weight: 500;
 }
 
@@ -996,53 +989,3 @@
   margin-top: 2rem;
 }
 
-/* =========================================================================
-   REALISTIC MASKING TAPE STYLING
-   ========================================================================= */
-
-.maskingTape {
-  position: relative;
-  display: inline-block;
-  background: linear-gradient(
-    135deg,
-    rgba(246, 240, 226, 0.88) 0%,
-    rgba(235, 224, 202, 0.78) 45%,
-    rgba(224, 210, 184, 0.84) 100%
-  );
-  box-shadow: 0 1.5px 3px rgba(23, 21, 18, 0.1),
-              inset 0 1px 0 rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(1px);
-  clip-path: polygon(
-    0% 12%, 4% 0%, 9% 10%, 15% 2%, 22% 11%, 28% 0%, 35% 9%,
-    100% 3%,
-    96% 88%, 91% 100%, 85% 90%, 78% 98%, 72% 89%,
-    0% 97%
-  );
-  pointer-events: none;
-}
-
-.tapeTexture {
-  position: absolute;
-  inset: 0;
-  opacity: 0.15;
-  background: repeating-linear-gradient(
-    90deg,
-    transparent 0px,
-    transparent 2px,
-    rgba(23, 21, 18, 0.22) 2px,
-    rgba(23, 21, 18, 0.22) 3px
-  );
-}
-
-.tapeHighlight {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 35%;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.35),
-    transparent
-  );
-}

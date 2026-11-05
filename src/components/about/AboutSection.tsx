@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { AboutEditorialContent } from "./AboutEditorialContent";
 import { AboutCollage } from "./AboutCollage";

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { RecognitionTape } from "./RecognitionTape";
+import { MaskingTape } from "@/components/common/MaskingTape";
 import styles from "./Recognition.module.scss";
 
 interface RecognitionHeaderProps {
@@ -107,10 +107,10 @@ export const RecognitionHeader: React.FC<RecognitionHeaderProps> = ({
             delay: shouldReduceMotion ? 0 : 0.35,
             ease: easeCurve,
           }}
-          aria-label="Sanskrit reflection: Abhyāsāt siddhiḥ - Progress through practice"
+          aria-label="Sanskrit reflection: Abhyasat siddhih - Progress through practice"
         >
           {/* Top masking tape */}
-          <RecognitionTape
+          <MaskingTape
             rotation={-4}
             width="50px"
             height="16px"

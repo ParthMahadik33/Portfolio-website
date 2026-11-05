@@ -17,13 +17,39 @@ export const CommunityVideoFeature: React.FC<CommunityVideoFeatureProps> = ({
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
 
   const easeCurve: [number, number, number, number] = [0.25, 1, 0.5, 1];
 
   useEffect(() => {
+    const container = containerRef.current;
+    if (!container || shouldReduceMotion) return;
+
+    const preloadObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoadVideo(true);
+          preloadObserver.disconnect();
+        }
+      },
+      {
+        root: null,
+        rootMargin: "350px 0px 350px 0px",
+        threshold: 0.01,
+      }
+    );
+
+    preloadObserver.observe(container);
+
+    return () => {
+      preloadObserver.disconnect();
+    };
+  }, [shouldReduceMotion]);
+
+  useEffect(() => {
     const video = videoRef.current;
     const container = containerRef.current;
-    if (!video || !container) return;
+    if (!video || !container || !shouldLoadVideo) return;
 
     video.muted = true;
     video.defaultMuted = true;
@@ -61,7 +87,7 @@ export const CommunityVideoFeature: React.FC<CommunityVideoFeatureProps> = ({
     return () => {
       observer.disconnect();
     };
-  }, [shouldReduceMotion]);
+  }, [shouldReduceMotion, shouldLoadVideo]);
 
   return (
     <motion.div
@@ -103,16 +129,14 @@ export const CommunityVideoFeature: React.FC<CommunityVideoFeatureProps> = ({
                 alt="Parth Mahadik presenting at a Google Developer Group event in GDG attire"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 640px"
-                priority={false}
                 className={`${styles.videoPoster} ${
                   isPlaying && videoLoaded ? styles.videoPosterHidden : ""
                 }`}
               />
 
-              {!shouldReduceMotion && (
+              {!shouldReduceMotion && shouldLoadVideo && (
                 <video
                   ref={videoRef}
-                  src="/assets/community/agrorent-presentation.mp4"
                   poster="/assets/community/agrorent-presentation-poster.jpg"
                   autoPlay
                   muted
@@ -122,7 +146,16 @@ export const CommunityVideoFeature: React.FC<CommunityVideoFeatureProps> = ({
                   aria-label="Silent video of Parth Mahadik presenting at a Google Developer Group community event"
                   className={styles.ambientVideo}
                   onLoadedData={() => setVideoLoaded(true)}
-                />
+                >
+                  <source
+                    src="/assets/community/agrorent-presentation.webm"
+                    type="video/webm"
+                  />
+                  <source
+                    src="/assets/community/agrorent-presentation.mp4"
+                    type="video/mp4"
+                  />
+                </video>
               )}
             </div>
           </div>

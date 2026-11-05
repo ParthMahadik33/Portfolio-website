@@ -16,10 +16,10 @@ export const AboutEditorialContent: React.FC = () => {
         <Image
           src="/assets/about/about-fort-mountain-engraving.png"
           alt=""
-          width={2172}
-          height={608}
+          width={1400}
+          height={392}
+          sizes="(max-width: 768px) 90vw, 880px"
           className={styles.fortEngravingImg}
-          priority={false}
         />
       </div>
 

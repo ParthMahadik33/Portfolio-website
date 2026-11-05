@@ -5,13 +5,7 @@ import Image from "next/image";
 import { GOOGLE_CLOUD_BADGES, CREDLY_PROFILE_URL } from "./toolkitData";
 import styles from "./Toolkit.module.scss";
 
-interface ToolkitIllustrationProps {
-  shouldReduceMotion: boolean | null;
-}
-
-export const ToolkitIllustration: React.FC<ToolkitIllustrationProps> = ({
-  shouldReduceMotion,
-}) => {
+export const ToolkitIllustration: React.FC = () => {
   return (
     <aside
       className={styles.rightIllustrationColumn}
@@ -63,7 +57,6 @@ export const ToolkitIllustration: React.FC<ToolkitIllustrationProps> = ({
             width={740}
             height={480}
             className={styles.laptopSketchImg}
-            priority={false}
           />
         </div>
 
@@ -166,7 +159,7 @@ export const ToolkitIllustration: React.FC<ToolkitIllustrationProps> = ({
             target="_blank"
             rel="noopener noreferrer"
             className={styles.credlyAllBadgesLink}
-            aria-label="View all verified skill badges on Credly (opens in new tab)"
+            aria-label="View all badges — Verified Google Cloud skill badges on Credly (opens in new tab)"
           >
             <span>View all badges</span>
             <span className={styles.linkArrow} aria-hidden="true">

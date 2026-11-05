@@ -597,44 +597,144 @@
     object-position: center bottom;
     opacity: 0.85;
   }
-
-  .skipButton {
-    bottom: 14px;
-    right: 16px;
-    padding: 5px 10px;
-    font-size: 0.72rem;
-  }
-
-  .sunArtworkWrapper {
-    height: 48%;
-    transform-origin: 50% 42%;
-  }
-
-  .sunImageMask {
-    -webkit-mask-image: radial-gradient(circle at 50% 42%, black 0%, black 24%, transparent 32%);
-    mask-image: radial-gradient(circle at 50% 42%, black 0%, black 24%, transparent 32%);
-  }
 }
 
 /* =========================================================================
-   7. ARTWORK REVEAL UTILITIES
+   GPU-COMPOSITED HERO ENTRANCE ANIMATIONS (SCENE 04 - SCENE 06)
    ========================================================================= */
-.sunArtworkWrapper {
-  position: absolute;
-  right: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  pointer-events: none;
-  transform-origin: 72% 51%;
+
+.animateNavbar {
+  animation: heroNavbarEnter 0.35s cubic-bezier(0.25, 1, 0.5, 1) 2.55s backwards;
 }
 
-.sunImageMask {
-  -webkit-mask-image: radial-gradient(circle at 72% 51%, black 0%, black 22%, transparent 28%);
-  mask-image: radial-gradient(circle at 72% 51%, black 0%, black 22%, transparent 28%);
+.animateArtwork {
+  animation: heroSlideUp22 0.65s cubic-bezier(0.22, 1, 0.36, 1) 1.5s backwards;
 }
+
+.animatePortrait {
+  animation: heroSlideUp18 0.65s cubic-bezier(0.22, 1, 0.36, 1) 1.65s backwards;
+}
+
+.animateBirds {
+  animation: heroBirdsDrift 0.6s cubic-bezier(0.22, 1, 0.36, 1) 1.75s backwards;
+}
+
+.animateRoleGroup {
+  animation: heroSlideUp10 0.35s cubic-bezier(0.25, 1, 0.5, 1) 1.9s backwards;
+}
+
+.animateNameCharcoal {
+  animation: heroSlideUp16 0.45s cubic-bezier(0.16, 1, 0.3, 1) 1.65s backwards;
+}
+
+.animateNameVermilion {
+  animation: heroSlideUp18 0.45s cubic-bezier(0.16, 1, 0.3, 1) 1.75s backwards;
+}
+
+.animateDescription {
+  animation: heroSlideUp10 0.35s cubic-bezier(0.25, 1, 0.5, 1) 1.95s backwards;
+}
+
+.animateActions {
+  animation: heroSlideUp12 0.35s cubic-bezier(0.25, 1, 0.5, 1) 2.0s backwards;
+}
+
+.animateSanskrit {
+  animation: heroSanskritReveal 0.35s cubic-bezier(0.25, 1, 0.5, 1) 2.6s backwards;
+}
+
+.animatePillar {
+  animation: heroPillarEnter 0.25s cubic-bezier(0.25, 1, 0.5, 1) backwards;
+}
+
+@keyframes heroNavbarEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroSlideUp22 {
+  from {
+    transform: translateY(22px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroSlideUp18 {
+  from {
+    transform: translateY(18px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroSlideUp16 {
+  from {
+    transform: translateY(16px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroSlideUp12 {
+  from {
+    transform: translateY(12px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroSlideUp10 {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroBirdsDrift {
+  from {
+    opacity: 0;
+    transform: translate(8px, -5px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes heroSanskritReveal {
+  from {
+    clip-path: inset(0% 0% 100% 0%);
+    opacity: 0;
+  }
+  to {
+    clip-path: inset(0% 0% 0% 0%);
+    opacity: 1;
+  }
+}
+
+@keyframes heroPillarEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 

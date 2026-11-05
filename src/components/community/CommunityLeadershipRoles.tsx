@@ -46,8 +46,8 @@ export const CommunityLeadershipRoles: React.FC<CommunityLeadershipRolesProps> =
               alt="CORE, TCOER (Computer Organisation of Radical Engineers) Official Emblem"
               width={76}
               height={76}
+              sizes="80px"
               className={styles.coreLogoImg}
-              priority={false}
             />
           </div>
 
@@ -138,7 +138,6 @@ export const CommunityLeadershipRoles: React.FC<CommunityLeadershipRolesProps> =
               width={52}
               height={52}
               className={styles.geminiSparkImg}
-              priority={false}
             />
           </div>
 

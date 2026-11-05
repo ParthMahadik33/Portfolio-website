@@ -67,7 +67,6 @@ export const CommunityGdgFeature: React.FC<CommunityGdgFeatureProps> = ({
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 620px"
               className={styles.teamPhotoImg}
-              priority={false}
             />
           </div>
         </div>
@@ -102,7 +101,6 @@ export const CommunityGdgFeature: React.FC<CommunityGdgFeatureProps> = ({
                 width={48}
                 height={36}
                 className={styles.gdgSymbolImg}
-                priority={false}
               />
             </div>
 

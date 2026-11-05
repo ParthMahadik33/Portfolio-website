@@ -26,9 +26,6 @@ export const ToolkitSection: React.FC = () => {
       {/* Anchor for alternative #skills link */}
       <span id="skills" className={styles.sectionAnchor} aria-hidden="true" />
 
-      {/* Subtle organic paper background texture overlay */}
-      <div className={styles.toolkitBgPaper} aria-hidden="true" />
-
       {/* Atmospheric Sahyadri Fort Panorama in Bottom-Left Background */}
       <div className={styles.fortPanoramaWrap} aria-hidden="true">
         <Image
@@ -36,8 +33,8 @@ export const ToolkitSection: React.FC = () => {
           alt=""
           width={1086}
           height={362}
+          sizes="(max-width: 768px) 85vw, 840px"
           className={styles.fortPanoramaImg}
-          priority={false}
         />
 
         {/* Handwritten Annotation: Ideas / Build / Iterate */}
@@ -74,7 +71,7 @@ export const ToolkitSection: React.FC = () => {
 
           {/* Column 3: Engineering Visual Anchor & Verified Credentials */}
           <div className={styles.illustrationCol}>
-            <ToolkitIllustration shouldReduceMotion={shouldReduceMotion} />
+            <ToolkitIllustration />
           </div>
         </div>
       </div>

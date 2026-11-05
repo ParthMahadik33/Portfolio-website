@@ -1,0 +1,46 @@
+.maskingTape {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    rgba(246, 240, 226, 0.88) 0%,
+    rgba(235, 224, 202, 0.78) 45%,
+    rgba(224, 210, 184, 0.84) 100%
+  );
+  box-shadow: 0 1.5px 3px rgba(23, 21, 18, 0.1),
+              inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  clip-path: polygon(
+    0% 12%, 4% 0%, 9% 10%, 15% 2%, 22% 11%, 28% 0%, 35% 9%,
+    100% 3%,
+    96% 88%, 91% 100%, 85% 90%, 78% 98%, 72% 89%,
+    0% 97%
+  );
+  pointer-events: none;
+}
+
+.tapeTexture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(23, 21, 18, 0.22) 2px,
+    rgba(23, 21, 18, 0.22) 3px
+  );
+}
+
+.tapeHighlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+}
+

@@ -17,10 +17,10 @@ export const AboutBotanicals: React.FC<AboutBotanicalsProps> = ({
         <Image
           src="/assets/about/about-botanical-grass-border.png"
           alt=""
-          width={2172}
-          height={721}
+          width={960}
+          height={319}
+          sizes="(max-width: 768px) 160px, 240px"
           className={styles.botanicalCropImg}
-          priority={false}
         />
       </div>
     </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import styles from "./Hero.module.scss";
 
 export interface HeroIntroProps {
@@ -13,25 +12,15 @@ export const HeroIntro: React.FC<HeroIntroProps> = ({
   animateIntro = false,
   isComplete = false,
 }) => {
-  const textEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
-  const gentleEase: [number, number, number, number] = [0.25, 1, 0.5, 1];
-
   return (
     <div className={styles.introContainer}>
       {/* SCENE 06 (2.55s - 2.85s): Role labels fade in */}
-      <motion.div
-        className={styles.roleGroup}
-        initial={animateIntro ? { opacity: 0, y: 10 } : { opacity: 1, y: 0 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: animateIntro ? 0.35 : 0,
-          delay: animateIntro ? 2.55 : 0,
-          ease: gentleEase,
-        }}
+      <div
+        className={`${styles.roleGroup} ${animateIntro ? styles.animateRoleGroup : ""}`}
       >
         <div className={styles.rolePrimary}>SOFTWARE DEVELOPER</div>
         <div className={styles.roleSecondary}>COMPUTER ENGINEERING STUDENT</div>
-      </motion.div>
+      </div>
 
       {/* SCENE 05 (2.00s - 2.55s): Oversized Bodoni headline with overflow masks */}
       <h1 className={styles.headline}>
@@ -39,54 +28,33 @@ export const HeroIntro: React.FC<HeroIntroProps> = ({
           className={styles.nameRow}
           style={{ overflow: isComplete ? "visible" : "hidden" }}
         >
-          <motion.span
-            className={styles.nameCharcoal}
-            initial={animateIntro ? { y: 16, opacity: 0 } : { y: 0, opacity: 1 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: animateIntro ? 0.45 : 0,
-              delay: animateIntro ? 2.0 : 0,
-              ease: textEase,
-            }}
+          <span
+            className={`${styles.nameCharcoal} ${animateIntro ? styles.animateNameCharcoal : ""}`}
             style={{
               transform: isComplete ? "none" : undefined,
             }}
           >
             PARTH
-          </motion.span>
+          </span>
         </span>
         <span
           className={styles.nameRow}
           style={{ overflow: isComplete ? "visible" : "hidden" }}
         >
-          <motion.span
-            className={styles.nameVermilion}
-            initial={animateIntro ? { y: 18, opacity: 0 } : { y: 0, opacity: 1 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: animateIntro ? 0.45 : 0,
-              delay: animateIntro ? 2.15 : 0,
-              ease: textEase,
-            }}
+          <span
+            className={`${styles.nameVermilion} ${animateIntro ? styles.animateNameVermilion : ""}`}
             style={{
               transform: isComplete ? "none" : undefined,
             }}
           >
             MAHADIK
-          </motion.span>
+          </span>
         </span>
       </h1>
 
       {/* SCENE 06 (2.65s - 2.95s): Description / Tagline */}
-      <motion.p
-        className={styles.description}
-        initial={animateIntro ? { opacity: 0, y: 10 } : { opacity: 1, y: 0 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: animateIntro ? 0.35 : 0,
-          delay: animateIntro ? 2.65 : 0,
-          ease: gentleEase,
-        }}
+      <p
+        className={`${styles.description} ${animateIntro ? styles.animateDescription : ""}`}
         style={{
           transform: isComplete ? "none" : undefined,
         }}
@@ -94,18 +62,11 @@ export const HeroIntro: React.FC<HeroIntroProps> = ({
         I build software that solves
         <br />
         real problems.”
-      </motion.p>
+      </p>
 
       {/* SCENE 06 (2.70s - 3.00s): Action Buttons */}
-      <motion.div
-        className={styles.actionButtons}
-        initial={animateIntro ? { opacity: 0, y: 12 } : { opacity: 1, y: 0 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: animateIntro ? 0.35 : 0,
-          delay: animateIntro ? 2.7 : 0,
-          ease: gentleEase,
-        }}
+      <div
+        className={`${styles.actionButtons} ${animateIntro ? styles.animateActions : ""}`}
         style={{
           transform: isComplete ? "none" : undefined,
         }}
@@ -137,7 +98,7 @@ export const HeroIntro: React.FC<HeroIntroProps> = ({
           </span>
           <span>VIEW PROJECTS</span>
         </a>
-      </motion.div>
+      </div>
     </div>
   );
 };

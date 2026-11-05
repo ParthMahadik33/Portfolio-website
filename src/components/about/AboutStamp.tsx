@@ -28,10 +28,10 @@ export const AboutStamp: React.FC<AboutStampProps> = ({
       <Image
         src="/assets/about/about-mountain-stamp.png"
         alt=""
-        width={1172}
-        height={1153}
+        width={256}
+        height={252}
+        sizes="130px"
         className={styles.stampImage}
-        priority={false}
       />
 
       {/* 2. Concentric SVG Arc Text: STILL LEARNING / STILL BUILDING */}

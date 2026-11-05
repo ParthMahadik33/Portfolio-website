@@ -11,6 +11,8 @@
   padding: 4rem clamp(1.25rem, 3.5vw, 3.5rem) 5rem;
   box-sizing: border-box;
   scroll-margin-top: 1.5rem;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1400px;
 
   @media (max-width: 1200px) {
     padding: 3.5rem clamp(1.25rem, 3vw, 2.25rem) 4rem;
@@ -35,15 +37,6 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
-}
-
-.workBgPaper {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseWork'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseWork)'/%3E%3C/svg%3E");
 }
 
 /* =========================================================================
@@ -1618,53 +1611,3 @@
   z-index: 15 !important;
 }
 
-/* =========================================================================
-   REUSABLE MASKING TAPE
-   ========================================================================= */
-
-.maskingTape {
-  position: relative;
-  display: inline-block;
-  background: linear-gradient(
-    135deg,
-    rgba(246, 240, 226, 0.88) 0%,
-    rgba(235, 224, 202, 0.78) 45%,
-    rgba(224, 210, 184, 0.84) 100%
-  );
-  box-shadow: 0 1.5px 3px rgba(23, 21, 18, 0.1),
-              inset 0 1px 0 rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(1px);
-  clip-path: polygon(
-    0% 12%, 4% 0%, 9% 10%, 15% 2%, 22% 11%, 28% 0%, 35% 9%,
-    100% 3%,
-    96% 88%, 91% 100%, 85% 90%, 78% 98%, 72% 89%,
-    0% 97%
-  );
-  pointer-events: none;
-}
-
-.tapeTexture {
-  position: absolute;
-  inset: 0;
-  opacity: 0.15;
-  background: repeating-linear-gradient(
-    90deg,
-    transparent 0px,
-    transparent 2px,
-    rgba(23, 21, 18, 0.22) 2px,
-    rgba(23, 21, 18, 0.22) 3px
-  );
-}
-
-.tapeHighlight {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 35%;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.35),
-    transparent
-  );
-}

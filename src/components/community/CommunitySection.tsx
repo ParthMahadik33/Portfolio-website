@@ -22,18 +22,15 @@ export const CommunitySection: React.FC = () => {
       {/* Anchor for alternative #leadership link */}
       <span id="leadership" className={styles.sectionAnchor} aria-hidden="true" />
 
-      {/* Subtle organic paper background texture */}
-      <div className={styles.communityBgPaper} aria-hidden="true" />
-
       {/* Decorative Campus Engraving Line Art Background (Middle & Top) */}
       <div className={styles.campusEngravingBackground} aria-hidden="true">
         <Image
           src="/assets/community/backgrounds/campus-engraving-lineart.png"
           alt=""
-          width={1800}
-          height={600}
+          width={1400}
+          height={467}
+          sizes="(max-width: 768px) 95vw, 1140px"
           className={styles.campusEngravingImg}
-          priority={false}
         />
       </div>
 
@@ -45,8 +42,8 @@ export const CommunitySection: React.FC = () => {
           alt=""
           width={240}
           height={200}
+          sizes="(max-width: 768px) 140px, 240px"
           className={styles.botanicalImg}
-          priority={false}
         />
       </div>
 

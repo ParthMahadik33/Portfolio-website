@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { ProjectTape } from "./ProjectTape";
+import { MaskingTape } from "@/components/common/MaskingTape";
 import styles from "./SelectedWork.module.scss";
 
 export const AquaTraceProject: React.FC = () => {
@@ -19,10 +19,10 @@ export const AquaTraceProject: React.FC = () => {
         <Image
           src="/assets/projects/sailing-ship-etching.jpg"
           alt=""
-          width={1200}
-          height={900}
+          width={960}
+          height={720}
+          sizes="(max-width: 768px) 160px, 280px"
           className={styles.sailingShipImg}
-          priority={false}
         />
       </div>
 
@@ -63,7 +63,7 @@ export const AquaTraceProject: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
-            aria-label="Explore AquaTrace live application (opens in new tab)"
+            aria-label="Explore Project — AquaTrace live application (opens in new tab)"
           >
             <span>EXPLORE PROJECT</span>
             <span className={styles.linkArrow} aria-hidden="true">→</span>
@@ -73,7 +73,7 @@ export const AquaTraceProject: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
-            aria-label="View AquaTrace source code on GitHub (opens in new tab)"
+            aria-label="View Source — AquaTrace on GitHub (opens in new tab)"
           >
             <span>VIEW SOURCE</span>
             <span className={styles.linkArrow} aria-hidden="true">→</span>
@@ -100,17 +100,17 @@ export const AquaTraceProject: React.FC = () => {
                 alt="AquaTrace maritime oil spill observation and vessel intelligence interface"
                 width={880}
                 height={500}
+                sizes="(max-width: 768px) 220px, (max-width: 1200px) 45vw, 520px"
                 className={styles.aquatraceScreenshotImg}
-                priority={false}
               />
             </div>
           </div>
 
           {/* 4 Corner Masking Tape Pieces */}
-          <ProjectTape rotation={-38} width={42} height={14} className={styles.tapeTopLeft} />
-          <ProjectTape rotation={42} width={44} height={14} className={styles.tapeTopRight} />
-          <ProjectTape rotation={36} width={40} height={14} className={styles.tapeBottomLeft} />
-          <ProjectTape rotation={-44} width={42} height={14} className={styles.tapeBottomRight} />
+          <MaskingTape rotation={-38} width={42} height={14} className={styles.tapeTopLeft} />
+          <MaskingTape rotation={42} width={44} height={14} className={styles.tapeTopRight} />
+          <MaskingTape rotation={36} width={40} height={14} className={styles.tapeBottomLeft} />
+          <MaskingTape rotation={-44} width={42} height={14} className={styles.tapeBottomRight} />
         </motion.div>
       </div>
     </article>

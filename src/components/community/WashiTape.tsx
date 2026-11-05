@@ -85,5 +85,3 @@ export const WashiTape: React.FC<WashiTapeProps> = ({
   );
 };
 
-// Re-export as CommunityTape for backwards compatibility
-export const CommunityTape = WashiTape;

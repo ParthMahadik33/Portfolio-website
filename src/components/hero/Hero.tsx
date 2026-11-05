@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState, useCallback, useRef } from "react";
-import { useReducedMotion } from "framer-motion";
 import { PortfolioIntro } from "@/components/intro/PortfolioIntro";
 import { HeroNavbar } from "./HeroNavbar";
 import { HeroIntro } from "./HeroIntro";
@@ -14,7 +13,6 @@ import styles from "./Hero.module.scss";
 const STORAGE_KEY = "pm_portfolio_intro_seen";
 
 export const Hero: React.FC = () => {
-  const shouldReduceMotion = useReducedMotion();
   const [introState, setIntroState] = useState<"ssr" | "playing" | "done">("ssr");
   const [showIntroOverlay, setShowIntroOverlay] = useState<boolean>(true);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -67,20 +65,29 @@ export const Hero: React.FC = () => {
       alreadySeen = false;
     }
 
-    if (shouldReduceMotion || alreadySeen) {
-      setShowIntroOverlay(false);
-      setIntroState("done");
-      return;
-    }
+    let startTimerId: NodeJS.Timeout | null = null;
+    const shouldReduceMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    // Play cinematic multilingual opening animation
-    setIntroState("playing");
-    setShowIntroOverlay(true);
+    const rafId = window.requestAnimationFrame(() => {
+      if (shouldReduceMotion || alreadySeen) {
+        setShowIntroOverlay(false);
+        setIntroState("done");
+        return;
+      }
 
-    // Complete opening at 3.0s
-    timerRef.current = setTimeout(() => {
-      handleSkip();
-    }, 3050);
+      // Allow Frame 1 (SSR Hero & LCP artwork) to paint first before starting the opening overlay
+      startTimerId = setTimeout(() => {
+        setIntroState("playing");
+        setShowIntroOverlay(true);
+
+        // Complete opening at 3.0s
+        timerRef.current = setTimeout(() => {
+          handleSkip();
+        }, 3050);
+      }, 60);
+    });
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -90,12 +97,16 @@ export const Hero: React.FC = () => {
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
+      window.cancelAnimationFrame(rafId);
+      if (startTimerId) {
+        clearTimeout(startTimerId);
+      }
       if (timerRef.current) {
         clearTimeout(timerRef.current);
       }
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [shouldReduceMotion, handleSkip]);
+  }, [handleSkip]);
 
   const isPlaying = introState === "playing";
   const isComplete = introState === "done";
@@ -105,7 +116,6 @@ export const Hero: React.FC = () => {
     <section
       className={styles.heroSection}
       id="home"
-      key={introState === "playing" ? "hero-playing" : "hero-static"}
     >
       {/* SCENE 01-03: Multilingual Cinematic Typographic Intro Overlay (0.0s - 1.75s) */}
       {animateIntro && showIntroOverlay && (

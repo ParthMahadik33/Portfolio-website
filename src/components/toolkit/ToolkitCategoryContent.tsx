@@ -92,7 +92,6 @@ export const ToolkitCategoryContent: React.FC<ToolkitCategoryContentProps> = ({
                     fill
                     sizes="(max-width: 768px) 140px, 160px"
                     className={styles.featuredThumbImg}
-                    priority={false}
                   />
                 </div>
                 <a
@@ -100,7 +99,7 @@ export const ToolkitCategoryContent: React.FC<ToolkitCategoryContentProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.featuredViewLink}
-                  aria-label={`View ${category.featuredWork.title} live (opens in new tab)`}
+                  aria-label={`View Project — ${category.featuredWork.title} live (opens in new tab)`}
                 >
                   <span>View Project</span>
                   <span className={styles.linkArrow} aria-hidden="true">

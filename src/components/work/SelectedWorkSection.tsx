@@ -15,9 +15,6 @@ export const SelectedWorkSection: React.FC = () => {
 
   return (
     <section className={styles.workSection} id="work" aria-label="Selected Engineering Work">
-      {/* Subtle organic paper background texture */}
-      <div className={styles.workBgPaper} aria-hidden="true" />
-
       {/* Decorative Botanical / Harvest Branch in Upper-Right Background */}
       <div className={styles.upperRightBotanical} aria-hidden="true">
         <Image
@@ -25,8 +22,8 @@ export const SelectedWorkSection: React.FC = () => {
           alt=""
           width={240}
           height={200}
+          sizes="(max-width: 768px) 110px, 240px"
           className={styles.botanicalImg}
-          priority={false}
         />
       </div>
 
@@ -42,10 +39,10 @@ export const SelectedWorkSection: React.FC = () => {
         <Image
           src="/assets/projects/tractor-isolated.png"
           alt=""
-          width={1325}
-          height={710}
+          width={1100}
+          height={589}
+          sizes="(max-width: 768px) 80vw, 680px"
           className={styles.tractorEngravingImg}
-          priority={false}
         />
       </motion.div>
 
@@ -61,10 +58,10 @@ export const SelectedWorkSection: React.FC = () => {
         <Image
           src="/assets/projects/agricultural-engraving-panorama.png"
           alt=""
-          width={1824}
-          height={688}
+          width={1400}
+          height={528}
+          sizes="(max-width: 768px) 95vw, 960px"
           className={styles.fieldsEngravingImg}
-          priority={false}
         />
       </motion.div>
 

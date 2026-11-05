@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import styles from "./Hero.module.scss";
 
 export interface HeroDecorationsProps {
@@ -11,25 +10,12 @@ export interface HeroDecorationsProps {
 export const HeroDecorations: React.FC<HeroDecorationsProps> = ({
   animateIntro = false,
 }) => {
-  const easeCurve: [number, number, number, number] = [0.22, 1, 0.36, 1];
-
   return (
     <div className={styles.decorationsLayer} aria-hidden="true">
-      <motion.svg
-        className={styles.birdsOverlay}
+      <svg
+        className={`${styles.birdsOverlay} ${animateIntro ? styles.animateBirds : ""}`}
         viewBox="0 0 1024 571"
         preserveAspectRatio="xMidYMid slice"
-        initial={
-          animateIntro
-            ? { opacity: 0, x: 8, y: -5 }
-            : { opacity: 1, x: 0, y: 0 }
-        }
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{
-          duration: animateIntro ? 0.6 : 0,
-          delay: animateIntro ? 1.75 : 0,
-          ease: easeCurve,
-        }}
       >
         {/* Flying Birds silhouettes - Exact vector trace from reference */}
         {/* Bird 1: High right soaring */}
@@ -62,7 +48,7 @@ export const HeroDecorations: React.FC<HeroDecorationsProps> = ({
           d="M 831 209 L 831 212 L 834 211 L 836 209 L 835 206 Z"
           fill="#171512"
         />
-      </motion.svg>
+      </svg>
     </div>
   );
 };

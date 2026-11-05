@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { ProjectTape } from "./ProjectTape";
+import { MaskingTape } from "@/components/common/MaskingTape";
 import styles from "./SelectedWork.module.scss";
 
 export const ArraProject: React.FC = () => {
@@ -47,10 +47,10 @@ export const ArraProject: React.FC = () => {
         <Image
           src="/assets/projects/railway-tracks-sun.jpg"
           alt=""
-          width={1600}
-          height={900}
+          width={960}
+          height={540}
+          sizes="(max-width: 768px) 80vw, 480px"
           className={styles.railwayTracksSunImg}
-          priority={false}
         />
       </div>
 
@@ -91,7 +91,7 @@ export const ArraProject: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
-            aria-label="Explore ARRA live prototype (opens in new tab)"
+            aria-label="Explore Project — ARRA live prototype (opens in new tab)"
           >
             <span>EXPLORE PROJECT</span>
             <span className={styles.linkArrow} aria-hidden="true">→</span>
@@ -101,7 +101,7 @@ export const ArraProject: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
-            aria-label="View ARRA source code on GitHub (opens in new tab)"
+            aria-label="View Source — ARRA on GitHub (opens in new tab)"
           >
             <span>VIEW SOURCE</span>
             <span className={styles.linkArrow} aria-hidden="true">→</span>
@@ -156,7 +156,7 @@ export const ArraProject: React.FC = () => {
                       {/* Grid background */}
                       <defs>
                         <pattern id="radarGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-                          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255, 255, 255, 0.05)" strokeWidth="0.8"/>
+                          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255, 255, 255, 0.05)" strokeWidth="0.8" />
                         </pattern>
                       </defs>
                       <rect width="280" height="160" fill="url(#radarGrid)" />
@@ -230,8 +230,8 @@ export const ArraProject: React.FC = () => {
           </div>
 
           {/* Masking Tape */}
-          <ProjectTape rotation={-10} width={48} height={16} className={styles.arraTapeTop} />
-          <ProjectTape rotation={14} width={44} height={15} className={styles.arraTapeBottom} />
+          <MaskingTape rotation={-10} width={48} height={16} className={styles.arraTapeTop} />
+          <MaskingTape rotation={14} width={44} height={15} className={styles.arraTapeBottom} />
         </motion.div>
       </div>
     </article>

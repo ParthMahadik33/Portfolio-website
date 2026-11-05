@@ -17,24 +17,6 @@ export const KraftTornStrip: React.FC<{
         className={styles.kraftTornSvg}
         xmlns="http://www.w3.org/2000/svg"
       >
-        <defs>
-          <filter id="kraftTearFilter" x="0%" y="0%" width="100%" height="100%">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.9"
-              numOctaves="3"
-              result="noise"
-            />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0.82   0 0 0 0 0.73   0 0 0 0 0.60  0 0 0 0.28 0"
-              in="noise"
-              result="coloredNoise"
-            />
-            <feBlend mode="multiply" in="SourceGraphic" in2="coloredNoise" />
-          </filter>
-        </defs>
-
         {/* Soft paper cast shadow */}
         <path
           d="M 6 0 
@@ -53,8 +35,7 @@ export const KraftTornStrip: React.FC<{
              Q 12 250 10 270 Q 2 292 4 315 Q 13 338 11 360 
              Q 3 380 5 400 Q 9 412 8 420 
              L 45 420 L 45 0 Z"
-          fill="#D6C4A7"
-          filter="url(#kraftTearFilter)"
+          fill="#D3C0A3"
         />
 
         {/* Deckled white fibrous tear line along edge */}

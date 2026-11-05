@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { RecognitionTape } from "./RecognitionTape";
+import { MaskingTape } from "@/components/common/MaskingTape";
 import styles from "./Recognition.module.scss";
 
 interface RightStoriesStackProps {
@@ -56,7 +56,7 @@ export const RightStoriesStack: React.FC<RightStoriesStackProps> = ({
               <span className={styles.storyNumber}>02</span>
             </div>
 
-            <h4 className={styles.storyBigVermilion}>₹5,000</h4>
+            <h4 className={styles.storyBigVermilion}><span style={{ fontFamily: "system-ui, sans-serif" }}>₹</span>5,000</h4>
             <div className={styles.storySubCategory}>THIRD PRIZE</div>
 
             <h5 id="story-efos-title" className={styles.storyTitle}>
@@ -69,7 +69,7 @@ export const RightStoriesStack: React.FC<RightStoriesStackProps> = ({
             </div>
 
             <p className={styles.storyDescription}>
-              Secured 3rd prize and ₹5,000 at EFOS SkillUp India Hackathon 2026 in Pune, Maharashtra.
+              Secured 3rd prize and <span style={{ fontFamily: "system-ui, sans-serif" }}>₹</span>5,000 at EFOS SkillUp India Hackathon 2026 in Pune, Maharashtra.
             </p>
           </div>
 
@@ -96,13 +96,13 @@ export const RightStoriesStack: React.FC<RightStoriesStackProps> = ({
                     }
               }
             >
-              <RecognitionTape
+              <MaskingTape
                 rotation={-25}
                 width="48px"
                 height="16px"
                 className={styles.tapeTopLeft}
               />
-              <RecognitionTape
+              <MaskingTape
                 rotation={32}
                 width="50px"
                 height="17px"
@@ -115,8 +115,8 @@ export const RightStoriesStack: React.FC<RightStoriesStackProps> = ({
                   alt="Team Elite Trio celebrating 3rd Prize at EFOS SkillUp India Hackathon 2026"
                   width={300}
                   height={300}
+                  sizes="230px"
                   className={styles.storyImg}
-                  priority={false}
                 />
               </div>
             </motion.div>
@@ -205,13 +205,13 @@ export const RightStoriesStack: React.FC<RightStoriesStackProps> = ({
                     }
               }
             >
-              <RecognitionTape
+              <MaskingTape
                 rotation={-28}
                 width="48px"
                 height="16px"
                 className={styles.tapeTopLeft}
               />
-              <RecognitionTape
+              <MaskingTape
                 rotation={28}
                 width="50px"
                 height="17px"
@@ -224,8 +224,8 @@ export const RightStoriesStack: React.FC<RightStoriesStackProps> = ({
                   alt="Parth Mahadik and team member holding certificates as 1st place winners at Devine Tech Solutions Hackathon"
                   width={300}
                   height={220}
+                  sizes="230px"
                   className={styles.storyImg}
-                  priority={false}
                 />
               </div>
             </motion.div>
@@ -312,13 +312,13 @@ export const RightStoriesStack: React.FC<RightStoriesStackProps> = ({
                     }
               }
             >
-              <RecognitionTape
+              <MaskingTape
                 rotation={-6}
                 width="56px"
                 height="18px"
                 className={styles.tapeTopCenter}
               />
-              <RecognitionTape
+              <MaskingTape
                 rotation={-40}
                 width="44px"
                 height="16px"
@@ -331,8 +331,8 @@ export const RightStoriesStack: React.FC<RightStoriesStackProps> = ({
                   alt="NoviTech R&D Pvt. Ltd. Certificate of Completion in Artificial Intelligence for Parth Mahadik"
                   width={280}
                   height={220}
+                  sizes="230px"
                   className={styles.storyImg}
-                  priority={false}
                 />
               </div>
             </motion.div>
@@ -370,8 +370,9 @@ export const RightStoriesStack: React.FC<RightStoriesStackProps> = ({
               <Image
                 src="/assets/recognition/stack-of-books.png"
                 alt=""
-                width={1022}
-                height={986}
+                width={360}
+                height={347}
+                sizes="180px"
                 className={styles.booksImg}
               />
               {/* Spines Editorial Pillars */}

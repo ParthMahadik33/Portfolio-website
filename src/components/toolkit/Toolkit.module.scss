@@ -12,6 +12,8 @@
   padding: 5.5rem clamp(1.5rem, 4vw, 4.5rem) 6.5rem;
   box-sizing: border-box;
   scroll-margin-top: 1.5rem;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1000px;
 
   @media (max-width: 1200px) {
     padding: 4.5rem clamp(1.25rem, 3vw, 2.5rem) 5.5rem;
@@ -47,16 +49,6 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
-}
-
-/* Subtle organic paper background texture overlay */
-.toolkitBgPaper {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseToolkit'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseToolkit)'/%3E%3C/svg%3E");
 }
 
 /* Atmospheric Fort Panorama in Bottom-Left Background */
@@ -419,7 +411,7 @@
   font-family: var(--font-condensed);
   font-size: 0.95rem;
   font-weight: 700;
-  color: #8A8278;
+  color: #5C544B;
   transition: color 0.2s ease;
 }
 
@@ -437,7 +429,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.12em;
-  color: #8A8278;
+  color: #5C544B;
   text-transform: uppercase;
   margin-top: 0.2rem;
 }
@@ -692,7 +684,7 @@
 .featuredRole {
   font-family: var(--font-sans);
   font-size: 0.82rem;
-  color: #7A7268;
+  color: #5C544B;
   font-weight: 500;
   margin-bottom: 0.45rem;
 }
@@ -917,7 +909,7 @@
 .archNodeSub {
   font-family: var(--font-sans);
   font-size: 0.72rem;
-  color: #7A7268;
+  color: #5C544B;
   margin-top: 0.15rem;
 }
 
@@ -983,7 +975,7 @@
 .verifiedSub {
   font-family: var(--font-sans);
   font-size: 0.82rem;
-  color: #7A7268;
+  color: #5C544B;
 }
 
 .credlyAllBadgesLink {

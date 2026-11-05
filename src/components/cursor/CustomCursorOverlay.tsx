@@ -79,7 +79,7 @@ export const CustomCursorOverlay: React.FC = () => {
     updateCanvasSize();
     window.addEventListener("resize", updateCanvasSize, { passive: true });
 
-    // Preload individual botanical leaf trail assets
+    // Preload individual botanical leaf trail assets lazily on first pointer move
     const leafSources = [
       "/assets/cursors/trail/leaf-1.png",
       "/assets/cursors/trail/leaf-2.png",
@@ -93,11 +93,16 @@ export const CustomCursorOverlay: React.FC = () => {
       "/assets/cursors/trail/leaf-10.png",
     ];
     const leafImages: HTMLImageElement[] = [];
-    leafSources.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-      leafImages.push(img);
-    });
+    let leavesPreloaded = false;
+    const ensureLeavesPreloaded = () => {
+      if (leavesPreloaded) return;
+      leavesPreloaded = true;
+      leafSources.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+        leafImages.push(img);
+      });
+    };
 
     // Cursor state variables
     let pointerX = -100;
@@ -343,6 +348,7 @@ export const CustomCursorOverlay: React.FC = () => {
 
     // Pointer Move Handler
     const handlePointerMove = (e: PointerEvent) => {
+      ensureLeavesPreloaded();
       pointerX = e.clientX;
       pointerY = e.clientY;
       isInsideWindow = true;

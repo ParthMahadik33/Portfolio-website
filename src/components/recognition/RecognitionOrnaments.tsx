@@ -35,8 +35,8 @@ export const RecognitionOrnaments: React.FC<RecognitionOrnamentsProps> = ({
           alt=""
           width={623}
           height={1002}
+          sizes="(max-width: 900px) 180px, 360px"
           className={styles.ornamentImg}
-          priority={false}
         />
       </motion.div>
 
@@ -50,8 +50,8 @@ export const RecognitionOrnaments: React.FC<RecognitionOrnamentsProps> = ({
           alt=""
           width={1323}
           height={461}
+          sizes="(max-width: 900px) 90vw, 720px"
           className={styles.ornamentImg}
-          priority={false}
         />
       </motion.div>
 
@@ -65,8 +65,8 @@ export const RecognitionOrnaments: React.FC<RecognitionOrnamentsProps> = ({
           alt=""
           width={959}
           height={832}
+          sizes="(max-width: 900px) 280px, 440px"
           className={styles.ornamentImg}
-          priority={false}
         />
       </motion.div>
     </div>
