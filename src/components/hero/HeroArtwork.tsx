@@ -19,7 +19,7 @@ export const HeroArtwork: React.FC<HeroArtworkProps> = ({
         className={`${styles.artworkWrapper} ${animateIntro ? styles.animateArtwork : ""}`}
       >
         <Image
-          src="/assets/hero-bg-mountain.png"
+          src="/assets/hero/hero-bg-mountain.png"
           alt="Sahyadri mountain landscape, historic fort walls, and vermilion sun"
           width={1672}
           height={921}

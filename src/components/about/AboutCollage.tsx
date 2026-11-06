@@ -70,7 +70,7 @@ export const AboutCollage: React.FC = () => {
         <div className={styles.mainPhotoFrame}>
           <div className={styles.mainPhotoInner}>
             <Image
-              src="/assets/about-speaking-photo-upper.webp"
+              src="/assets/about/about-speaking-photo-upper.webp"
               alt="Parth Mahadik speaking at technical event"
               width={640}
               height={544}
@@ -95,7 +95,7 @@ export const AboutCollage: React.FC = () => {
         <div className={`${styles.tuckedPolaroid} ${styles.polaroidFort}`}>
           <div className={styles.polaroidCard}>
             <Image
-              src="/assets/polaroid-04-fort-portrait.png"
+              src="/assets/about/polaroid-04-fort-portrait.png"
               alt="Parth Mahadik at heritage fort bastion"
               width={225}
               height={263}
@@ -115,7 +115,7 @@ export const AboutCollage: React.FC = () => {
         <div className={`${styles.tuckedPolaroid} ${styles.polaroidStairs}`}>
           <div className={styles.polaroidCard}>
             <Image
-              src="/assets/polaroid-01-stairs.png"
+              src="/assets/about/polaroid-01-stairs.png"
               alt="Parth Mahadik on heritage stone stairs"
               width={225}
               height={263}
@@ -135,7 +135,7 @@ export const AboutCollage: React.FC = () => {
         <div className={`${styles.tuckedPolaroid} ${styles.polaroidCycling}`}>
           <div className={styles.polaroidCard}>
             <Image
-              src="/assets/polaroid-05-cycling.png"
+              src="/assets/about/polaroid-05-cycling.png"
               alt="Parth Mahadik exploring trails with bicycle"
               width={210}
               height={247}

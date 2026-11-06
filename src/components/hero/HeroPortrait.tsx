@@ -17,7 +17,7 @@ export const HeroPortrait: React.FC<HeroPortraitProps> = ({
       className={`${styles.portraitWrapper} ${animateIntro ? styles.animatePortrait : ""}`}
     >
       <Image
-        src="/assets/hero-potrait.png"
+        src="/assets/hero/hero-portrait.png"
         alt="Parth Mahadik - Software Developer & Computer Engineering Student"
         width={1277}
         height={1232}
