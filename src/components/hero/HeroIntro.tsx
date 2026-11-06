@@ -75,12 +75,17 @@ export const HeroIntro: React.FC<HeroIntroProps> = ({
         <a
           href="#journey"
           className={styles.btnPrimary}
-          onClick={() =>
+          onClick={() => {
+            trackEvent("section_navigation", {
+              section_name: "journey",
+              navigation_source: "hero_primary_cta",
+              destination_anchor: "#journey",
+            });
             trackEvent("journey_cta_click", {
               destination: "#journey",
               source: "hero_primary_cta",
-            })
-          }
+            });
+          }}
           aria-label="Explore My Journey — Scroll to about and journey section"
         >
           <span>EXPLORE MY JOURNEY</span>
@@ -105,8 +110,9 @@ export const HeroIntro: React.FC<HeroIntroProps> = ({
           className={styles.btnSecondary}
           onClick={() =>
             trackEvent("section_navigation", {
-              section: "work",
-              source: "hero_secondary_cta",
+              section_name: "work",
+              navigation_source: "hero_secondary_cta",
+              destination_anchor: "#work",
             })
           }
           aria-label="View Projects — Scroll to selected engineering work"

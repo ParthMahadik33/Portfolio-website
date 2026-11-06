@@ -92,12 +92,17 @@ export const ArraProject: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
-            onClick={() =>
-              trackEvent("external_project_click", {
-                project: "ARRA",
+            onClick={() => {
+              trackEvent("external_project_visit", {
+                project_name: "ARRA",
                 url: "https://arraproject.netlify.app/",
-              })
-            }
+                link_location: "project_card",
+              });
+              trackEvent("project_exploration", {
+                project_name: "ARRA",
+                interaction_type: "live_demo_click",
+              });
+            }}
             aria-label="Explore Project — ARRA live prototype (opens in new tab)"
           >
             <span>EXPLORE PROJECT</span>
@@ -109,9 +114,11 @@ export const ArraProject: React.FC = () => {
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
             onClick={() =>
-              trackEvent("github_click", {
-                project: "ARRA",
+              trackEvent("github_repository_click", {
+                repository_name: "A.R.R.A",
+                project_name: "ARRA",
                 url: "https://github.com/ParthMahadik33/A.R.R.A",
+                link_location: "project_card",
               })
             }
             aria-label="View Source — ARRA on GitHub (opens in new tab)"

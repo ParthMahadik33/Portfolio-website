@@ -94,12 +94,17 @@ export const AgroRentProject: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
-            onClick={() =>
-              trackEvent("external_project_click", {
-                project: "AgroRent",
+            onClick={() => {
+              trackEvent("external_project_visit", {
+                project_name: "AgroRent",
                 url: "https://agrorent-v3.onrender.com/",
-              })
-            }
+                link_location: "project_card",
+              });
+              trackEvent("project_exploration", {
+                project_name: "AgroRent",
+                interaction_type: "live_demo_click",
+              });
+            }}
             aria-label="Explore Project — AgroRent live application (opens in new tab)"
           >
             <span>EXPLORE PROJECT</span>
@@ -111,9 +116,11 @@ export const AgroRentProject: React.FC = () => {
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
             onClick={() =>
-              trackEvent("github_click", {
-                project: "AgroRent",
+              trackEvent("github_repository_click", {
+                repository_name: "AgroRent-v3",
+                project_name: "AgroRent",
                 url: "https://github.com/ParthMahadik33/AgroRent-v3",
+                link_location: "project_card",
               })
             }
             aria-label="View Source — AgroRent on GitHub (opens in new tab)"

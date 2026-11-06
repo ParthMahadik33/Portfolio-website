@@ -7,7 +7,7 @@ import {
   Caveat,
 } from "next/font/google";
 import { CustomCursorOverlay } from "../components/cursor/CustomCursorOverlay";
-import { GoogleAnalytics } from "../components/analytics/GoogleAnalytics";
+import { GoogleTagManager } from "../components/analytics/GoogleTagManager";
 import "./globals.scss";
 
 const bodoniModa = Bodoni_Moda({
@@ -162,7 +162,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={fontVariables}>
       <body>
-        <GoogleAnalytics />
+        <GoogleTagManager />
         {children}
         <CustomCursorOverlay />
       </body>

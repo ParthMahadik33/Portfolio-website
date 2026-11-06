@@ -64,12 +64,17 @@ export const AquaTraceProject: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
-            onClick={() =>
-              trackEvent("external_project_click", {
-                project: "AquaTrace",
+            onClick={() => {
+              trackEvent("external_project_visit", {
+                project_name: "AquaTrace",
                 url: "https://aqua-trace-olive.vercel.app/",
-              })
-            }
+                link_location: "project_card",
+              });
+              trackEvent("project_exploration", {
+                project_name: "AquaTrace",
+                interaction_type: "live_demo_click",
+              });
+            }}
             aria-label="Explore Project — AquaTrace live application (opens in new tab)"
           >
             <span>EXPLORE PROJECT</span>
@@ -81,9 +86,11 @@ export const AquaTraceProject: React.FC = () => {
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
             onClick={() =>
-              trackEvent("github_click", {
-                project: "AquaTrace",
+              trackEvent("github_repository_click", {
+                repository_name: "Aqua-Trace",
+                project_name: "AquaTrace",
                 url: "https://github.com/ParthMahadik33/Aqua-Trace",
+                link_location: "project_card",
               })
             }
             aria-label="View Source — AquaTrace on GitHub (opens in new tab)"

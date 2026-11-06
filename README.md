@@ -123,11 +123,14 @@ npm run lint
 
 ## ⚙️ Environment Variables
 
-Create a `.env.local` file in the project root (or set in Vercel):
+Create a `.env.local` file in the project root (or set in Vercel Project Settings):
 
 ```env
-# Google Analytics 4 Measurement ID (optional in development; required in production)
-NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+# Google Tag Manager Container ID (Default: GTM-NRP9327Z)
+NEXT_PUBLIC_GTM_ID=GTM-NRP9327Z
+
+# Google Analytics 4 Measurement ID (Configured within GTM: G-4GD9QZJK5D)
+NEXT_PUBLIC_GA_ID=G-4GD9QZJK5D
 ```
 
 ---

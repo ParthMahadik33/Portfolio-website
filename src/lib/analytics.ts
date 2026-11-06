@@ -1,9 +1,12 @@
-// Client-side Google Analytics 4 (GA4) event tracking utility
-export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
+// Client-side Google Tag Manager & Google Analytics 4 event tracking utility
+export const GTM_CONTAINER_ID =
+  process.env.NEXT_PUBLIC_GTM_ID || "GTM-NRP9327Z";
+export const GA_MEASUREMENT_ID =
+  process.env.NEXT_PUBLIC_GA_ID || "G-4GD9QZJK5D";
 
 declare global {
   interface Window {
-    dataLayer?: unknown[];
+    dataLayer?: Array<Record<string, unknown> | unknown[]>;
     gtag?: (...args: unknown[]) => void;
   }
 }
@@ -11,8 +14,9 @@ declare global {
 export type EventParamValue = string | number | boolean | undefined | null;
 
 /**
- * Dispatches a custom GA4 event to Google Analytics via gtag if available.
- * Safe to call on server or when GA is not configured.
+ * Dispatches a custom event to Google Tag Manager via dataLayer.
+ * If window.gtag is initialized by the GTM container, also forwards the event directly.
+ * Safe to call on server or when analytics is blocked/not loaded.
  */
 export function trackEvent(
   eventName: string,
@@ -20,11 +24,17 @@ export function trackEvent(
 ): void {
   if (typeof window === "undefined") return;
 
-  if (typeof window.gtag === "function") {
-    try {
+  try {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: eventName,
+      ...eventParams,
+    });
+
+    if (typeof window.gtag === "function") {
       window.gtag("event", eventName, eventParams);
-    } catch {
-      // Ignore analytics dispatch errors in strict environments
     }
+  } catch {
+    // Fail silently in strict or adblocked environments
   }
 }

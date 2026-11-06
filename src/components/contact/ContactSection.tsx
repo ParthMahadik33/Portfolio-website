@@ -102,8 +102,8 @@ export const ContactSection: React.FC = () => {
               className={styles.emailButton}
               onClick={() =>
                 trackEvent("contact_email_click", {
-                  email: "parthmahadik752@gmail.com",
-                  source: "contact_button",
+                  contact_method: "email",
+                  link_location: "contact_section",
                 })
               }
               aria-label="Send email to Parth Mahadik at parthmahadik752@gmail.com"
@@ -132,9 +132,10 @@ export const ContactSection: React.FC = () => {
                   rel="noopener noreferrer"
                   className={styles.channelItemLink}
                   onClick={() =>
-                    trackEvent("github_click", {
+                    trackEvent("github_repository_click", {
+                      repository_name: "Profile-ParthMahadik33",
                       url: "https://github.com/ParthMahadik33",
-                      source: "contact_section",
+                      link_location: "contact_section",
                     })
                   }
                   aria-label="Parth Mahadik on GitHub (opens in new tab)"
@@ -155,8 +156,9 @@ export const ContactSection: React.FC = () => {
                   className={styles.channelItemLink}
                   onClick={() =>
                     trackEvent("linkedin_click", {
-                      url: "https://www.linkedin.com/in/parthmahadik/",
-                      source: "contact_section",
+                      platform: "linkedin",
+                      profile_url: "https://www.linkedin.com/in/parthmahadik/",
+                      link_location: "contact_section",
                     })
                   }
                   aria-label="Parth Mahadik on LinkedIn (opens in new tab)"
@@ -176,9 +178,10 @@ export const ContactSection: React.FC = () => {
                   rel="noopener noreferrer"
                   className={styles.channelItemLink}
                   onClick={() =>
-                    trackEvent("external_project_click", {
-                      project: "Credly Google Cloud Badges",
-                      source: "contact_section",
+                    trackEvent("external_project_visit", {
+                      project_name: "Credly Google Cloud Badges",
+                      url: "https://www.credly.com/users/parth-mahadik.7429132e/badges",
+                      link_location: "contact_section",
                     })
                   }
                   aria-label="Verified Google Cloud Badges on Credly (opens in new tab)"
@@ -200,9 +203,10 @@ export const ContactSection: React.FC = () => {
                 rel="noopener noreferrer"
                 className={styles.scorebadgePill}
                 onClick={() =>
-                  trackEvent("external_project_click", {
-                    project: "Scorebadge Audit",
-                    source: "contact_footer",
+                  trackEvent("external_project_visit", {
+                    project_name: "Scorebadge Audit",
+                    url: "https://scorebadge.com/site/parthmahadik.in",
+                    link_location: "contact_footer",
                   })
                 }
                 aria-label="View public website score and audit report on scorebadge.com (opens in new tab)"

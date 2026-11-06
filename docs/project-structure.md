@@ -86,3 +86,4 @@ parth-portfolio-v2/
    - All static assets live in `public/assets/` organized strictly by feature folder (`hero/`, `about/`, `projects/`, `recognition/`, `community/`, `toolkit/`, `cursors/`).
    - Every asset is web-optimized (modern WebP/WebM/AVIF/PNG-quant) with high fidelity and responsive sizing.
    - Uncompressed camera masters and raw design packs are preserved outside the production repo in `source_assets_archive/`.
+

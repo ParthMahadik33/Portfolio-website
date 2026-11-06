@@ -91,3 +91,4 @@ This document categorizes all production static assets stored under `parth-portf
 
 All uncompressed camera originals (e.g. `gdg comp.mp4` 14MB, raw 2MB+ PNGs, design mockups, and PSD files) are securely preserved outside the production Git repository in:
 `C:\Portfolio\source_assets_archive/`
+

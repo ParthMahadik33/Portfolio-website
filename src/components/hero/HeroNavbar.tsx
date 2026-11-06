@@ -14,7 +14,11 @@ export const HeroNavbar: React.FC<HeroNavbarProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleNavClick = (section: string, source: string) => {
-    trackEvent("section_navigation", { section, source });
+    trackEvent("section_navigation", {
+      section_name: section,
+      navigation_source: source,
+      destination_anchor: `#${section}`,
+    });
   };
 
   return (

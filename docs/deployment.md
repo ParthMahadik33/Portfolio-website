@@ -26,15 +26,27 @@ The portfolio uses the **non-www** apex domain as its single canonical URL.
 
 ---
 
-## 2. Environment Variables
+## 2. Analytics & Tracking Configuration (Google Tag Manager & GA4)
 
-Configure the following variables in **Vercel Project Settings** → **Environment Variables**:
+Google Analytics 4 is integrated exclusively via **Google Tag Manager** (`GTM-NRP9327Z`).
 
-| Variable | Target Value | Environments | Purpose |
+### Environment Variables
+Configure in **Vercel Project Settings** → **Environment Variables**:
+
+| Variable | Default Value | Environments | Purpose |
 | :--- | :--- | :--- | :--- |
-| `NEXT_PUBLIC_GA_ID` | `G-XXXXXXXXXX` | Production, Preview | Google Analytics 4 Measurement ID |
+| `NEXT_PUBLIC_GTM_ID` | `GTM-NRP9327Z` | Production, Preview | Google Tag Manager Container ID |
+| `NEXT_PUBLIC_GA_ID` | `G-4GD9QZJK5D` | Production, Preview | Google Analytics 4 Measurement ID |
 
-*Note: In local development, `NEXT_PUBLIC_GA_ID` can remain unset. The application conditionally loads Google Analytics only when a valid `G-` prefixed ID is present, ensuring zero development console spam or performance overhead.*
+### GTM Container Setup Guide (`GTM-NRP9327Z`)
+1. Log into **[Google Tag Manager](https://tagmanager.google.com/)** and select container `GTM-NRP9327Z`.
+2. Under **Tags** → **New**:
+   - **Tag Type:** `Google Tag` (Google Analytics)
+   - **Tag ID:** `G-4GD9QZJK5D`
+   - **Triggering:** `Initialization - All Pages` (or `All Pages`)
+3. Under **Variables**, ensure built-in click and page variables are enabled.
+4. For custom interactions (`section_navigation`, `project_exploration`, `github_repository_click`, `resume_download`, `contact_email_click`, `linkedin_click`, `external_project_visit`), add **Google Analytics: GA4 Event** tags triggered by **Custom Event** triggers matching these event names.
+5. In **Google Analytics 4** (`G-4GD9QZJK5D`), verify under **Admin** → **Data Streams** that enhanced measurement is enabled and Realtime reports display active visitor events.
 
 ---
 
@@ -57,3 +69,4 @@ next dev
 - **Framework:** Next.js 16 (Turbopack)
 - **Node Version:** Node.js 20.x LTS or higher
 - **Zero Config SSR:** Statically generates all pages (`/`, `/robots.txt`, `/sitemap.xml`) at build time for instant Edge CDN delivery.
+
