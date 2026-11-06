@@ -1,18 +1,42 @@
+import dynamic from "next/dynamic";
 import { Hero } from "@/components/hero/Hero";
-import { BelowTheFoldSections } from "@/components/common/BelowTheFoldSections";
+
+const AboutSection = dynamic(() =>
+  import("@/components/about/AboutSection").then((mod) => mod.AboutSection)
+);
+const SelectedWorkSection = dynamic(() =>
+  import("@/components/work/SelectedWorkSection").then(
+    (mod) => mod.SelectedWorkSection
+  )
+);
+const RecognitionSection = dynamic(() =>
+  import("@/components/recognition/RecognitionSection").then(
+    (mod) => mod.RecognitionSection
+  )
+);
+const CommunitySection = dynamic(() =>
+  import("@/components/community/CommunitySection").then(
+    (mod) => mod.CommunitySection
+  )
+);
+const ToolkitSection = dynamic(() =>
+  import("@/components/toolkit/ToolkitSection").then(
+    (mod) => mod.ToolkitSection
+  )
+);
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://www.parthmahadik.in/#person",
+      "@id": "https://parthmahadik.in/#person",
       name: "Parth Mahadik",
-      url: "https://www.parthmahadik.in",
-      image: "https://www.parthmahadik.in/og-image.png",
-      jobTitle: "Software Developer & Computer Engineering Student",
+      url: "https://parthmahadik.in",
+      image: "https://parthmahadik.in/og-image.png",
+      jobTitle: "Software Developer, AI & Cloud Enthusiast",
       description:
-        "Computer Engineering student and software developer building full-stack web applications, AI-powered tools, and real-world software systems.",
+        "I'm Parth Mahadik, a Computer Engineering student and software developer building web applications, backend systems and AI-integrated solutions. Explore my projects, achievements and technical journey.",
       alumniOf: {
         "@type": "CollegeOrUniversity",
         name: "Trinity College of Engineering and Research (TCOER)",
@@ -37,37 +61,39 @@ const jsonLd = {
         "REST APIs",
         "AI Applications",
         "Google Gemini API",
+        "Cloud Computing",
       ],
       sameAs: [
         "https://github.com/ParthMahadik33",
+        "https://www.linkedin.com/in/parthmahadik/",
         "https://www.credly.com/users/parth-mahadik.7429132e/badges",
       ],
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.parthmahadik.in/#website",
-      url: "https://www.parthmahadik.in",
-      name: "Parth Mahadik | Software Developer & Computer Engineering Student",
+      "@id": "https://parthmahadik.in/#website",
+      url: "https://parthmahadik.in",
+      name: "Parth Mahadik | Software Developer, AI & Cloud Enthusiast",
       description:
-        "Portfolio of Parth Mahadik, a Computer Engineering student and software developer building full-stack web applications, AI-powered tools, and real-world software systems.",
+        "I'm Parth Mahadik, a Computer Engineering student and software developer building web applications, backend systems and AI-integrated solutions. Explore my projects, achievements and technical journey.",
       publisher: {
-        "@id": "https://www.parthmahadik.in/#person",
+        "@id": "https://parthmahadik.in/#person",
       },
       inLanguage: "en-US",
     },
     {
       "@type": "ProfilePage",
-      "@id": "https://www.parthmahadik.in/#webpage",
-      url: "https://www.parthmahadik.in",
-      name: "Parth Mahadik | Software Developer & Computer Engineering Student",
+      "@id": "https://parthmahadik.in/#webpage",
+      url: "https://parthmahadik.in",
+      name: "Parth Mahadik | Software Developer, AI & Cloud Enthusiast",
       isPartOf: {
-        "@id": "https://www.parthmahadik.in/#website",
+        "@id": "https://parthmahadik.in/#website",
       },
       about: {
-        "@id": "https://www.parthmahadik.in/#person",
+        "@id": "https://parthmahadik.in/#person",
       },
       mainEntity: {
-        "@id": "https://www.parthmahadik.in/#person",
+        "@id": "https://parthmahadik.in/#person",
       },
       inLanguage: "en-US",
     },
@@ -82,7 +108,11 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
-      <BelowTheFoldSections />
+      <AboutSection />
+      <SelectedWorkSection />
+      <RecognitionSection />
+      <CommunitySection />
+      <ToolkitSection />
     </main>
   );
 }

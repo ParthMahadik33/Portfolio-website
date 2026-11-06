@@ -1,13 +1,37 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
+  const isPreview = process.env.VERCEL_ENV === "preview";
+
+  if (isPreview) {
+    return {
+      rules: {
+        userAgent: "*",
+        disallow: "/",
+      },
+    };
+  }
+
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
-    sitemap: "https://www.parthmahadik.in/sitemap.xml",
-    host: "https://www.parthmahadik.in",
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+      {
+        userAgent: [
+          "Googlebot",
+          "Bingbot",
+          "Applebot",
+          "DuckDuckBot",
+          "GPTBot",
+          "ClaudeBot",
+          "PerplexityBot",
+        ],
+        allow: "/",
+      },
+    ],
+    sitemap: "https://parthmahadik.in/sitemap.xml",
+    host: "https://parthmahadik.in",
   };
 }
-

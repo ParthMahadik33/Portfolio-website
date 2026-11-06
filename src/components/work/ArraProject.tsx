@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { MaskingTape } from "@/components/common/MaskingTape";
+import { trackEvent } from "@/lib/analytics";
 import styles from "./SelectedWork.module.scss";
 
 export const ArraProject: React.FC = () => {
@@ -91,6 +92,12 @@ export const ArraProject: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
+            onClick={() =>
+              trackEvent("external_project_click", {
+                project: "ARRA",
+                url: "https://arraproject.netlify.app/",
+              })
+            }
             aria-label="Explore Project — ARRA live prototype (opens in new tab)"
           >
             <span>EXPLORE PROJECT</span>
@@ -101,6 +108,12 @@ export const ArraProject: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
+            onClick={() =>
+              trackEvent("github_click", {
+                project: "ARRA",
+                url: "https://github.com/ParthMahadik33/A.R.R.A",
+              })
+            }
             aria-label="View Source — ARRA on GitHub (opens in new tab)"
           >
             <span>VIEW SOURCE</span>

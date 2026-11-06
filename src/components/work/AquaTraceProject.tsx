@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { MaskingTape } from "@/components/common/MaskingTape";
+import { trackEvent } from "@/lib/analytics";
 import styles from "./SelectedWork.module.scss";
 
 export const AquaTraceProject: React.FC = () => {
@@ -21,7 +22,7 @@ export const AquaTraceProject: React.FC = () => {
           alt=""
           width={960}
           height={720}
-          sizes="(max-width: 768px) 160px, 280px"
+          sizes="(max-width: 768px) 80vw, 480px"
           className={styles.sailingShipImg}
         />
       </div>
@@ -63,6 +64,12 @@ export const AquaTraceProject: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
+            onClick={() =>
+              trackEvent("external_project_click", {
+                project: "AquaTrace",
+                url: "https://aqua-trace-olive.vercel.app/",
+              })
+            }
             aria-label="Explore Project — AquaTrace live application (opens in new tab)"
           >
             <span>EXPLORE PROJECT</span>
@@ -73,6 +80,12 @@ export const AquaTraceProject: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
+            onClick={() =>
+              trackEvent("github_click", {
+                project: "AquaTrace",
+                url: "https://github.com/ParthMahadik33/Aqua-Trace",
+              })
+            }
             aria-label="View Source — AquaTrace on GitHub (opens in new tab)"
           >
             <span>VIEW SOURCE</span>
@@ -100,7 +113,7 @@ export const AquaTraceProject: React.FC = () => {
                 alt="AquaTrace maritime oil spill observation and vessel intelligence interface"
                 width={880}
                 height={500}
-                sizes="(max-width: 768px) 220px, (max-width: 1200px) 45vw, 520px"
+                sizes="(max-width: 768px) 92vw, (max-width: 1200px) 45vw, 540px"
                 className={styles.aquatraceScreenshotImg}
               />
             </div>

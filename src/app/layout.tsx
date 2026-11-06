@@ -7,10 +7,13 @@ import {
   Caveat,
 } from "next/font/google";
 import { CustomCursorOverlay } from "../components/cursor/CustomCursorOverlay";
+import { GoogleAnalytics } from "../components/analytics/GoogleAnalytics";
 import "./globals.scss";
 
 const bodoniModa = Bodoni_Moda({
   subsets: ["latin"],
+  weight: ["400", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
   display: "swap",
   variable: "--font-bodoni",
   preload: true,
@@ -18,7 +21,7 @@ const bodoniModa = Bodoni_Moda({
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["500", "600", "700", "800"],
   display: "swap",
   variable: "--font-barlow",
   preload: true,
@@ -26,6 +29,7 @@ const barlowCondensed = Barlow_Condensed({
 
 const inter = Inter({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
   variable: "--font-inter",
   preload: true,
@@ -33,7 +37,7 @@ const inter = Inter({
 
 const martel = Martel({
   subsets: ["devanagari", "latin"],
-  weight: ["800"],
+  weight: ["700", "800", "900"],
   display: "swap",
   variable: "--font-martel",
   preload: true,
@@ -41,17 +45,19 @@ const martel = Martel({
 
 const caveat = Caveat({
   subsets: ["latin"],
-  weight: ["600"],
+  weight: ["600", "700"],
   display: "swap",
   variable: "--font-caveat",
   preload: false,
 });
 
-const SITE_URL = "https://www.parthmahadik.in";
+const SITE_URL = "https://parthmahadik.in";
 const SITE_TITLE =
-  "Parth Mahadik | Software Developer & Computer Engineering Student";
+  "Parth Mahadik | Software Developer, AI & Cloud Enthusiast";
 const SITE_DESCRIPTION =
-  "Portfolio of Parth Mahadik, a Computer Engineering student and software developer building full-stack web applications, AI-powered tools, and real-world software systems.";
+  "I'm Parth Mahadik, a Computer Engineering student and software developer building web applications, backend systems and AI-integrated solutions. Explore my projects, achievements and technical journey.";
+
+const isPreview = process.env.VERCEL_ENV === "preview";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -73,6 +79,8 @@ export const metadata: Metadata = {
   keywords: [
     "Parth Mahadik",
     "Software Developer",
+    "AI Enthusiast",
+    "Cloud Enthusiast",
     "Computer Engineering Student",
     "Full-Stack Developer",
     "Next.js",
@@ -89,17 +97,22 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  robots: isPreview
+    ? {
+        index: false,
+        follow: false,
+      }
+    : {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -112,7 +125,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Parth Mahadik — Software Developer & Computer Engineering Student",
+        alt: "Parth Mahadik — Software Developer, AI & Cloud Enthusiast",
       },
     ],
   },
@@ -149,6 +162,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={fontVariables}>
       <body>
+        <GoogleAnalytics />
         {children}
         <CustomCursorOverlay />
       </body>

@@ -6,6 +6,7 @@ import { SelectedWorkSection } from "@/components/work/SelectedWorkSection";
 import { RecognitionSection } from "@/components/recognition/RecognitionSection";
 import { CommunitySection } from "@/components/community/CommunitySection";
 import { ToolkitSection } from "@/components/toolkit/ToolkitSection";
+import { ContactSection } from "@/components/contact/ContactSection";
 
 export const BelowTheFoldContent: React.FC = () => {
   useEffect(() => {
@@ -27,6 +28,7 @@ export const BelowTheFoldContent: React.FC = () => {
       <RecognitionSection />
       <CommunitySection />
       <ToolkitSection />
+      <ContactSection />
     </>
   );
 };

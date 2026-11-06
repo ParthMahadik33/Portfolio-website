@@ -664,21 +664,19 @@
 
 @keyframes heroArtworkReveal {
   from {
-    clip-path: inset(100% 0% 0% 0%);
+    transform: translateY(22px);
   }
   to {
-    clip-path: inset(0% 0% 0% 0%);
+    transform: translateY(0);
   }
 }
 
 @keyframes heroPortraitReveal {
   from {
-    clip-path: inset(14% 0% 0% 0%);
     opacity: 0;
     transform: translateY(18px) scale(0.985);
   }
   to {
-    clip-path: inset(0% 0% 0% 0%);
     opacity: 1;
     transform: translateY(0) scale(1);
   }

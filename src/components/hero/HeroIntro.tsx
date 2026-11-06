@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { trackEvent } from "@/lib/analytics";
 import styles from "./Hero.module.scss";
 
 export interface HeroIntroProps {
@@ -71,7 +72,17 @@ export const HeroIntro: React.FC<HeroIntroProps> = ({
           transform: isComplete ? "none" : undefined,
         }}
       >
-        <a href="#journey" className={styles.btnPrimary}>
+        <a
+          href="#journey"
+          className={styles.btnPrimary}
+          onClick={() =>
+            trackEvent("journey_cta_click", {
+              destination: "#journey",
+              source: "hero_primary_cta",
+            })
+          }
+          aria-label="Explore My Journey — Scroll to about and journey section"
+        >
           <span>EXPLORE MY JOURNEY</span>
           <svg
             className={styles.btnArrow}
@@ -89,7 +100,17 @@ export const HeroIntro: React.FC<HeroIntroProps> = ({
           </svg>
         </a>
 
-        <a href="#work" className={styles.btnSecondary}>
+        <a
+          href="#work"
+          className={styles.btnSecondary}
+          onClick={() =>
+            trackEvent("section_navigation", {
+              section: "work",
+              source: "hero_secondary_cta",
+            })
+          }
+          aria-label="View Projects — Scroll to selected engineering work"
+        >
           <span className={styles.playIconContainer} aria-hidden="true">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="#171512">
               <circle cx="12" cy="12" r="11" fill="#171512" />

@@ -113,7 +113,7 @@ export const PortfolioIntro: React.FC<PortfolioIntroProps> = ({
       <button
         className={styles.skipButton}
         onClick={onSkip}
-        aria-label="Skip introduction animation and enter website"
+        aria-label="SKIP INTRO — Skip introduction animation and enter website"
         tabIndex={isFadingOut ? -1 : 0}
       >
         <span>SKIP INTRO</span>

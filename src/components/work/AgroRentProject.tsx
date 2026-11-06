@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { MaskingTape } from "@/components/common/MaskingTape";
+import { trackEvent } from "@/lib/analytics";
 import styles from "./SelectedWork.module.scss";
 
 export const AgroRentProject: React.FC = () => {
@@ -12,7 +13,16 @@ export const AgroRentProject: React.FC = () => {
   const [isSpread, setIsSpread] = useState(false);
 
   const toggleSpread = () => {
-    setIsSpread((prev) => !prev);
+    setIsSpread((prev) => {
+      const next = !prev;
+      if (next) {
+        trackEvent("project_click", {
+          project: "AgroRent",
+          action: "fan_out_collage",
+        });
+      }
+      return next;
+    });
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -84,6 +94,12 @@ export const AgroRentProject: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
+            onClick={() =>
+              trackEvent("external_project_click", {
+                project: "AgroRent",
+                url: "https://agrorent-v3.onrender.com/",
+              })
+            }
             aria-label="Explore Project — AgroRent live application (opens in new tab)"
           >
             <span>EXPLORE PROJECT</span>
@@ -94,6 +110,12 @@ export const AgroRentProject: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.editorialActionLink}
+            onClick={() =>
+              trackEvent("github_click", {
+                project: "AgroRent",
+                url: "https://github.com/ParthMahadik33/AgroRent-v3",
+              })
+            }
             aria-label="View Source — AgroRent on GitHub (opens in new tab)"
           >
             <span>VIEW SOURCE</span>
@@ -118,7 +140,7 @@ export const AgroRentProject: React.FC = () => {
             alt=""
             width={1400}
             height={528}
-            sizes="(max-width: 768px) 240px, 750px"
+            sizes="(max-width: 768px) 95vw, 900px"
             className={styles.agriculturalPanoramaImg}
           />
         </div>
@@ -130,7 +152,7 @@ export const AgroRentProject: React.FC = () => {
             alt=""
             width={480}
             height={480}
-            sizes="128px"
+            sizes="240px"
             className={styles.botanicalSprigImg}
           />
         </div>
@@ -140,7 +162,7 @@ export const AgroRentProject: React.FC = () => {
             alt=""
             width={480}
             height={480}
-            sizes="128px"
+            sizes="240px"
             className={styles.botanicalSprigImg}
           />
         </div>
@@ -152,9 +174,9 @@ export const AgroRentProject: React.FC = () => {
             shouldReduceMotion
               ? {}
               : {
-                  x: scrollSpreadLeftX,
-                  rotate: scrollRotateLeft,
-                }
+                x: scrollSpreadLeftX,
+                rotate: scrollRotateLeft,
+              }
           }
           initial={
             shouldReduceMotion
@@ -208,7 +230,7 @@ export const AgroRentProject: React.FC = () => {
                 alt="AI machinery inspection closeup of tractor wheel and engine"
                 width={320}
                 height={220}
-                sizes="128px"
+                sizes="220px"
                 className={styles.conditionPhotoImg}
               />
             </div>
@@ -264,7 +286,7 @@ export const AgroRentProject: React.FC = () => {
               alt="AgroRent farm machinery rental homepage interface showing tractors and harvesting equipment"
               width={1040}
               height={585}
-              sizes="(max-width: 768px) 220px, (max-width: 1200px) 50vw, 640px"
+              sizes="(max-width: 768px) 92vw, (max-width: 1200px) 55vw, 680px"
               className={styles.desktopScreenshotImg}
             />
           </div>
@@ -283,9 +305,9 @@ export const AgroRentProject: React.FC = () => {
             shouldReduceMotion
               ? {}
               : {
-                  x: scrollSpreadRightX,
-                  rotate: scrollRotateRight,
-                }
+                x: scrollSpreadRightX,
+                rotate: scrollRotateRight,
+              }
           }
           initial={
             shouldReduceMotion
@@ -335,7 +357,7 @@ export const AgroRentProject: React.FC = () => {
                 <span className={styles.waBackBtn}>‹</span>
                 <div className={styles.waAvatar}>
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="#FFFFFF">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
                   </svg>
                 </div>
                 <div className={styles.waContactInfo}>
@@ -362,7 +384,7 @@ export const AgroRentProject: React.FC = () => {
               {/* Message 2: Outgoing from AgroRent AI Bot */}
               <div className={styles.waMessageOutgoing}>
                 <p className={styles.waMsgText}>
-                  Yes! We have a John Deere 5050D available for rent, <span style={{ fontFamily: "system-ui, sans-serif" }}>₹</span>1,200 per day. Would you like to book it?
+                  Yes! We have a John Deere 5050D available for rent, ₹1,200 per day. Would you like to book it?
                 </p>
                 <span className={styles.waMsgTime}>10:25 AM <span className={styles.waChecks}>✓✓</span></span>
               </div>
@@ -379,8 +401,8 @@ export const AgroRentProject: React.FC = () => {
               <span className={styles.waInputPlaceholder}>Type a message...</span>
               <div className={styles.waMicBtn}>
                 <svg viewBox="0 0 24 24" width="12" height="12" fill="#FFFFFF">
-                  <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
-                  <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+                  <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z" />
+                  <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z" />
                 </svg>
               </div>
             </div>

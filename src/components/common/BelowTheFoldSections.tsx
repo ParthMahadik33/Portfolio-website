@@ -195,6 +195,33 @@ export const BelowTheFoldSections: React.FC = () => {
           </a>
         </div>
       </section>
+
+      {/* Semantic SSR & Accessibility structure for Section 06: Contact and Colophon */}
+      <footer
+        id="contact"
+        aria-label="Section 06: Contact and Colophon"
+        style={{ minHeight: "550px", position: "relative" }}
+      >
+        <div style={srOnlyStyle}>
+          <h2>06 / CONTACT &amp; COLOPHON — Curious by default. Builder by choice.</h2>
+          <p>
+            Get in touch with Parth Mahadik for software engineering roles, full-stack web
+            applications, AI integrations, and technical collaborations.
+          </p>
+          <a href="mailto:parthmahadik752@gmail.com">
+            Email: parthmahadik752@gmail.com
+          </a>
+          <a href="https://github.com/ParthMahadik33">
+            GitHub / ParthMahadik33
+          </a>
+          <a href="https://www.linkedin.com/in/parthmahadik/">
+            LinkedIn / in/parthmahadik
+          </a>
+          <a href="https://scorebadge.com/site/parthmahadik.in">
+            scorebadge · Public Site Audit
+          </a>
+        </div>
+      </footer>
     </div>
   );
 };
