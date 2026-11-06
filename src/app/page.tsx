@@ -65,7 +65,7 @@ const jsonLd = {
       ],
       sameAs: [
         "https://github.com/ParthMahadik33",
-        "https://www.linkedin.com/in/parthmahadik/",
+        "https://www.linkedin.com/in/parth-mahadik-489348325/",
         "https://www.credly.com/users/parth-mahadik.7429132e/badges",
       ],
     },

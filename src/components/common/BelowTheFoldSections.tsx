@@ -196,17 +196,16 @@ export const BelowTheFoldSections: React.FC = () => {
         </div>
       </section>
 
-      {/* Semantic SSR & Accessibility structure for Section 06: Contact and Colophon */}
+      {/* Semantic SSR & Accessibility structure for Section 07: Let's Connect */}
       <footer
         id="contact"
-        aria-label="Section 06: Contact and Colophon"
+        aria-label="Section 07: Let's Connect"
         style={{ minHeight: "550px", position: "relative" }}
       >
         <div style={srOnlyStyle}>
-          <h2>06 / CONTACT &amp; COLOPHON — Curious by default. Builder by choice.</h2>
+          <h2>07 / LET&apos;S CONNECT — Good things start with a conversation.</h2>
           <p>
-            Get in touch with Parth Mahadik for software engineering roles, full-stack web
-            applications, AI integrations, and technical collaborations.
+            Have an interesting idea, a challenging problem, or an opportunity worth exploring? Let&apos;s talk.
           </p>
           <a href="mailto:parthmahadik752@gmail.com">
             Email: parthmahadik752@gmail.com
@@ -214,11 +213,11 @@ export const BelowTheFoldSections: React.FC = () => {
           <a href="https://github.com/ParthMahadik33">
             GitHub / ParthMahadik33
           </a>
-          <a href="https://www.linkedin.com/in/parthmahadik/">
-            LinkedIn / in/parthmahadik
+          <a href="https://www.linkedin.com/in/parth-mahadik-489348325/">
+            LinkedIn / in/parth-mahadik-489348325
           </a>
-          <a href="https://scorebadge.com/site/parthmahadik.in">
-            scorebadge · Public Site Audit
+          <a href="/assets/resume/Parth_Mahadik_Resume.pdf">
+            Download Resume (PDF)
           </a>
         </div>
       </footer>

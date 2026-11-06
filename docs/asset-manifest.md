@@ -16,6 +16,7 @@ This document categorizes all production static assets stored under `parth-portf
 | `public/assets/community/` | `.mp4`, `.webm`, `.jpg`, `.png`, `.svg` | GDG group photo, presentation video clips, CORE logo, campus lineart |
 | `public/assets/toolkit/` | `.svg`, `.png` | Laptop browser illustration, mountain panorama, brush underline |
 | `public/assets/cursors/` | `.svg`, `.png` | Custom parchment cursor variants and 10 drift-leaf trail particle frames |
+| `public/assets/resume/` | `.pdf` | Authentic compiled PDF resume (`Parth_Mahadik_Resume.pdf`) |
 
 ---
 
