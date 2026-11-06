@@ -126,8 +126,8 @@ npm run lint
 Create a `.env.local` file in the project root (or set in Vercel Project Settings):
 
 ```env
-# Google Tag Manager Container ID (Default: GTM-NRP9327Z)
-NEXT_PUBLIC_GTM_ID=GTM-NRP9327Z
+# Google Tag Manager Container ID (Default: GTM-PJJDLZR2)
+NEXT_PUBLIC_GTM_ID=GTM-PJJDLZR2
 
 # Google Analytics 4 Measurement ID (Configured within GTM: G-4GD9QZJK5D)
 NEXT_PUBLIC_GA_ID=G-4GD9QZJK5D

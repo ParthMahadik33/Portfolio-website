@@ -1,6 +1,6 @@
 // Client-side Google Tag Manager & Google Analytics 4 event tracking utility
 export const GTM_CONTAINER_ID =
-  process.env.NEXT_PUBLIC_GTM_ID || "GTM-NRP9327Z";
+  process.env.NEXT_PUBLIC_GTM_ID || "GTM-PJJDLZR2";
 export const GA_MEASUREMENT_ID =
   process.env.NEXT_PUBLIC_GA_ID || "G-4GD9QZJK5D";
 

@@ -28,18 +28,18 @@ The portfolio uses the **non-www** apex domain as its single canonical URL.
 
 ## 2. Analytics & Tracking Configuration (Google Tag Manager & GA4)
 
-Google Analytics 4 is integrated exclusively via **Google Tag Manager** (`GTM-NRP9327Z`).
+Google Analytics 4 is integrated exclusively via **Google Tag Manager** (`GTM-PJJDLZR2`).
 
 ### Environment Variables
 Configure in **Vercel Project Settings** → **Environment Variables**:
 
 | Variable | Default Value | Environments | Purpose |
 | :--- | :--- | :--- | :--- |
-| `NEXT_PUBLIC_GTM_ID` | `GTM-NRP9327Z` | Production, Preview | Google Tag Manager Container ID |
+| `NEXT_PUBLIC_GTM_ID` | `GTM-PJJDLZR2` | Production, Preview | Google Tag Manager Container ID |
 | `NEXT_PUBLIC_GA_ID` | `G-4GD9QZJK5D` | Production, Preview | Google Analytics 4 Measurement ID |
 
-### GTM Container Setup Guide (`GTM-NRP9327Z`)
-1. Log into **[Google Tag Manager](https://tagmanager.google.com/)** and select container `GTM-NRP9327Z`.
+### GTM Container Setup Guide (`GTM-PJJDLZR2`)
+1. Log into **[Google Tag Manager](https://tagmanager.google.com/)** and select container `GTM-PJJDLZR2`.
 2. Under **Tags** → **New**:
    - **Tag Type:** `Google Tag` (Google Analytics)
    - **Tag ID:** `G-4GD9QZJK5D`
