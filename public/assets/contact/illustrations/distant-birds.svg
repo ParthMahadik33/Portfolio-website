@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none">
+  <!-- Bird 1 -->
+  <path d="M10 20 Q 16 12 22 20 Q 28 12 34 20" stroke="#4A453E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Bird 2 -->
+  <path d="M48 14 Q 52 8 57 14 Q 62 8 67 14" stroke="#4A453E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Bird 3 -->
+  <path d="M78 24 Q 81 19 85 24 Q 89 19 93 24" stroke="#4A453E" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

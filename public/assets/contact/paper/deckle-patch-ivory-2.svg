@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 48" fill="none">
+  <defs>
+    <filter id="paperShadow2" x="-6%" y="-15%" width="112%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#171512" flood-opacity="0.09"/>
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#171512" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+  <path d="M4 5 L18 3 L35 5 L62 3 L88 5 L118 3 L142 5 L162 3 L166 8 L168 16 L165 25 L167 33 L165 42 L161 45 L142 44 L118 46 L88 44 L62 46 L35 44 L18 46 L4 43 L2 35 L5 27 L2 19 L4 11 Z"
+        fill="#FAF6F0" filter="url(#paperShadow2)" stroke="rgba(23,21,18,0.14)" stroke-width="0.8"/>
+</svg>

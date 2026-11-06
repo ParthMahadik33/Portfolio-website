@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" fill="none">
+  <defs>
+    <filter id="sealShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="3" flood-color="#171512" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Organic melted wax perimeter -->
+  <path d="M27 3 C 34 2, 42 6, 46 12 C 50 18, 52 26, 49 33 C 46 41, 40 48, 32 50 C 23 52, 14 49, 8 43 C 2 36, 1 27, 4 19 C 7 11, 15 4, 23 3 Z"
+        fill="#A52429" filter="url(#sealShadow)"/>
+  <circle cx="27" cy="27" r="18" fill="#B5282D" stroke="#8A1B20" stroke-width="1"/>
+  <circle cx="27" cy="27" r="15" stroke="rgba(255,255,255,0.25)" stroke-width="0.8" stroke-dasharray="2 2"/>
+  <!-- Embossed monogram / emblem -->
+  <path d="M22 20 L27 32 L32 20 M24 26 H30" stroke="#F4EBDD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

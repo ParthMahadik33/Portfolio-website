@@ -15,6 +15,7 @@ This document categorizes all production static assets stored under `parth-portf
 | `public/assets/recognition/` | `.jpg`, `.png` | Main hackathon cheque photo, Devine hackathon, Novitech cert, trophies |
 | `public/assets/community/` | `.mp4`, `.webm`, `.jpg`, `.png`, `.svg` | GDG group photo, presentation video clips, CORE logo, campus lineart |
 | `public/assets/toolkit/` | `.svg`, `.png` | Laptop browser illustration, mountain panorama, brush underline |
+| `public/assets/contact/` | `.png`, `.svg`, `.jpg` | Sahyadri fort composite, torn deckle patches, masking tape, ridgeline sketch |
 | `public/assets/cursors/` | `.svg`, `.png` | Custom parchment cursor variants and 10 drift-leaf trail particle frames |
 | `public/assets/resume/` | `.pdf` | Authentic compiled PDF resume (`Parth_Mahadik_Resume.pdf`) |
 
@@ -80,6 +81,19 @@ This document categorizes all production static assets stored under `parth-portf
 - `illustrations/laptop-browser-code.svg`: Clean vector editorial graphic depicting web engineering.
 - `illustrations/sahyadri-fort-mountain-panorama.png`: Panorama fort illustration spanning skills category cards.
 - `ornaments/brush-underline.svg`: Red vermilion brush stroke accent.
+
+### Contact & Footer Section (`public/assets/contact/`)
+- `fort/sahyadri-fort-landscape-composite.png`: High-resolution Sahyadri hill fort bastion, stone stairways, saffron flag, distressed vermilion sun, and distant mountain ridges with smooth cubic ease-out alpha fade.
+- `fort/sahyadri-hill-fort-bastion.png`: Isolated fort bastion on rocky ridge with stone stairways and flag.
+- `paper/torn-edge-botanical-left.png`: Fibrous ripped kraft paper edge and botanical foliage sprig along the left edge.
+- `paper/badge-bg-ivory.svg`: Irregular ripped cream paper patch (`#FAF6F0`) with drop shadow for GitHub, LinkedIn, and Instagram badges.
+- `paper/badge-bg-vermilion.svg`: Tactile ripped vermilion paper strip (`#B5282D`) with paper fiber highlights for Resume download badge.
+- `tape/translucent-masking-tape.svg` & `tape/translucent-masking-tape-2.svg`: Translucent textured parchment masking tape pins.
+- `illustrations/brush-underline-vermilion.svg`: Hand-painted vermilion brush stroke underline.
+- `illustrations/distant-birds.svg`: Vector silhouettes of soaring birds above the fort landscape.
+- `mountains/mountain-contour-footer.svg`: Minimalist Sahyadri mountain ridgeline contour sketch resting on the footer colophon rule.
+- `textures/parchment-ivory-texture.jpg`: Subtle parchment background texture.
+- `textures/aged-grain-overlay.png`: Aged tactile paper grain overlay.
 
 ### Cursors & Particle Effects (`public/assets/cursors/`)
 - `cursor-default.svg` / `.png`: Custom quill/ink pointer cursor.

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" fill="none">
+  <defs>
+    <filter id="vermilionShadow" x="-6%" y="-15%" width="112%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#171512" flood-opacity="0.18"/>
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#B5282D" flood-opacity="0.25"/>
+    </filter>
+    <pattern id="paperFibersRed" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M0 6h12 M6 0v12" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+    </pattern>
+  </defs>
+  <path d="M4 6 L22 4 L48 6 L82 3 L118 6 L154 4 L188 6 L212 4 L216 10 L214 18 L217 27 L214 36 L217 44 L212 48 L188 47 L154 49 L118 46 L82 49 L48 47 L22 49 L4 47 L2 39 L5 30 L1 21 L4 12 Z"
+        fill="#B5282D" filter="url(#vermilionShadow)" stroke="rgba(145,28,33,0.4)" stroke-width="1"/>
+  <path d="M4 6 L22 4 L48 6 L82 3 L118 6 L154 4 L188 6 L212 4 L216 10 L214 18 L217 27 L214 36 L217 44 L212 48 L188 47 L154 49 L118 46 L82 49 L48 47 L22 49 L4 47 L2 39 L5 30 L1 21 L4 12 Z"
+        fill="url(#paperFibersRed)"/>
+  <!-- Highlight on upper torn rim -->
+  <path d="M6 7 L210 6" stroke="rgba(255,255,255,0.22)" stroke-width="1.2" stroke-linecap="round"/>
+</svg>

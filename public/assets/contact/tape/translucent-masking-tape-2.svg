@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 32" fill="none">
+  <defs>
+    <filter id="tapeShadow2" x="-10%" y="-20%" width="120%" height="150%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#171512" flood-opacity="0.10"/>
+    </filter>
+    <pattern id="tapeFibers2" width="6" height="6" patternUnits="userSpaceOnUse">
+      <path d="M0 3h6 M3 0v6" stroke="rgba(168,145,115,0.15)" stroke-width="0.6"/>
+    </pattern>
+  </defs>
+  <path d="M3 4 L14 2 L32 4 L58 2 L88 4 L114 2 L132 4 L137 7 L135 13 L138 19 L135 25 L138 29 L134 31 L114 29 L88 31 L58 29 L32 31 L14 29 L3 31 L5 24 L2 17 L5 10 Z"
+        fill="#EDE2CF" fill-opacity="0.78" filter="url(#tapeShadow2)"/>
+  <path d="M3 4 L14 2 L32 4 L58 2 L88 4 L114 2 L132 4 L137 7 L135 13 L138 19 L135 25 L138 29 L134 31 L114 29 L88 31 L58 29 L32 31 L14 29 L3 31 L5 24 L2 17 L5 10 Z"
+        fill="url(#tapeFibers2)" opacity="0.85"/>
+  <path d="M8 6 L130 5" stroke="rgba(255,255,255,0.4)" stroke-width="1" stroke-linecap="round"/>
+</svg>

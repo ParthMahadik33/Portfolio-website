@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 36" fill="none">
+  <defs>
+    <filter id="tapeShadow" x="-10%" y="-20%" width="120%" height="150%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#171512" flood-opacity="0.12"/>
+    </filter>
+    <pattern id="tapeFibers" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M0 4h8 M4 0v8" stroke="rgba(168,145,115,0.18)" stroke-width="0.7"/>
+      <path d="M0 0l8 8 M8 0l-8 8" stroke="rgba(168,145,115,0.08)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <path d="M3 5 L12 3 L25 5 L45 3 L75 5 L105 3 L135 5 L152 3 L157 6 L155 12 L158 18 L155 24 L158 30 L154 34 L135 32 L105 34 L75 32 L45 34 L25 32 L12 34 L3 32 L5 25 L2 18 L5 11 Z"
+        fill="#EDE2CF" fill-opacity="0.82" filter="url(#tapeShadow)"/>
+  <path d="M3 5 L12 3 L25 5 L45 3 L75 5 L105 3 L135 5 L152 3 L157 6 L155 12 L158 18 L155 24 L158 30 L154 34 L135 32 L105 34 L75 32 L45 34 L25 32 L12 34 L3 32 L5 25 L2 18 L5 11 Z"
+        fill="url(#tapeFibers)" opacity="0.9"/>
+  <!-- Subtle creased highlight line -->
+  <path d="M10 8 L150 7" stroke="rgba(255,255,255,0.45)" stroke-width="1.2" stroke-linecap="round"/>
+</svg>
