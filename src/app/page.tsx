@@ -24,6 +24,11 @@ const ToolkitSection = dynamic(() =>
     (mod) => mod.ToolkitSection
   )
 );
+const ContactSection = dynamic(() =>
+  import("@/components/contact/ContactSection").then(
+    (mod) => mod.ContactSection
+  )
+);
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -113,6 +118,7 @@ export default function Home() {
       <RecognitionSection />
       <CommunitySection />
       <ToolkitSection />
+      <ContactSection />
     </main>
   );
 }
