@@ -93,7 +93,6 @@ This document categorizes all production static assets stored under `parth-portf
 - `ui_backings/blank-linkedin-paper-button-backing.png`: Torn-paper deckle backing with natural drop shadow for LinkedIn badge.
 - `ui_backings/blank-instagram-paper-button-backing.png`: Torn-paper deckle backing with natural drop shadow for Instagram badge.
 - `ui_backings/blank-vermilion-resume-button-backing.png`: Authentic vermilion torn-paper scrap backing for Download Resume badge.
-- `textures/parchment-ivory-texture.jpg`: Subtle parchment background texture.
 - `textures/aged-grain-overlay.png`: Aged tactile paper grain overlay.
 
 ### Cursors & Particle Effects (`public/assets/cursors/`)

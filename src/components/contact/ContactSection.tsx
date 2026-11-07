@@ -104,18 +104,7 @@ export const ContactSection: React.FC = () => {
 
       {/* Layered Sahyadri Fort Landscape Artwork (Right) */}
       <div className={styles.landscapeBackdrop} aria-hidden="true">
-        {/* Soft atmospheric distant mountain ridge behind fort */}
-        <div className={styles.distantRidgeLayer}>
-          <Image
-            src="/assets/contact/landscape/soft-distant-mountain-ridge.png"
-            alt=""
-            width={238}
-            height={173}
-            className={styles.distantRidgeImage}
-          />
-        </div>
-
-        {/* Main fort, textured vermilion sun, stone stairways, and saffron flag */}
+        {/* Main fort, textured vermilion sun, stone stairways, and saffron flag with smooth fade */}
         <Image
           src="/assets/contact/landscape/sahyadri-fort-landscape.png"
           alt="Sahyadri historic hill fort bastion, stone stairways, saffron flag, textured vermilion sun, and mountain landscape"
