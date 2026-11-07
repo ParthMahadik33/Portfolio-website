@@ -8,9 +8,8 @@ import styles from "./Contact.module.scss";
 export const ContactSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
 
-  // Verified contact destinations from project configuration
-  // Using actual configured contact email from project repository
-  const emailAddress = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "parthmahadik752@gmail.com";
+  // Verified contact destinations
+  const emailAddress = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "parth.mahadik33@gmail.com";
   const githubUrl = "https://github.com/ParthMahadik33";
   const linkedinUrl = "https://www.linkedin.com/in/parth-mahadik-489348325/";
   const resumeUrl = "/assets/resume/Parth_Mahadik_Resume.pdf";
@@ -102,9 +101,8 @@ export const ContactSection: React.FC = () => {
       {/* Anchor for direct #contact navigation */}
       <span id="contact-anchor" className={styles.sectionAnchor} aria-hidden="true" />
 
-      {/* Layered Sahyadri Fort Landscape Artwork (Right) */}
+      {/* Layered Sahyadri Fort Landscape Artwork (Right) with Smooth Alpha Gradient Blending */}
       <div className={styles.landscapeBackdrop} aria-hidden="true">
-        {/* Main fort, textured vermilion sun, stone stairways, and saffron flag with smooth fade */}
         <Image
           src="/assets/contact/landscape/sahyadri-fort-landscape.png"
           alt="Sahyadri historic hill fort bastion, stone stairways, saffron flag, textured vermilion sun, and mountain landscape"
@@ -114,7 +112,7 @@ export const ContactSection: React.FC = () => {
           priority
         />
 
-        {/* Distant soaring birds above fort */}
+        {/* Distant soaring birds above fort and mountains */}
         <div className={styles.distantBirdsWrapper}>
           <Image
             src="/assets/contact/landscape/distant-birds.png"
@@ -126,7 +124,7 @@ export const ContactSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Botanical Branch along Left Edge */}
+      {/* Intentionally Positioned Botanical Branch along Left Margin */}
       <div className={styles.leftBotanicalEdge} aria-hidden="true">
         <Image
           src="/assets/contact/botanical/botanical-left-branch.png"
@@ -155,18 +153,19 @@ export const ContactSection: React.FC = () => {
 
         {/* 2. Main Editorial Content Area */}
         <div className={styles.contentWrapper}>
-          {/* Headline: Good things start with a conversation. (strictly 2 lines on desktop) */}
+          {/* Headline: Good things start with a conversation. (strictly 2 lines) */}
           <h2 className={styles.editorialHeadline}>
             <span className={styles.headlineCharcoal}>Good things start with</span>
             <span className={styles.headlineVermilionWrap}>
               <span className={styles.headlineVermilion}>a conversation.</span>
-              {/* Authentic Hand-Painted Vermilion Brush Underline */}
+              {/* Hand-Painted Vermilion Brush Underline */}
               <Image
                 src="/assets/contact/decorative/red-brush-underline.png"
                 alt=""
                 width={524}
                 height={35}
                 className={styles.brushUnderlineImage}
+                priority
                 aria-hidden="true"
               />
             </span>
@@ -225,7 +224,6 @@ export const ContactSection: React.FC = () => {
               onClick={handleGithubClick}
               aria-label="Parth Mahadik on GitHub (opens in new tab)"
             >
-              {/* Torn-paper PNG backing */}
               <Image
                 src="/assets/contact/ui_backings/blank-github-paper-button-backing.png"
                 alt=""
@@ -259,7 +257,6 @@ export const ContactSection: React.FC = () => {
               onClick={handleLinkedinClick}
               aria-label="Parth Mahadik on LinkedIn (opens in new tab)"
             >
-              {/* Torn-paper PNG backing */}
               <Image
                 src="/assets/contact/ui_backings/blank-linkedin-paper-button-backing.png"
                 alt=""
@@ -334,7 +331,6 @@ export const ContactSection: React.FC = () => {
               onClick={handleResumeClick}
               aria-label="Download Parth Mahadik's Resume in PDF format"
             >
-              {/* Vermilion torn-paper PNG backing */}
               <Image
                 src="/assets/contact/ui_backings/blank-vermilion-resume-button-backing.png"
                 alt=""
@@ -370,9 +366,9 @@ export const ContactSection: React.FC = () => {
           </div>
         </div>
 
-        {/* 5. Compact Editorial Footer */}
+        {/* 5. Compact Editorial Footer with Centered Mountain Line Art */}
         <div className={styles.footerWrapper}>
-          {/* Top hairline rule with Sahyadri mountain ridgeline line art resting on it */}
+          {/* Top hairline rule with hand-drawn mountain line art centered horizontally */}
           <div className={styles.footerRuleContainer}>
             <div className={styles.footerRule} />
             <div className={styles.mountainSketchContainer} aria-hidden="true">
@@ -382,6 +378,7 @@ export const ContactSection: React.FC = () => {
                 width={294}
                 height={97}
                 className={styles.mountainSketchImage}
+                priority
               />
             </div>
           </div>

@@ -43,7 +43,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: clamp(440px, 48vw, 760px);
+  width: clamp(450px, 49vw, 760px);
   height: 100%;
   pointer-events: none;
   z-index: 1;
@@ -73,13 +73,16 @@
   object-fit: contain;
   object-position: right center;
   filter: contrast(1.02) saturate(1.04);
+  /* Hardware-accelerated alpha-mask gradient for seamless dissolving on left */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 14%, rgba(0, 0, 0, 0.8) 32%, black 45%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 14%, rgba(0, 0, 0, 0.8) 32%, black 45%);
 }
 
 .distantBirdsWrapper {
   position: absolute;
-  top: 14%;
-  right: 36%;
-  width: 88px;
+  top: 10%;
+  right: 48%;
+  width: clamp(80px, 8.5vw, 110px);
   pointer-events: none;
   opacity: 0.85;
 
@@ -96,12 +99,12 @@
 
 .leftBotanicalEdge {
   position: absolute;
-  top: clamp(3rem, 7vw, 6rem);
-  left: 0;
-  width: clamp(55px, 6vw, 95px);
+  top: clamp(2.5rem, 6vw, 5.5rem);
+  left: clamp(14px, 2vw, 36px);
+  width: clamp(68px, 6.5vw, 105px);
   pointer-events: none;
   z-index: 2;
-  opacity: 0.92;
+  opacity: 0.94;
 
   @media (max-width: 768px) {
     display: none;
@@ -202,9 +205,9 @@
   display: flex;
   flex-direction: column;
   font-family: var(--font-bodoni), Georgia, serif;
-  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  font-size: clamp(2.7rem, 5.4vw, 4.75rem);
   font-weight: 800;
-  line-height: 1.05;
+  line-height: 1.08;
   letter-spacing: -0.025em;
 }
 
@@ -234,16 +237,20 @@
 
 .brushUnderlineImage {
   position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 102%;
+  left: -2%;
+  bottom: -30px;
+  width: 104%;
   height: auto;
   pointer-events: none;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    bottom: -18px;
+  }
 }
 
 .supportingCopy {
-  margin: clamp(1.25rem, 2vw, 1.85rem) 0 0;
+  margin: clamp(1.35rem, 2.2vw, 2rem) 0 0;
   font-family: var(--font-inter), sans-serif;
   font-size: clamp(1.05rem, 1.35vw, 1.25rem);
   font-weight: 400;
@@ -339,12 +346,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
-  height: 50px;
+  min-height: 44px;
+  height: 48px;
   padding: 0 clamp(16px, 1.8vw, 22px);
   text-decoration: none;
   cursor: pointer;
   user-select: none;
+  filter: drop-shadow(0 2px 5px rgba(23, 21, 18, 0.08));
   transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), filter 0.22s ease;
   overflow: visible;
 
@@ -385,7 +393,7 @@
 
   &:hover {
     transform: translateY(-2px);
-    filter: drop-shadow(0 4px 10px rgba(23, 21, 18, 0.12));
+    filter: drop-shadow(0 5px 12px rgba(23, 21, 18, 0.14));
 
     .badgeArrow {
       transform: translate(2px, -2px);
@@ -403,7 +411,7 @@
 
   &:hover {
     transform: translateY(-2px);
-    filter: drop-shadow(0 5px 14px rgba(181, 40, 45, 0.35));
+    filter: drop-shadow(0 5px 14px rgba(181, 40, 45, 0.38));
 
     .badgeArrow {
       transform: translateY(2px);
@@ -445,7 +453,7 @@
 .footerRuleContainer {
   position: relative;
   width: 100%;
-  height: 30px;
+  height: 48px;
 }
 
 .footerRule {
@@ -459,17 +467,20 @@
 
 .mountainSketchContainer {
   position: absolute;
-  right: clamp(140px, 16vw, 230px);
+  left: 50%;
+  transform: translateX(-50%);
   bottom: -1px;
-  width: 120px;
+  width: clamp(160px, 16vw, 220px);
   pointer-events: none;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
 
   @media (max-width: 768px) {
     position: static;
     margin: 0 auto 0.5rem;
-    display: flex;
-    justify-content: center;
-    width: 100px;
+    transform: none;
+    width: 140px;
   }
 }
 
