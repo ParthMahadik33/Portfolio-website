@@ -83,15 +83,16 @@ This document categorizes all production static assets stored under `parth-portf
 - `ornaments/brush-underline.svg`: Red vermilion brush stroke accent.
 
 ### Contact & Footer Section (`public/assets/contact/`)
-- `fort/sahyadri-fort-landscape-composite.png`: High-resolution Sahyadri hill fort bastion, stone stairways, saffron flag, distressed vermilion sun, and distant mountain ridges with smooth cubic ease-out alpha fade.
-- `fort/sahyadri-hill-fort-bastion.png`: Isolated fort bastion on rocky ridge with stone stairways and flag.
-- `paper/torn-edge-botanical-left.png`: Fibrous ripped kraft paper edge and botanical foliage sprig along the left edge.
-- `paper/badge-bg-ivory.svg`: Irregular ripped cream paper patch (`#FAF6F0`) with drop shadow for GitHub, LinkedIn, and Instagram badges.
-- `paper/badge-bg-vermilion.svg`: Tactile ripped vermilion paper strip (`#B5282D`) with paper fiber highlights for Resume download badge.
-- `tape/translucent-masking-tape.svg` & `tape/translucent-masking-tape-2.svg`: Translucent textured parchment masking tape pins.
-- `illustrations/brush-underline-vermilion.svg`: Hand-painted vermilion brush stroke underline.
-- `illustrations/distant-birds.svg`: Vector silhouettes of soaring birds above the fort landscape.
-- `mountains/mountain-contour-footer.svg`: Minimalist Sahyadri mountain ridgeline contour sketch resting on the footer colophon rule.
+- `landscape/sahyadri-fort-landscape.png`: Main Sahyadri hill fort bastion, stone stairways, saffron flag, textured vermilion sun, and misty mountain range illustration from the official asset pack.
+- `landscape/soft-distant-mountain-ridge.png`: Soft atmospheric distant mountain ridge backdrop.
+- `landscape/distant-birds.png`: Silhouette flock of soaring birds above the fort.
+- `landscape/footer-mountain-line-art.png`: Hand-drawn minimalist mountain line illustration resting on the footer divider rule.
+- `botanical/botanical-left-branch.png`: Vintage botanical foliage branch along the left edge.
+- `decorative/red-brush-underline.png`: Authentic hand-painted vermilion brush underline beneath headline line 2.
+- `ui_backings/blank-github-paper-button-backing.png`: Torn-paper deckle backing with natural drop shadow for GitHub badge.
+- `ui_backings/blank-linkedin-paper-button-backing.png`: Torn-paper deckle backing with natural drop shadow for LinkedIn badge.
+- `ui_backings/blank-instagram-paper-button-backing.png`: Torn-paper deckle backing with natural drop shadow for Instagram badge.
+- `ui_backings/blank-vermilion-resume-button-backing.png`: Authentic vermilion torn-paper scrap backing for Download Resume badge.
 - `textures/parchment-ivory-texture.jpg`: Subtle parchment background texture.
 - `textures/aged-grain-overlay.png`: Aged tactile paper grain overlay.
 

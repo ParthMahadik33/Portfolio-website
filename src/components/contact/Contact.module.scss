@@ -1,12 +1,13 @@
 /* =========================================================================
    SECTION 07: LET'S CONNECT & COMPACT EDITORIAL FOOTER
-   Layered Maharashtrian vintage travel-journal aesthetic:
-   - Warm ivory parchment texture + aged grain
-   - Sahyadri hill fort bastion, stone stairways, saffron flag & vermilion sun
-   - Distant soaring birds & left torn-edge botanical border
-   - Oversized editorial serif typography & hand-painted vermilion brush stroke
-   - Irregular ripped-paper deckle badges with translucent washi tape pins
-   - Minimalist Sahyadri ridgeline contour sketch on footer colophon rule
+   Layered vintage Maharashtrian travel-journal aesthetic matching reference:
+   - Warm ivory parchment background (#F4EBDD)
+   - Sahyadri fort, stone stairways, saffron flag, textured vermilion sun (#B5282D)
+   - Left botanical branch illustration & soaring birds
+   - Strictly 2-line editorial headline with authentic brush underline
+   - Live verified email & Devanagari accent
+   - Reusable torn-paper PNG button backings & live HTML labels
+   - Hand-drawn mountain line art sitting on footer divider rule
    ========================================================================= */
 
 .contactSection {
@@ -45,45 +46,75 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: clamp(480px, 52vw, 860px);
+  width: clamp(460px, 48vw, 760px);
   height: 100%;
   pointer-events: none;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  opacity: 0.96;
+  opacity: 0.98;
 
   @media (max-width: 900px) {
-    width: clamp(340px, 65vw, 560px);
-    opacity: 0.30;
-    right: -5%;
+    width: clamp(340px, 62vw, 540px);
+    opacity: 0.32;
+    right: -4%;
   }
 
   @media (max-width: 600px) {
     width: 320px;
-    opacity: 0.20;
+    opacity: 0.22;
     top: 5%;
     right: -10%;
   }
 }
 
+.distantRidgeLayer {
+  position: absolute;
+  top: 25%;
+  left: -10%;
+  width: 55%;
+  height: auto;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.distantRidgeImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .landscapeImage {
   width: 100%;
   height: auto;
-  max-height: 88%;
+  max-height: 90%;
   object-fit: contain;
   object-position: right center;
   filter: contrast(1.02) saturate(1.04);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.25) 12%,
+    rgba(0, 0, 0, 0.8) 30%,
+    black 52%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.25) 12%,
+    rgba(0, 0, 0, 0.8) 30%,
+    black 52%
+  );
 }
 
 .distantBirdsWrapper {
   position: absolute;
   top: 14%;
-  right: 38%;
-  width: 85px;
+  right: 36%;
+  width: 88px;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.85;
 
   @media (max-width: 768px) {
     display: none;
@@ -96,26 +127,25 @@
   display: block;
 }
 
-.leftTornBorder {
+.leftBotanicalEdge {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: clamp(3.5rem, 8vw, 7rem);
   left: 0;
-  width: clamp(60px, 7vw, 105px);
+  width: clamp(75px, 8vw, 115px);
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
   opacity: 0.92;
-  overflow: hidden;
 
   @media (max-width: 768px) {
     display: none;
   }
 }
 
-.leftTornBorderImage {
+.botanicalImage {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
+  object-fit: contain;
   object-position: left top;
 }
 
@@ -130,7 +160,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: clamp(2.5rem, 4vw, 4rem);
+  gap: clamp(2.5rem, 4vw, 3.8rem);
 }
 
 /* 1. Header Bar: 07 / LET'S CONNECT —————— THE LAST PAGE */
@@ -159,7 +189,7 @@
 }
 
 .tagSep {
-  color: rgba(23, 21, 18, 0.35);
+  color: #B5282D;
 }
 
 .tagText {
@@ -184,7 +214,7 @@
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.18em;
-  color: rgba(23, 21, 18, 0.72);
+  color: #171512;
   white-space: nowrap;
   text-transform: uppercase;
 }
@@ -204,39 +234,50 @@
   display: flex;
   flex-direction: column;
   font-family: var(--font-bodoni), Georgia, serif;
-  font-size: clamp(2.6rem, 5.8vw, 4.8rem);
+  font-size: clamp(2.5rem, 5.2vw, 4.5rem);
   font-weight: 800;
-  line-height: 1.06;
+  line-height: 1.05;
   letter-spacing: -0.025em;
 }
 
 .headlineCharcoal {
-  color: var(--color-text);
+  color: #171512;
+  white-space: nowrap;
+
+  @media (max-width: 640px) {
+    white-space: normal;
+  }
 }
 
 .headlineVermilionWrap {
   position: relative;
   display: inline-block;
   width: fit-content;
+  white-space: nowrap;
+
+  @media (max-width: 640px) {
+    white-space: normal;
+  }
 }
 
 .headlineVermilion {
   color: #B5282D;
 }
 
-.brushUnderline {
+.brushUnderlineImage {
   position: absolute;
   left: 0;
-  bottom: -6px;
-  width: 104%;
+  bottom: -8px;
+  width: 102%;
   height: auto;
   pointer-events: none;
+  z-index: 1;
 }
 
 .supportingCopy {
   margin: clamp(1.25rem, 2vw, 1.85rem) 0 0;
   font-family: var(--font-inter), sans-serif;
-  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
   font-weight: 400;
   line-height: 1.58;
   color: #3A342C;
@@ -255,15 +296,15 @@
 
 .devanagariAccent {
   font-family: var(--font-martel), Georgia, serif;
-  font-size: clamp(1.85rem, 2.6vw, 2.5rem);
+  font-size: clamp(1.9rem, 2.7vw, 2.6rem);
   font-weight: 800;
-  color: var(--color-text);
+  color: #171512;
   line-height: 1;
   user-select: none;
 }
 
 .emailDivider {
-  color: rgba(23, 21, 18, 0.25);
+  color: rgba(181, 40, 45, 0.45);
   font-size: 1.8rem;
   font-weight: 300;
   user-select: none;
@@ -275,7 +316,7 @@
   gap: 0.65rem;
   color: #B5282D;
   font-family: var(--font-inter), sans-serif;
-  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  font-size: clamp(1.1rem, 1.45vw, 1.35rem);
   font-weight: 600;
   letter-spacing: -0.01em;
   text-decoration: none;
@@ -288,6 +329,12 @@
     .linkArrow {
       transform: translate(2px, -2px);
     }
+  }
+
+  &:focus-visible {
+    outline: 2px solid #B5282D;
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 }
 
@@ -324,11 +371,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 22px;
+  min-height: 48px;
+  height: 52px;
+  padding: 0 clamp(18px, 2vw, 24px);
   text-decoration: none;
   cursor: pointer;
   user-select: none;
   transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), filter 0.22s ease;
+  overflow: visible;
 
   &:focus-visible {
     outline: 2px solid #B5282D;
@@ -337,21 +387,14 @@
   }
 }
 
-.badgeSvgBackdrop {
+.badgeBackingImage {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  object-fit: fill;
   pointer-events: none;
   z-index: 1;
-  filter: drop-shadow(0 3px 7px rgba(23, 21, 18, 0.08)) drop-shadow(0 1px 2px rgba(23, 21, 18, 0.05));
-  transition: filter 0.22s ease;
-}
-
-.deckleSvg {
-  width: 100%;
-  height: 100%;
-  display: block;
 }
 
 .badgeContent {
@@ -359,23 +402,22 @@
   z-index: 2;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.65rem;
   font-family: var(--font-inter), sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 /* Deckled Ivory Paper Badges (GitHub, LinkedIn, Instagram) */
 .paperBadgeIvory {
-  color: var(--color-text);
+  color: #171512;
 
   &:hover {
     transform: translateY(-2px);
-
-    .badgeSvgBackdrop {
-      filter: drop-shadow(0 6px 15px rgba(23, 21, 18, 0.13)) drop-shadow(0 2px 4px rgba(23, 21, 18, 0.08));
-    }
+    filter: drop-shadow(0 4px 10px rgba(23, 21, 18, 0.12));
 
     .badgeArrow {
       transform: translate(2px, -2px);
@@ -391,16 +433,9 @@
 .paperBadgeVermilion {
   color: #FAF6F0;
 
-  .badgeSvgBackdrop {
-    filter: drop-shadow(0 4px 12px rgba(181, 40, 45, 0.28)) drop-shadow(0 1px 3px rgba(23, 21, 18, 0.12));
-  }
-
   &:hover {
     transform: translateY(-2px);
-
-    .badgeSvgBackdrop {
-      filter: drop-shadow(0 7px 18px rgba(181, 40, 45, 0.40)) drop-shadow(0 2px 5px rgba(23, 21, 18, 0.18));
-    }
+    filter: drop-shadow(0 5px 14px rgba(181, 40, 45, 0.35));
 
     .badgeArrow {
       transform: translateY(2px);
@@ -428,46 +463,8 @@
   transition: transform 0.2s ease;
 }
 
-/* Translucent Washi/Masking Tape Scrap Pins */
-.tapeScrap {
-  position: absolute;
-  top: -7px;
-  left: 18px;
-  width: 38px;
-  height: 13px;
-  background-image: url("/assets/contact/tape/translucent-masking-tape.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  pointer-events: none;
-  z-index: 3;
-  opacity: 0.9;
-  filter: drop-shadow(0 1px 2px rgba(23, 21, 18, 0.12));
-}
-
-.tapeScrap1 {
-  transform: rotate(-3deg);
-}
-
-.tapeScrap2 {
-  left: auto;
-  right: 18px;
-  transform: rotate(2.5deg);
-}
-
-.tapeScrap3 {
-  left: 24px;
-  transform: rotate(-1.5deg);
-}
-
-.tapeScrapVermilion {
-  left: auto;
-  right: 24px;
-  transform: rotate(3deg);
-  background-image: url("/assets/contact/tape/translucent-masking-tape-2.svg");
-}
-
 /* -------------------------------------------------------------------------
-   5. Compact Editorial Footer with Ridgeline Contour Sketch
+   5. Compact Editorial Footer with Hand-Drawn Mountain Line Art
    ------------------------------------------------------------------------- */
 
 .footerWrapper {
@@ -480,7 +477,7 @@
 .footerRuleContainer {
   position: relative;
   width: 100%;
-  height: 28px;
+  height: 32px;
 }
 
 .footerRule {
@@ -494,9 +491,9 @@
 
 .mountainSketchContainer {
   position: absolute;
-  right: clamp(140px, 16vw, 220px);
+  right: clamp(140px, 16vw, 230px);
   bottom: -1px;
-  width: 130px;
+  width: 125px;
   pointer-events: none;
 
   @media (max-width: 768px) {
@@ -504,6 +501,7 @@
     margin: 0 auto 0.5rem;
     display: flex;
     justify-content: center;
+    width: 110px;
   }
 }
 
@@ -534,7 +532,7 @@
   font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.16em;
-  color: var(--color-text);
+  color: #171512;
   white-space: nowrap;
 }
 
@@ -552,7 +550,7 @@
   em {
     font-style: italic;
     font-family: var(--font-bodoni), Georgia, serif;
-    color: var(--color-text);
+    color: #171512;
   }
 }
 
@@ -580,12 +578,32 @@
   font-size: 0.86rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: var(--color-text);
+  color: #B5282D;
   text-decoration: none;
   transition: color 0.2s ease, transform 0.2s ease;
 
   &:hover {
-    color: #B5282D;
+    opacity: 0.85;
     transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #B5282D;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Reduced Motion
+   ------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .emailDirectLink,
+  .paperBadge,
+  .backToTopLink,
+  .linkArrow,
+  .badgeArrow {
+    transition: none !important;
+    transform: none !important;
   }
 }

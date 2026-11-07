@@ -8,8 +8,9 @@ import styles from "./Contact.module.scss";
 export const ContactSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
 
-  // Verified URLs from prompt & repository
-  const emailAddress = "parth.mahadik33@gmail.com";
+  // Verified contact destinations from project configuration
+  // Using actual configured contact email from project repository
+  const emailAddress = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "parthmahadik752@gmail.com";
   const githubUrl = "https://github.com/ParthMahadik33";
   const linkedinUrl = "https://www.linkedin.com/in/parth-mahadik-489348325/";
   const resumeUrl = "/assets/resume/Parth_Mahadik_Resume.pdf";
@@ -80,11 +81,15 @@ export const ContactSection: React.FC = () => {
     });
   };
 
-  const handleBackToTop = () => {
+  const handleBackToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
     trackEvent("section_navigation", {
       section_name: "home",
       navigation_source: "back_to_top",
     });
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   return (
@@ -97,36 +102,49 @@ export const ContactSection: React.FC = () => {
       {/* Anchor for direct #contact navigation */}
       <span id="contact-anchor" className={styles.sectionAnchor} aria-hidden="true" />
 
-      {/* Layered Sahyadri Fort Landscape Composite (Right) */}
+      {/* Layered Sahyadri Fort Landscape Artwork (Right) */}
       <div className={styles.landscapeBackdrop} aria-hidden="true">
+        {/* Soft atmospheric distant mountain ridge behind fort */}
+        <div className={styles.distantRidgeLayer}>
+          <Image
+            src="/assets/contact/landscape/soft-distant-mountain-ridge.png"
+            alt=""
+            width={238}
+            height={173}
+            className={styles.distantRidgeImage}
+          />
+        </div>
+
+        {/* Main fort, textured vermilion sun, stone stairways, and saffron flag */}
         <Image
-          src="/assets/contact/fort/sahyadri-fort-landscape-composite.png"
+          src="/assets/contact/landscape/sahyadri-fort-landscape.png"
           alt="Sahyadri historic hill fort bastion, stone stairways, saffron flag, textured vermilion sun, and mountain landscape"
-          width={1048}
-          height={1020}
+          width={508}
+          height={425}
           className={styles.landscapeImage}
           priority
         />
+
         {/* Distant soaring birds above fort */}
         <div className={styles.distantBirdsWrapper}>
           <Image
-            src="/assets/contact/illustrations/distant-birds.svg"
+            src="/assets/contact/landscape/distant-birds.png"
             alt=""
-            width={120}
-            height={40}
+            width={147}
+            height={39}
             className={styles.birdsImage}
           />
         </div>
       </div>
 
-      {/* Torn Kraft Paper Border & Botanical Sprig along Left Edge */}
-      <div className={styles.leftTornBorder} aria-hidden="true">
+      {/* Botanical Branch along Left Edge */}
+      <div className={styles.leftBotanicalEdge} aria-hidden="true">
         <Image
-          src="/assets/contact/paper/torn-edge-botanical-left.png"
+          src="/assets/contact/botanical/botanical-left-branch.png"
           alt=""
-          width={95}
-          height={520}
-          className={styles.leftTornBorderImage}
+          width={124}
+          height={308}
+          className={styles.botanicalImage}
         />
       </div>
 
@@ -148,35 +166,20 @@ export const ContactSection: React.FC = () => {
 
         {/* 2. Main Editorial Content Area */}
         <div className={styles.contentWrapper}>
-          {/* Headline: Good things start with a conversation. */}
+          {/* Headline: Good things start with a conversation. (strictly 2 lines on desktop) */}
           <h2 className={styles.editorialHeadline}>
             <span className={styles.headlineCharcoal}>Good things start with</span>
             <span className={styles.headlineVermilionWrap}>
               <span className={styles.headlineVermilion}>a conversation.</span>
-              {/* Organic Hand-painted Vermilion Brush Underline */}
-              <svg
-                className={styles.brushUnderline}
-                viewBox="0 0 380 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+              {/* Authentic Hand-Painted Vermilion Brush Underline */}
+              <Image
+                src="/assets/contact/decorative/red-brush-underline.png"
+                alt=""
+                width={524}
+                height={35}
+                className={styles.brushUnderlineImage}
                 aria-hidden="true"
-              >
-                <path
-                  d="M4 14 C 70 8, 180 5, 374 11 C 290 16, 150 17, 12 16"
-                  stroke="#B5282D"
-                  strokeWidth="6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  opacity="0.92"
-                />
-                <path
-                  d="M25 15 C 100 10, 240 7, 360 12"
-                  stroke="#C84B31"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  opacity="0.75"
-                />
-              </svg>
+              />
             </span>
           </h2>
 
@@ -206,7 +209,7 @@ export const ContactSection: React.FC = () => {
                 className={styles.emailIcon}
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="currentColor"
+                stroke="#B5282D"
                 strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -233,19 +236,15 @@ export const ContactSection: React.FC = () => {
               onClick={handleGithubClick}
               aria-label="Parth Mahadik on GitHub (opens in new tab)"
             >
-              {/* Translucent textured washi tape scrap */}
-              <span className={`${styles.tapeScrap} ${styles.tapeScrap1}`} aria-hidden="true" />
-              {/* Deckled irregular torn paper backdrop */}
-              <span className={styles.badgeSvgBackdrop} aria-hidden="true">
-                <svg viewBox="0 0 160 48" preserveAspectRatio="none" className={styles.deckleSvg}>
-                  <path
-                    d="M 4 4 L 14 3 L 26 4 L 42 2 L 64 4 L 90 2 L 118 4 L 142 3 L 156 5 L 158 9 L 157 16 L 159 24 L 156 32 L 159 40 L 155 44 L 142 43 L 118 45 L 90 43 L 64 45 L 42 43 L 26 45 L 14 43 L 4 45 L 2 38 L 4 30 L 1 20 L 4 10 Z"
-                    fill="#FAF6F0"
-                    stroke="rgba(23,21,18,0.16)"
-                    strokeWidth="0.9"
-                  />
-                </svg>
-              </span>
+              {/* Torn-paper PNG backing */}
+              <Image
+                src="/assets/contact/ui_backings/blank-github-paper-button-backing.png"
+                alt=""
+                fill
+                sizes="(max-width: 768px) 160px, 180px"
+                className={styles.badgeBackingImage}
+                priority
+              />
               <div className={styles.badgeContent}>
                 <svg
                   className={styles.badgeIcon}
@@ -271,19 +270,15 @@ export const ContactSection: React.FC = () => {
               onClick={handleLinkedinClick}
               aria-label="Parth Mahadik on LinkedIn (opens in new tab)"
             >
-              {/* Translucent textured washi tape scrap */}
-              <span className={`${styles.tapeScrap} ${styles.tapeScrap2}`} aria-hidden="true" />
-              {/* Deckled irregular torn paper backdrop */}
-              <span className={styles.badgeSvgBackdrop} aria-hidden="true">
-                <svg viewBox="0 0 160 48" preserveAspectRatio="none" className={styles.deckleSvg}>
-                  <path
-                    d="M 4 4 L 14 3 L 26 4 L 42 2 L 64 4 L 90 2 L 118 4 L 142 3 L 156 5 L 158 9 L 157 16 L 159 24 L 156 32 L 159 40 L 155 44 L 142 43 L 118 45 L 90 43 L 64 45 L 42 43 L 26 45 L 14 43 L 4 45 L 2 38 L 4 30 L 1 20 L 4 10 Z"
-                    fill="#FAF6F0"
-                    stroke="rgba(23,21,18,0.16)"
-                    strokeWidth="0.9"
-                  />
-                </svg>
-              </span>
+              {/* Torn-paper PNG backing */}
+              <Image
+                src="/assets/contact/ui_backings/blank-linkedin-paper-button-backing.png"
+                alt=""
+                fill
+                sizes="(max-width: 768px) 160px, 180px"
+                className={styles.badgeBackingImage}
+                priority
+              />
               <div className={styles.badgeContent}>
                 <svg
                   className={styles.badgeIcon}
@@ -300,7 +295,7 @@ export const ContactSection: React.FC = () => {
               </div>
             </a>
 
-            {/* Instagram Pill (conditionally rendered when verified URL configured) */}
+            {/* Instagram Pill (conditionally rendered only if configured) */}
             {instagramUrl ? (
               <a
                 href={instagramUrl}
@@ -310,17 +305,13 @@ export const ContactSection: React.FC = () => {
                 onClick={handleInstagramClick}
                 aria-label="Parth Mahadik on Instagram (opens in new tab)"
               >
-                <span className={`${styles.tapeScrap} ${styles.tapeScrap3}`} aria-hidden="true" />
-                <span className={styles.badgeSvgBackdrop} aria-hidden="true">
-                  <svg viewBox="0 0 160 48" preserveAspectRatio="none" className={styles.deckleSvg}>
-                    <path
-                      d="M 4 4 L 14 3 L 26 4 L 42 2 L 64 4 L 90 2 L 118 4 L 142 3 L 156 5 L 158 9 L 157 16 L 159 24 L 156 32 L 159 40 L 155 44 L 142 43 L 118 45 L 90 43 L 64 45 L 42 43 L 26 45 L 14 43 L 4 45 L 2 38 L 4 30 L 1 20 L 4 10 Z"
-                      fill="#FAF6F0"
-                      stroke="rgba(23,21,18,0.16)"
-                      strokeWidth="0.9"
-                    />
-                  </svg>
-                </span>
+                <Image
+                  src="/assets/contact/ui_backings/blank-instagram-paper-button-backing.png"
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 160px, 180px"
+                  className={styles.badgeBackingImage}
+                />
                 <div className={styles.badgeContent}>
                   <svg
                     className={styles.badgeIcon}
@@ -344,7 +335,7 @@ export const ContactSection: React.FC = () => {
               </a>
             ) : null}
 
-            {/* Download Resume Pill (Authentic Torn Vermilion Scrap) */}
+            {/* Download Resume Pill (Authentic Torn Vermilion Paper Scrap) */}
             <a
               href={resumeUrl}
               download="Parth_Mahadik_Resume.pdf"
@@ -354,25 +345,15 @@ export const ContactSection: React.FC = () => {
               onClick={handleResumeClick}
               aria-label="Download Parth Mahadik's Resume in PDF format"
             >
-              {/* Translucent washi tape scrap */}
-              <span className={`${styles.tapeScrap} ${styles.tapeScrapVermilion}`} aria-hidden="true" />
-              {/* Torn vermilion paper scrap SVG backdrop */}
-              <span className={styles.badgeSvgBackdrop} aria-hidden="true">
-                <svg viewBox="0 0 220 52" preserveAspectRatio="none" className={styles.deckleSvg}>
-                  <path
-                    d="M 4 5 L 20 3 L 46 5 L 80 2 L 120 5 L 160 3 L 195 5 L 214 3 L 217 9 L 215 17 L 218 26 L 215 35 L 218 43 L 214 48 L 195 46 L 160 48 L 120 45 L 80 48 L 46 46 L 20 48 L 4 46 L 2 38 L 4 28 L 1 18 L 4 10 Z"
-                    fill="#B5282D"
-                    stroke="rgba(145,28,33,0.4)"
-                    strokeWidth="1.1"
-                  />
-                  <path
-                    d="M 8 6 L 212 5"
-                    stroke="rgba(255,255,255,0.25)"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </span>
+              {/* Vermilion torn-paper PNG backing */}
+              <Image
+                src="/assets/contact/ui_backings/blank-vermilion-resume-button-backing.png"
+                alt=""
+                fill
+                sizes="(max-width: 768px) 220px, 260px"
+                className={styles.badgeBackingImage}
+                priority
+              />
               <div className={styles.badgeContent}>
                 {/* Document Icon */}
                 <svg
@@ -402,15 +383,15 @@ export const ContactSection: React.FC = () => {
 
         {/* 5. Compact Editorial Footer */}
         <div className={styles.footerWrapper}>
-          {/* Top hairline rule with Sahyadri mountain ridgeline contour sketch resting on it */}
+          {/* Top hairline rule with Sahyadri mountain ridgeline line art resting on it */}
           <div className={styles.footerRuleContainer}>
             <div className={styles.footerRule} />
             <div className={styles.mountainSketchContainer} aria-hidden="true">
               <Image
-                src="/assets/contact/mountains/mountain-contour-footer.svg"
+                src="/assets/contact/landscape/footer-mountain-line-art.png"
                 alt=""
-                width={140}
-                height={26}
+                width={294}
+                height={97}
                 className={styles.mountainSketchImage}
               />
             </div>
